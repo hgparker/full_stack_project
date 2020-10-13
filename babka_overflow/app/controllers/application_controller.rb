@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
 
-    protect_from_forgery with: :null_session
+    # protect_from_forgery with: :null_session
 
     # helper_method :current_user, :logged_in? if needed
             
@@ -14,6 +14,7 @@ class ApplicationController < ActionController::Base
     end
       
     def current_user
+        debugger
         @current_user ||= User.find_by(session_token: session[:session_token]);    
     end
       
