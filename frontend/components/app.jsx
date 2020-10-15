@@ -4,10 +4,14 @@ import QuestionIndex from "./question_index";
 import {OnlyLoggedOutRoute} from "../util/route_util"
 import SessionFormContainer from "./Auth/session_form_container";
 import SignupFormContainer from "./Auth/signup_form_container";
+import NavBarContainer from "./NavBar/nav_bar_container";
 
 const App = (props) => {
     return (
         <div>
+            <Route
+                path = "/" component={NavBarContainer}
+            />
             <Route
                 exact path = "/" component={QuestionIndex}
             />
@@ -25,5 +29,3 @@ const App = (props) => {
 
 export default App;
 
-// nav bar route use path that captures all
-// other routes
