@@ -9,9 +9,7 @@ import NavBarContainer from "./NavBar/nav_bar_container";
 const App = (props) => {
     return (
         <div>
-            <Route
-                path = "/" component={NavBarContainer}
-            />
+            <NavBarContainer/>
             <Route
                 exact path = "/" component={QuestionIndex}
             />
