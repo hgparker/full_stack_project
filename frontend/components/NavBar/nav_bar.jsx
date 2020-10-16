@@ -37,7 +37,7 @@ class NavBar extends React.Component {
                     <Link
                         to="/"
                     >
-                        <img src="./assets/babka.png"/> 
+                        <img src="/assets/babka.png"/> 
                     </Link>
                     <div className="LeftNavBarText">
                         babka overflow

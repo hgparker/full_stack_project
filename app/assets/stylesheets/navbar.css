@@ -25,7 +25,7 @@
     border-width: 1px;
 }
 
-.loginButton {
+.loginButton, .logoutButton {
     background-color: #e1ecf4;
     color: #39739d;
 }
