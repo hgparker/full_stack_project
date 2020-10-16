@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 class SessionForm extends React.Component {
 
@@ -28,28 +29,39 @@ class SessionForm extends React.Component {
 
     render() {
         return (
-            <label>
-                Sign In
-                <form
-                    onSubmit={this.handleSubmit}
+            <div
+                className="outerLoginBox"
+            >
+                <Link
+                    to="/"
                 >
-                    <input
-                        type="text"
-                        value={this.state.email}
-                        onChange={this.handleChange("email")}
-                    />
-                    <input
-                        type="password"
-                        value={this.state.password}
-                        onChange={this.handleChange("password")}
-                    />
-                    <button
-                        value="submit"
+                    <img src="/assets/babka.png"/> 
+                </Link>
+                <label>
+                    Sign In
+                    <form
+                        onSubmit={this.handleSubmit}
                     >
-                        Log In
-                    </button>
-                </form>
+                        <input
+                            type="text"
+                            value={this.state.email}
+                            onChange={this.handleChange("email")}
+                        />
+                        <input
+                            type="password"
+                            value={this.state.password}
+                            onChange={this.handleChange("password")}
+                        />
+                        <button
+                            value="submit"
+                        >
+                            Log In
+                        </button>
+                    </form>
             </label>
+
+
+            </div>
         )
     }
 }
