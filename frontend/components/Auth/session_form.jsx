@@ -11,13 +11,18 @@ class SessionForm extends React.Component {
         };
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleChange = this.handleChange.bind(this);
+        this.handleDemoLogin = this.handleDemoLogin.bind(this);
+    }
+
+    handleDemoLogin(e) {
+        e.preventDefault();
+        this.props.login({email: "demodocus@demo.com", password: "demodemo"})
     }
 
     handleSubmit(e) {
         e.preventDefault();
         this.props.login(this.state)
     }
-
 
     handleChange(field) {
         return (e) => {
@@ -29,38 +34,46 @@ class SessionForm extends React.Component {
 
     render() {
         return (
-            <div
-                className="outerLoginBox"
-            >
+            <div className="SessionBox1">
                 <Link
                     to="/"
                 >
                     <img src="/assets/babka.png"/> 
                 </Link>
-                <label>
-                    Sign In
+
                     <form
+                        className="SessionBox2"
                         onSubmit={this.handleSubmit}
                     >
-                        <input
-                            type="text"
-                            value={this.state.email}
-                            onChange={this.handleChange("email")}
-                        />
-                        <input
-                            type="password"
-                            value={this.state.password}
-                            onChange={this.handleChange("password")}
-                        />
-                        <button
-                            value="submit"
-                        >
-                            Log In
-                        </button>
+                        <div className="SessionFormBox">
+                            <label>Email</label>
+                            <input
+                                type="text"
+                                value={this.state.email}
+                                onChange={this.handleChange("email")}
+                            /> 
+                        </div>
+                        <div className="SessionFormBox">
+                            <label>Password</label>
+                            <input
+                                type="password"
+                                value={this.state.password}
+                                onChange={this.handleChange("password")}
+                            />
+                        </div>
+                        <div className="SessionButtonRow">
+                            <button
+                                className = "SessionLoginButton"
+                                value="submit"
+                            >Log In </button>
+                            <button
+                                className = "SessionLoginButton"
+                                onClick={this.handleDemoLogin}
+                            >Demo </button>
+                        </div>
                     </form>
-            </label>
 
-
+                    <div> Don't have an account? <Link to="/signup">Sign Up</Link> </div>
             </div>
         )
     }

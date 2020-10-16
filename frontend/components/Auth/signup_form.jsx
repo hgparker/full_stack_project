@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 class UserForm extends React.Component {
 
@@ -14,7 +15,6 @@ class UserForm extends React.Component {
     }
 
     handleSubmit(e) {
-        debugger
         e.preventDefault();
         this.props.signup(this.state)
     }
@@ -29,36 +29,50 @@ class UserForm extends React.Component {
 
     render() {
         return (
-            <label>
-                Sign Up Form
+            <div className="SignupBox1">
+                <div>
+                    Create your own Babka Overflow account. It's free and only takes a minute.
+                </div>
                 <form
+                    className="SignupBox2"
                     onSubmit={this.handleSubmit}
                 >
+                    <div className="SignupFormBox">
+                    <label>Email</label> 
                     <input
                         type="text"
                         value={this.state.email}
                         onChange={this.handleChange("email")}
-                        placeholder="Email address"
                     />
-                    <input
-                        type="text"
-                        value={this.state.username}
-                        onChange={this.handleChange("username")}
-                        placeholder="Username"
-                    />
-                    <input
-                        type="password"
-                        value={this.state.password}
-                        onChange={this.handleChange("password")}
-                        placeholder="Email address"
-                    />
+                    </div>
+                    <div className="SignupFormBox">
+                        <label>Display name</label>
+                        <input
+                            type="text"
+                            value={this.state.username}
+                            onChange={this.handleChange("username")}
+                        />
+                    </div>
+                    <div className="SignupFormBox">
+                        <label>Password</label>
+                        <input
+                            type="password"
+                            value={this.state.password}
+                            onChange={this.handleChange("password")}
+                        />
+                    </div>
+
                     <button
+                        className="SignupButton"
                         value="submit"
                     >
-                        Create Account
+                        Sign up
                     </button>
                 </form>
-            </label>
+                <div> Already have an account? <Link to="/login">Log in</Link></div> 
+            </div>
+
+
         )
     }
 }
