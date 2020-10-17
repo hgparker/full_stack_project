@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import Errors from '../errors';
 
 class UserForm extends React.Component {
 
@@ -12,6 +13,10 @@ class UserForm extends React.Component {
         };
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleChange = this.handleChange.bind(this);
+    }
+
+    componentDidMount() {
+        this.props.clearAuthErrors();
     }
 
     handleSubmit(e) {
@@ -68,11 +73,10 @@ class UserForm extends React.Component {
                     >
                         Sign up
                     </button>
+                    <Errors errors={this.props.errors.responseJSON}/>
                 </form>
                 <div> Already have an account? <Link to="/login">Log in</Link></div> 
             </div>
-
-
         )
     }
 }

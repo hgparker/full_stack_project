@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import Errors from '../errors';
 
 class SessionForm extends React.Component {
 
@@ -13,6 +14,11 @@ class SessionForm extends React.Component {
         this.handleChange = this.handleChange.bind(this);
         this.handleDemoLogin = this.handleDemoLogin.bind(this);
     }
+
+    componentDidMount() {
+        this.props.clearAuthErrors();
+    }
+
 
     handleDemoLogin(e) {
         e.preventDefault();
@@ -71,8 +77,8 @@ class SessionForm extends React.Component {
                                 onClick={this.handleDemoLogin}
                             >Demo </button>
                         </div>
-                    </form>
-
+                        <Errors errors={this.props.errors.responseJSON}/>
+                    </form> 
                     <div> Don't have an account? <Link to="/signup">Sign Up</Link> </div>
             </div>
         )
