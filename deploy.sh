@@ -1,5 +1,5 @@
 
-# bundle exec rake assets:precompile RAILS_ENV=production
+bundle exec rake assets:precompile RAILS_ENV=production
 git add .
 git commit -m "$1"
 git push origin main
