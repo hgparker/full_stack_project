@@ -12,3 +12,7 @@
 User.destroy_all
 User.create(username: "Demo", email: "demodocus@demo.com", password: "demodemo")
 
+User.create(username: "thales", email: "thales@thales.com", password: "password")
+User.create(username: "parmeniPLEASE", email: "parm@parm.com", password: "password")
+User.create(username: "heraclitus", email: "hera@hera.com", password: "password")
+User.create(username: "anaxagoras", email: "anax@anax.com", password: "password")
