@@ -1,5 +1,3 @@
-export default questionsReducer;
-
 import {RECEIVE_QUESTION, RECEIVE_QUESTIONS, REMOVE_QUESTION} from "../actions/question_actions";
 
 const questionsReducer = (oldState = {}, action) => {
@@ -17,3 +15,5 @@ const questionsReducer = (oldState = {}, action) => {
             return oldState;
     }
 }
+
+export default questionsReducer;
