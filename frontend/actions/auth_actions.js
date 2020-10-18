@@ -2,7 +2,7 @@ import * as AuthApiUtil from "../util/auth_api_util";
 
 export const RECEIVE_CURRENT_USER = "RECEIVE_CURRENT_USER";
 export const REMOVE_CURRENT_USER = "REMOVE_CURRENT_USER";
-export const RECEIVE_ERRORS = "RECEIVE_ERRORS";
+export const RECEIVE_AUTH_ERRORS = "RECEIVE_ERRORS";
 
 const receiveCurrentUser = (user) => {
     return {
@@ -17,22 +17,22 @@ const removeCurrentUser = () => {
     };
 };
 
-const receiveErrors = (errors) => {
+const receiveAuthErrors = (errors) => {
     return {
-        type: RECEIVE_ERRORS,
+        type: RECEIVE_AUTH_ERRORS,
         errors: errors
     };
 };
 
 export const clearAuthErrors = () => {
-    return receiveErrors({});
+    return receiveAuthErrors({});
 }
 
 export const login = (user) => {
     return (dispatch) => {
         return AuthApiUtil.login(user)
             .then((loginUser) => dispatch(receiveCurrentUser(loginUser)))
-            .fail((errors) => dispatch(receiveErrors(errors)));
+            .fail((errors) => dispatch(receiveAuthErrors(errors)));
     };
 };
 
@@ -40,7 +40,7 @@ export const logout = () => {
     return (dispatch) => {
         return AuthApiUtil.logout()
             .then(() => dispatch(removeCurrentUser()))
-            .fail((errors) => dispatch(receiveErrors(errors)));
+            .fail((errors) => dispatch(receiveAuthErrors(errors)));
     };
 };
 
@@ -48,6 +48,6 @@ export const signup = (user) => {
     return (dispatch) => {
         return AuthApiUtil.signup(user)
             .then((newUser) => dispatch(receiveCurrentUser(newUser)))
-            .fail((errors) => dispatch(receiveErrors(errors)));
+            .fail((errors) => dispatch(receiveAuthErrors(errors)));
     };
 };
