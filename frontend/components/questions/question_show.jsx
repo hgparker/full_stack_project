@@ -16,14 +16,14 @@ class QuestionShow extends React.Component {
     render() {
         if (!this.state.fetched)
             return (
-                <h1> not fetched yet </h1> // change to spinner or something
+                <h1> Loading... </h1>
             )
         else 
             return (
                 <div>
-                    {this.props.question.title} <p></p>
-                    {this.props.question.body} <p></p>
-                    {this.props.question.author_id} <p></p> 
+                    Title: {this.props.question.title} 
+                    Body: {this.props.question.body} 
+                    Author id: {this.props.question.author_id} 
                 </div>
             );
     }
