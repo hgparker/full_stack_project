@@ -1,6 +1,6 @@
 import {connect} from 'react-redux';
 import QuestionShow from './question_show';
-import {fetchQuestion} from "../../actions/question_actions";
+import {fetchQuestion, deleteQuestion} from "../../actions/question_actions";
 
 const mSTP = (state, ownProps) => {
     return {    
@@ -13,6 +13,9 @@ const mDTP = (dispatch) => {
     return {
         fetchQuestion: (questionId) => {
             return dispatch(fetchQuestion(questionId))
+        },
+        deleteQuestion: (questionId) => {
+            return dispatch(deleteQuestion(questionId))
         }
     }
 }

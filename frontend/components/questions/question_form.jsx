@@ -5,10 +5,7 @@ import Errors from '../errors';
 class QuestionForm extends React.Component {
     constructor(props) {
         super(props)
-        this.state = {
-            ...this.props.question,
-            hasPosted: false
-        }
+        this.state = this.props.question;
 
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleChange = this.handleChange.bind(this);
@@ -21,13 +18,9 @@ class QuestionForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         this.props.submit(this.state)
-            .then((question) => {
-                this.props.history.push(`/questions`)
-            });        
-
-
-        // this.props.submit(this.state)
-        //     .then(() => {this.setState({hasPosted: true})});        
+            .then(({question}) => {
+                this.props.history.push(`/questions/${question.id}`)
+            });
     }
 
     handleChange(field) {
@@ -39,10 +32,6 @@ class QuestionForm extends React.Component {
     }
 
     render() {
-        if (this.state.hasPosted && Object.keys(this.props.errors).length === 0)
-            return (
-                <Redirect to="/questions"/>
-            )
         return (
             <div>
                 <form

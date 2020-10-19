@@ -21,13 +21,22 @@ class QuestionShow extends React.Component {
                         Edit
                     </button>
                 </Link>;
-        
+
+            const DeleteButton = this.props.currentUserId !== this.props.question.author_id ? null :
+                <button
+                onClick = { () => {
+                    this.props.deleteQuestion(this.props.question.id)
+                        .then(() => this.props.history.push('/questions'))
+                }}>
+                    Delete
+                </button>
             return (
                 <div>
                     Title: {this.props.question.title} 
                     Body: {this.props.question.body} 
                     Author id: {this.props.question.author_id} 
                     {EditButton}
+                    {DeleteButton}
                 </div>
             );
         }

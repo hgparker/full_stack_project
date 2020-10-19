@@ -20,7 +20,6 @@ class QuestionIndex extends React.Component {
             </Link>
             );
 
-
         return (
             <div>
                 <div> Stuff up top here
@@ -35,6 +34,5 @@ class QuestionIndex extends React.Component {
         );
     }
 }
-
 
 export default QuestionIndex;

@@ -37,10 +37,8 @@ class EditPostForm extends React.Component {
     render() {
         if (!this.props.question)
             return null
-        if (this.props.question.author_id != this.props.currentUserId) {
+        if (this.props.question.author_id != this.props.currentUserId)
             this.props.history.push(`/questions`);
-            console.log("got here");
-        }
         return (
             <QuestionForm
                 {...this.props}
