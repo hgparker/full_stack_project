@@ -11,4 +11,6 @@ export const logout = () => {
     return $.ajax({url: `/api/session`, method: 'DELETE'});
 }
 
-
+export const loggedIn = (state) => {
+    return Boolean(state.session.currentUserId);
+}

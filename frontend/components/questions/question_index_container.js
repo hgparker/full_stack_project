@@ -1,11 +1,11 @@
 import {connect} from 'react-redux';
 import QuestionIndex from './question_index';
 import {fetchQuestions} from "../../actions/question_actions";
-
-// import {login, clearAuthErrors, RECEIVE_ERRORS} from '../../actions/auth_actions';
+import { loggedIn } from '../../util/auth_api_util';
 
 const mSTP = (state) => {
     return {
+        loggedIn: loggedIn(state),
         questions: Object.values(state.entities.questions)
     };
 }

@@ -64,7 +64,10 @@ export const updateQuestion = (question) => {
     return (dispatch) => {
         return QuestionUtil.updateQuestion(question)
             .then((updatedQuestion) => dispatch(receiveQuestion(updatedQuestion)))
-            .fail((errors) => dispatch(receiveQuestionErrors(errors)));
+            .fail((errors) => {
+                debugger
+                /// errors.response.json 
+                dispatch(receiveQuestionErrors(errors))});
     };
 }
 

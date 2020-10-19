@@ -1,10 +1,11 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {Redirect, Route, withRouter} from 'react-router-dom';
+import {loggedIn} from './auth_api_util'
 
 const mapStateToProps = (state) => {
     return {
-        loggedIn: Boolean(state.session.currentUserId)
+        loggedIn: loggedIn(state)
     }
 }
 

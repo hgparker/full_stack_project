@@ -1,9 +1,10 @@
 import {connect} from 'react-redux';
 import NavBar from './nav_bar.jsx';
-import { logout } from '../../actions/auth_actions';
+import {loggedIn } from '../../util/auth_api_util';
+import {logout} from '../../actions/auth_actions';
 
 const mapStateToProps = (state) => ({
-    loggedIn: Boolean(state.session.currentUserId)
+    loggedIn: loggedIn(state)
 });
 
 

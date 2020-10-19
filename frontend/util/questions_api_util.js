@@ -13,9 +13,9 @@ export const postQuestion = (question) => {
 }
 
 export const updateQuestion = (question) => {
-    return $.ajax({url: `/api/question/${questionId}`, method: "PATCH", data: {question}});
+    return $.ajax({url: `/api/questions/${question.id}`, method: "PATCH", data: {question}});
 }
 
 export const deleteQuestion = (questionId) => {
-    return $.ajax({url: `/api/question/${questionId}`, method: "DELETE"});
+    return $.ajax({url: `/api/questions/${questionId}`, method: "DELETE"});
 }
