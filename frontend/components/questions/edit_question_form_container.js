@@ -29,28 +29,18 @@ const mDTP = (dispatch) => {
 
 class EditPostForm extends React.Component {
 
-    constructor(props) {
-        super(props)
-        this.state = {
-            fetched: false
-        }
-    }
-
     componentDidMount() {
         this.props.clearQuestionErrors();
-        this.props.fetchPost(this.props.match.params.questionId)
-            .then(() => {
-                this.setState({fetched: true});
-            });
+        this.props.fetchPost(this.props.match.params.questionId);
     }
   
     render() {
-        if (!this.state.fetched)
+        if (!this.props.question)
             return null
-        if (this.props.question.author_id != this.props.currentUserId)
-            return (
-                <Redirect to="/questions"/>
-            );
+        if (this.props.question.author_id != this.props.currentUserId) {
+            this.props.history.push(`/questions`);
+            console.log("got here");
+        }
         return (
             <QuestionForm
                 {...this.props}
@@ -58,11 +48,5 @@ class EditPostForm extends React.Component {
         );
     }
 }
-
-// errors={this.props.errors}
-// formType={this.props.formType}
-// question={this.props.question}
-// submit={this.props.submit}
-// clearQuestionErrors={this.props.clearQuestionErrors}
 
 export default connect(mSTP, mDTP)(EditPostForm);

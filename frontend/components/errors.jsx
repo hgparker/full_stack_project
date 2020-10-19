@@ -1,12 +1,10 @@
 import React from 'react';
 
-const Errors = (props) => {
-    if (!props.errors)
-        return null;
+const Errors = ({errors}) => {
     return (
         <ul>
             {
-                props.errors.map((error) => {
+                errors.map((error) => {
                     return (
                         <li className="ErrorMessage" key={error[0]}>
                             {error}

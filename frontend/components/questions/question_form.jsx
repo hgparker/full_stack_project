@@ -63,7 +63,7 @@ class QuestionForm extends React.Component {
                     <button
                         value="submit"
                     >{this.props.formType} </button>
-                    <Errors errors={this.props.errors.responseJSON}/>
+                    <Errors errors={this.props.errors}/>
                     </form> 
 
             </div>

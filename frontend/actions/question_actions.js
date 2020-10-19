@@ -34,7 +34,7 @@ const receiveQuestionErrors = (errors) => {
 };
 
 export const clearQuestionErrors = () => {
-    return receiveQuestionErrors({});
+    return receiveQuestionErrors([]);
 }
 
 export const fetchQuestions = () => {
@@ -48,7 +48,7 @@ export const fetchQuestion = (questionId) => {
     return (dispatch) => {
         return QuestionUtil.fetchQuestion(questionId)
             .then((question) => dispatch(receiveQuestion(question)))
-            .fail((errors) => dispatch(receiveQuestionErrors(errors)));
+            .fail((errors) => dispatch(receiveQuestionErrors(errors.responseJSON)));
     };
 }
 
@@ -56,7 +56,7 @@ export const postQuestion = (question) => {
     return (dispatch) => {
         return QuestionUtil.postQuestion(question)
             .then((newQuestion) => dispatch(receiveQuestion(newQuestion)))
-            .fail((errors) => dispatch(receiveQuestionErrors(errors)));
+            .fail((errors) => dispatch(receiveQuestionErrors(errors.responseJSON)));
     };
 }
 
@@ -64,10 +64,7 @@ export const updateQuestion = (question) => {
     return (dispatch) => {
         return QuestionUtil.updateQuestion(question)
             .then((updatedQuestion) => dispatch(receiveQuestion(updatedQuestion)))
-            .fail((errors) => {
-                debugger
-                /// errors.response.json 
-                dispatch(receiveQuestionErrors(errors))});
+            .fail((errors) => dispatch(receiveQuestionErrors(errors.responseJSON)));
     };
 }
 
@@ -75,6 +72,6 @@ export const deleteQuestion = (questionId) => {
     return (dispatch) => {
         return QuestionUtil.deleteQuestion(questionId)
             .then(() => dispatch(removeQuestion(questionId)))
-            .fail((errors) => dispatch(receiveQuestionErrors(errors)));
+            .fail((errors) => dispatch(receiveQuestionErrors(errors.responseJSON)));
     };
 }

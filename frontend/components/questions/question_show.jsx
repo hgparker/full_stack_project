@@ -2,21 +2,13 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 
 class QuestionShow extends React.Component {
-    constructor(props) {
-        super(props)
-        this.state = {fetched: false};
-    }
-
     componentDidMount() {
-        this.props.fetchQuestion(this.props.match.params.questionId)
-            .then(() => {
-                this.setState({fetched: true});
-            });
+        this.props.fetchQuestion(this.props.match.params.questionId);
     }
 
     render() {
 
-        if (!this.state.fetched)
+        if (!this.props.question)
             return (
                 <h1> Loading... </h1>
             )

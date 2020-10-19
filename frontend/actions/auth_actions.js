@@ -25,14 +25,14 @@ const receiveAuthErrors = (errors) => {
 };
 
 export const clearAuthErrors = () => {
-    return receiveAuthErrors({});
+    return receiveAuthErrors([]);
 }
 
 export const login = (user) => {
     return (dispatch) => {
         return AuthApiUtil.login(user)
             .then((loginUser) => dispatch(receiveCurrentUser(loginUser)))
-            .fail((errors) => dispatch(receiveAuthErrors(errors)));
+            .fail((errors) => dispatch(receiveAuthErrors(errors.responseJSON)));
     };
 };
 
@@ -40,7 +40,7 @@ export const logout = () => {
     return (dispatch) => {
         return AuthApiUtil.logout()
             .then(() => dispatch(removeCurrentUser()))
-            .fail((errors) => dispatch(receiveAuthErrors(errors)));
+            .fail((errors) => dispatch(receiveAuthErrors(errors.responseJSON)));
     };
 };
 
@@ -48,6 +48,6 @@ export const signup = (user) => {
     return (dispatch) => {
         return AuthApiUtil.signup(user)
             .then((newUser) => dispatch(receiveCurrentUser(newUser)))
-            .fail((errors) => dispatch(receiveAuthErrors(errors)));
+            .fail((errors) => dispatch(receiveAuthErrors(errors.responseJSON)));
     };
 };

@@ -73,7 +73,7 @@ class UserForm extends React.Component {
                     >
                         Sign up
                     </button>
-                    <Errors errors={this.props.errors.responseJSON}/>
+                    <Errors errors={this.props.errors}/>
                 </form>
                 <div> Already have an account? <Link to="/login">Log in</Link></div> 
             </div>

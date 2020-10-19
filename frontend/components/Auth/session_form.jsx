@@ -77,7 +77,7 @@ class SessionForm extends React.Component {
                                 onClick={this.handleDemoLogin}
                             >Demo </button>
                         </div>
-                        <Errors errors={this.props.errors.responseJSON}/>
+                        <Errors errors={this.props.errors}/>
                     </form> 
                     <div> Don't have an account? <Link to="/signup">Sign Up</Link> </div>
             </div>
