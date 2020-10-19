@@ -50,6 +50,7 @@ class QuestionForm extends React.Component {
                             onChange={this.handleChange("body")}
                         />
                     <button
+                        className="ButtonStyle1"
                         value="submit"
                     >{this.props.formType} </button>
                     <Errors errors={this.props.errors}/>

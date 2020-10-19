@@ -14,7 +14,9 @@ class QuestionIndex extends React.Component {
 
         const NewQuestionButton = !this.props.loggedIn ? null : (
             <Link to="/questions/ask">
-            <button>
+            <button
+                className="ButtonStyle1"
+            >
                 Ask Question
             </button>
             </Link>

@@ -68,7 +68,7 @@ class UserForm extends React.Component {
                     </div>
 
                     <button
-                        className="SignupButton"
+                        className="ButtonStyle1"
                         value="submit"
                     >
                         Sign up

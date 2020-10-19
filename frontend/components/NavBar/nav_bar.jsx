@@ -9,7 +9,7 @@ class NavBar extends React.Component {
                 <Link
                     to="/login"
                 >
-                    <button className="loginButton">
+                    <button className="ButtonStyle2">
                         Log in
                     </button>
                 </Link>;
@@ -18,7 +18,7 @@ class NavBar extends React.Component {
             <Link
                 to="/signup"
             >
-                <button className="signupButton">
+                <button className="ButtonStyle1">
                     Sign up
                 </button>
             </Link>;
@@ -26,7 +26,7 @@ class NavBar extends React.Component {
         const logoutButton = !this.props.loggedIn ? null :
             <button
                 onClick={this.props.logout}
-                className="logoutButton"
+                className="ButtonStyle2"
             >
                     Log out
             </button>;

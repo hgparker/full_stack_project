@@ -17,16 +17,19 @@ class QuestionShow extends React.Component {
                 <Link
                     to={`/questions/${this.props.question.id}/edit`}
                 >
-                    <button>
+                    <button
+                        className="ButtonStyle1"
+                    >
                         Edit
                     </button>
                 </Link>;
 
             const DeleteButton = this.props.currentUserId !== this.props.question.author_id ? null :
                 <button
-                onClick = { () => {
-                    this.props.deleteQuestion(this.props.question.id)
-                        .then(() => this.props.history.push('/questions'))
+                    className="ButtonStyle2"
+                    onClick = { () => {
+                        this.props.deleteQuestion(this.props.question.id)
+                            .then(() => this.props.history.push('/questions'))
                 }}>
                     Delete
                 </button>

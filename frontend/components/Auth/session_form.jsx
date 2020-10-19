@@ -69,11 +69,11 @@ class SessionForm extends React.Component {
                         </div>
                         <div className="SessionButtonRow">
                             <button
-                                className = "SessionLoginButton"
+                                className = "ButtonStyle2"
                                 value="submit"
                             >Log In </button>
                             <button
-                                className = "SessionLoginButton"
+                                className = "ButtonStyle1"
                                 onClick={this.handleDemoLogin}
                             >Demo </button>
                         </div>
