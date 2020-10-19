@@ -22,6 +22,3 @@ const List = ({component: Component, list, itemCallback}) => {
 }
 
 export default List;
-
-
-
