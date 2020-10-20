@@ -1,4 +1,3 @@
-import { RECEIVE_CURRENT_USER } from "../actions/auth_actions";
 import {RECEIVE_QUESTION_ERRORS, RECEIVE_QUESTION} from "../actions/question_actions";
 
 const questionErrorsReducer =(oldState =[], action) => {
