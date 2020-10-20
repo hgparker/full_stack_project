@@ -1,0 +1,21 @@
+# == Schema Information
+#
+# Table name: answers
+#
+#  id          :bigint           not null, primary key
+#  author_id   :integer          not null
+#  question_id :integer          not null
+#  body        :text             not null
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#
+
+one:
+  user_id: 1
+  question_id: 1
+  body: MyText
+
+two:
+  user_id: 1
+  question_id: 1
+  body: MyText
