@@ -1,8 +1,11 @@
 
 
 export const selectAnswers = (state, questionId) => {
-    let answers = state.entities.questions[questionId];
-    return answers.map((answerId) => selectAnswer(state, answerId));
+    // debugger
+    let answers = []
+    if (state.entities.questions[questionId] && state.entities.questions[questionId].answers)
+        answers = state.entities.questions[questionId].answers;
+    return answers.map(answerId => selectAnswer(state, answerId));
 } 
 
 export const selectAnswer = (state, answerId) => {

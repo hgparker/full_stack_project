@@ -1,5 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import List from '../list';
+import AnswerItem from '../answers/answer_item'
 
 class QuestionShow extends React.Component {
     componentDidMount() {
@@ -40,7 +42,7 @@ class QuestionShow extends React.Component {
                         Ask Question
                     </button>
                 </Link>);
-
+    
             return (
                 <div className="QuestionShowBox1">
                     <div className="QuestionShowBox2">
@@ -56,6 +58,13 @@ class QuestionShow extends React.Component {
                     <div className="QuestionShowBox3">
                         {this.props.question.body} 
                     </div>
+
+                    <List 
+                    component={AnswerItem}
+                    list={this.props.answers}
+                    itemCallback={(answer) => ({answer})}
+                    />
+
                 </div>
             );
         }
