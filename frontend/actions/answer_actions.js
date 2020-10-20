@@ -19,10 +19,11 @@ export const receiveAnswer = (answer) => {
     };
 };
 
-export const removeAnswer = (answerId) => {
+export const removeAnswer = (answer) => {
     return {
         type: REMOVE_ANSWER,
-        answerId: answerId
+        questionId: answer.question_id,
+        answerId: answer.id
     }
 }
 
@@ -56,7 +57,7 @@ export const updateAnswer = (answer) => {
 export const deleteAnswer = (answerId) => {
     return (dispatch) => {
         return AnswerUtil.deleteAnswer(answerId)
-            .then(() => dispatch(removeAnswer(answerId)))
+            .then((deletedAnswer) => dispatch(removeAnswer(deletedAnswer)))
             .fail((errors) => dispatch(receiveAnswerErrors(errors.responseJSON)));
     };
 }

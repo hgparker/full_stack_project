@@ -1,4 +1,5 @@
 import * as QuestionUtil from "../util/questions_api_util";
+import {RECEIVE_ANSWERS, receiveAnswers} from "./answer_actions";
 
 export const RECEIVE_QUESTIONS = "RECEIVE_QUESTIONS";
 export const RECEIVE_QUESTION = "RECEIVE_QUESTION";
@@ -15,7 +16,12 @@ export const receiveQuestions = (questions) => {
 export const receiveQuestion = (question) => {
     return {
         type: RECEIVE_QUESTION,
-        question: question
+        question: {
+            id: question.id,
+            title: question.title,
+            body: question.body,
+            answers: Object.keys(question.answers)
+        }
     };
 };
 
@@ -47,8 +53,10 @@ export const fetchQuestions = () => {
 export const fetchQuestion = (questionId) => {
     return (dispatch) => {
         return QuestionUtil.fetchQuestion(questionId)
-            .then((question) => dispatch(receiveQuestion(question)))
-            .fail((errors) => dispatch(receiveQuestionErrors(errors.responseJSON)));
+            .then((question) => {
+                dispatch(receiveAnswers(question.answers))
+                return dispatch(receiveQuestion(question))
+            }).fail((errors) => dispatch(receiveQuestionErrors(errors.responseJSON)));
     };
 }
 
