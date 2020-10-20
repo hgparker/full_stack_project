@@ -33,6 +33,14 @@ class QuestionShow extends React.Component {
                 }}>
                     Delete
                 </button>
+
+            const NewQuestionButton = !this.props.loggedIn ? null : (
+                <Link to="/questions/ask">
+                    <button className="ButtonStyle1">
+                        Ask Question
+                    </button>
+                </Link>);
+
             return (
                 <div className="QuestionShowBox1">
                     <div className="QuestionShowBox2">
@@ -42,6 +50,7 @@ class QuestionShow extends React.Component {
                         <div className="RightQuestionShowBox2">
                             {EditButton}
                             {DeleteButton}
+                            {NewQuestionButton}
                         </div>
                     </div>
                     <div className="QuestionShowBox3">

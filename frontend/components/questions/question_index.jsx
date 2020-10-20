@@ -28,7 +28,7 @@ class QuestionIndex extends React.Component {
                     <div>Top Questions </div>
                     <div> {NewQuestionButton} </div>
                 </div>
-                <div className="QuestionIndexBox3">
+                <div>
                 <List 
                     component={QuestionIndexItem}
                     list={this.props.questions}
