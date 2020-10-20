@@ -1,0 +1,25 @@
+
+
+
+.QuestionShowBox1 {
+    background-color: aqua;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.QuestionShowBox2 {
+    background-color: blueviolet;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.LeftQuestionShowBox2 {
+    background-color: cornflowerblue;
+    font-size: 22px;
+}
+.QuestionShowBox3 {
+    background-color: coral;
+}

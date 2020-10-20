@@ -23,15 +23,19 @@ class QuestionIndex extends React.Component {
             );
 
         return (
-            <div>
-                <div> Stuff up top here
-                    {NewQuestionButton}
+            <div className="QuestionIndexBox1">
+                <div className="QuestionIndexBox2">
+                    <div>Top Questions </div>
+                    <div> {NewQuestionButton} </div>
                 </div>
+                <div className="QuestionIndexBox3">
                 <List 
                     component={QuestionIndexItem}
                     list={this.props.questions}
                     itemCallback={(question) => ({question})}
                 />
+                </div>
+                
             </div>
         );
     }

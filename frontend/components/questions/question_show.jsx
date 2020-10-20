@@ -34,12 +34,19 @@ class QuestionShow extends React.Component {
                     Delete
                 </button>
             return (
-                <div>
-                    Title: {this.props.question.title} 
-                    Body: {this.props.question.body} 
-                    Author id: {this.props.question.author_id} 
-                    {EditButton}
-                    {DeleteButton}
+                <div className="QuestionShowBox1">
+                    <div className="QuestionShowBox2">
+                        <div className="LeftQuestionShowBox2">
+                            {this.props.question.title} 
+                        </div>
+                        <div className="RightQuestionShowBox2">
+                            {EditButton}
+                            {DeleteButton}
+                        </div>
+                    </div>
+                    <div className="QuestionShowBox3">
+                        {this.props.question.body} 
+                    </div>
                 </div>
             );
         }
