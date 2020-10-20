@@ -34,21 +34,28 @@ class QuestionForm extends React.Component {
     render() {
         return (
             <div>
-                <form
+                <form className="QuestionFormBox1"
                     onSubmit={this.handleSubmit}
                 >
+                    <div className="QuestionFormBox">
                     <label>Title</label>
                         <input
+                            className="QuestionFormTitle"
                             type="text"
+                            row="60"
                             value={this.state.title}
                             onChange={this.handleChange("title")}
-                        /> 
+                        />
+                    </div>
+                    <div className="QuestionFormBox">
                     <label>Body</label>
-                        <input
-                            type="textarea"
+                        <textarea
+                            className="QuestionFormBody"
+                            cols="60"
                             value={this.state.body}
                             onChange={this.handleChange("body")}
                         />
+                    </div>
                     <button
                         className="ButtonStyle1"
                         value="submit"

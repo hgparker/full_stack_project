@@ -1,0 +1,27 @@
+
+
+.QuestionFormBox1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 70%;
+    margin: auto;
+    margin-top: 20px;
+    // background-color: yellowgreen;
+}
+
+.QuestionFormBox {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    // background-color: turquoise;
+}
+
+.QuestionFormTitle {
+    width: 600px;
+}
+
+.QuestionFormBody {
+    width: 600px;
+    height: 300px;
+}
