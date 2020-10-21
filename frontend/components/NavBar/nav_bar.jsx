@@ -1,36 +1,10 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import {conditionalLogin, conditionalSignup, conditionalLogout} from '../conditional_buttons';
 
 class NavBar extends React.Component {
 
     render() {
-         
-        const loginButton = this.props.loggedIn ? null :
-                <Link
-                    to="/login"
-                >
-                    <button className="ButtonStyle2">
-                        Log in
-                    </button>
-                </Link>;
-
-        const signUpButton = this.props.loggedIn ? null :
-            <Link
-                to="/signup"
-            >
-                <button className="ButtonStyle1">
-                    Sign up
-                </button>
-            </Link>;
-
-        const logoutButton = !this.props.loggedIn ? null :
-            <button
-                onClick={this.props.logout}
-                className="ButtonStyle2"
-            >
-                    Log out
-            </button>;
-
         return (
             <div className="NavBar">
                 <div className="LeftNavBar">
@@ -44,9 +18,9 @@ class NavBar extends React.Component {
                     </div>
                 </div>
                 <div className="RightNavBar">
-                    {loginButton}
-                    {signUpButton}
-                    {logoutButton}
+                    {conditionalLogin(!this.props.loggedIn)}
+                    {conditionalSignup(!this.props.loggedIn)}
+                    {conditionalLogout(this.props.loggedIn, this.props.dispatch)}
                 </div>
             </div>
         );
@@ -54,7 +28,3 @@ class NavBar extends React.Component {
 }
 
 export default NavBar;
-
-
-// this.props.loggedIn
-// this.props.logout()

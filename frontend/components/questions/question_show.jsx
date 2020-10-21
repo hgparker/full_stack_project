@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom';
 import List from '../list';
 import AnswerItem from '../answers/answer_item'
 import AnswerFormContainer from '../answers/answer_form_container';
+import {conditionalNewQuestion, conditionalDelete, conditionalButton} from '../conditional_buttons';
 
 class QuestionShow extends React.Component {
     componentDidMount() {
@@ -16,33 +17,6 @@ class QuestionShow extends React.Component {
                 <h1> Loading... </h1>
             )
         else {
-            const EditButton = this.props.currentUserId !== this.props.question.author_id ? null :
-                <Link
-                    to={`/questions/${this.props.question.id}/edit`}
-                >
-                    <button
-                        className="ButtonStyle1"
-                    >
-                        Edit
-                    </button>
-                </Link>;
-
-            const DeleteButton = this.props.currentUserId !== this.props.question.author_id ? null :
-                <button
-                    className="ButtonStyle2"
-                    onClick = { () => {
-                        this.props.deleteQuestion(this.props.question.id)
-                            .then(() => this.props.history.push('/questions'))
-                }}>
-                    Delete
-                </button>
-
-            const NewQuestionButton = !this.props.loggedIn ? null : (
-                <Link to="/questions/ask">
-                    <button className="ButtonStyle1">
-                        Ask Question
-                    </button>
-                </Link>);
 
             return (
                 <div className="QuestionShowBox1">
@@ -51,9 +25,15 @@ class QuestionShow extends React.Component {
                             {this.props.question.title} 
                         </div>
                         <div className="RightQuestionShowBox2">
-                            {EditButton}
-                            {DeleteButton}
-                            {NewQuestionButton}
+                            {conditionalButton(this.props.currentUserId === this.props.question.author_id,
+                        () => this.props.history.push(`/questions/${this.props.question.id}/edit`),
+                        "ButtonStyle1", "Edit")}
+                            {conditionalDelete(this.props.currentUserId === this.props.question.author_id, 
+                                () => {
+                                    this.props.deleteQuestion(this.props.question.id)
+                                        .then(() => this.props.history.push('/questions'))
+                            })}
+                            {conditionalNewQuestion(this.props.loggedIn)}
                         </div>
                     </div>
                     <div className="QuestionShowBox3">
