@@ -2,6 +2,7 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import List from '../list';
 import AnswerItem from '../answers/answer_item'
+import AnswerFormContainer from '../answers/answer_form_container';
 
 class QuestionShow extends React.Component {
     componentDidMount() {
@@ -64,6 +65,8 @@ class QuestionShow extends React.Component {
                     list={this.props.answers}
                     itemCallback={(answer) => ({answer})}
                     />
+                    
+                    <AnswerFormContainer questionId={this.props.question.id}/>
 
                 </div>
             );
