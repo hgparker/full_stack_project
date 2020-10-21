@@ -40,6 +40,10 @@ class QuestionShow extends React.Component {
                         {this.props.question.body} 
                     </div>
 
+                        <div className="QuestionShowBox4">
+                            Answers:
+                        </div>
+                        
                     <List 
                     component={AnswerItem}
                     list={this.props.answers}

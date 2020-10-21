@@ -1,5 +1,4 @@
 
-
 .QuestionFormBox1 {
     display: flex;
     flex-direction: column;
@@ -24,4 +23,8 @@
 .QuestionFormBody {
     width: 600px;
     height: 300px;
+}
+
+.AnswerAlternative {
+    margin-top: 30px;
 }

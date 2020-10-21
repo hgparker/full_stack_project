@@ -1,5 +1,5 @@
 import React from 'react';
-// import { Redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Errors from '../errors';
 
 class AnswerForm extends React.Component {
@@ -31,7 +31,10 @@ class AnswerForm extends React.Component {
     render() {
         if (!this.props.loggedIn) {
             return (
-                <div>Log in or sign up to post your answer</div>
+                <div className="AnswerAlternative">
+                    <Link to='/login'>
+                    Log in
+                    </Link> or <Link to='/signup'>sign up</Link> to post your answer</div>
             );
         }
         return (
@@ -40,7 +43,6 @@ class AnswerForm extends React.Component {
                     onSubmit={this.handleSubmit}
                 >
                     <div className="QuestionFormBox">
-                    <label>Body</label>
                         <textarea
                             className="QuestionFormBody"
                             cols="60"
