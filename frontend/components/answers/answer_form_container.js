@@ -1,16 +1,17 @@
 import {connect} from 'react-redux';
 import AnswerForm from './answer_form';
 import {postAnswer, clearAnswerErrors} from '../../actions/answer_actions';
-import {loggedIn} from '../../util/auth_api_util';
+import {loggedIn, currentUser} from '../../selectors/auth_selectors';
+import {answerErrors} from '../../selectors/errors_selectors';
 
 const mSTP = (state, ownProps) => {
     return {
-        errors: state.errors.answer,
+        errors: answerErrors(state),
         formType: "Post your answer",
         loggedIn: loggedIn(state),
         answer: {
             body: "",
-            author_id: state.session.currentUserId,
+            author_id: currentUser(state),
             question_id: ownProps.questionId
         }
     };

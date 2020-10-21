@@ -66,7 +66,6 @@ export const conditionalDelete = (successCondition, callback) => {
 }
 
 export const conditionalButton = (successCondition, callback, buttonStyle, buttonText) => {
-    debugger
     if (!successCondition)
         return null;
     return (

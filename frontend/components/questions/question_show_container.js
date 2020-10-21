@@ -1,15 +1,16 @@
 import {connect} from 'react-redux';
 import QuestionShow from './question_show';
 import {fetchQuestion, deleteQuestion} from "../../actions/question_actions";
-import {loggedIn} from '../../util/auth_api_util';
 import {selectAnswers} from '../../selectors/answers_selectors';
+import {selectQuestion} from '../../selectors/questions_selectors';
+import { currentUser, loggedIn } from '../../selectors/auth_selectors';
 
 const mSTP = (state, ownProps) => {
     let questionId = ownProps.match.params.questionId;
     return {    
-        question: state.entities.questions[questionId],
+        question: selectQuestion(state, questionId),
         answers: selectAnswers(state, questionId),
-        currentUserId: state.session.currentUserId,
+        currentUserId: currentUser(state),
         loggedIn: loggedIn(state)
     };
 }

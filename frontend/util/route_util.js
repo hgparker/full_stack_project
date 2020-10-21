@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {Redirect, Route, withRouter} from 'react-router-dom';
-import {loggedIn} from './auth_api_util'
+import {loggedIn} from '../selectors/auth_selectors'
 
 const mapStateToProps = (state) => {
     return {

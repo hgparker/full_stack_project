@@ -1,12 +1,13 @@
 import {connect} from 'react-redux';
 import QuestionIndex from './question_index';
 import {fetchQuestions} from "../../actions/question_actions";
-import { loggedIn } from '../../util/auth_api_util';
+import { loggedIn } from '../../selectors/auth_selectors';
+import {selectQuestions} from '../../selectors/questions_selectors';
 
 const mSTP = (state) => {
     return {
         loggedIn: loggedIn(state),
-        questions: Object.values(state.entities.questions)
+        questions: selectQuestions(state)
     };
 }
 

@@ -1,10 +1,11 @@
 import {connect} from 'react-redux';
 import SignupForm from './signup_form.jsx';
 import {signup, clearAuthErrors} from '../../actions/auth_actions';
+import {sessionErrors} from '../../selectors/errors_selectors';
 
 const mSTP = (state) => {
     return {
-        errors: state.errors.session
+        errors: sessionErrors(state)
     }
 }
 
