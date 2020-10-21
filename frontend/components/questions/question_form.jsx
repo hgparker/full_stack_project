@@ -18,8 +18,8 @@ class QuestionForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         this.props.submit(this.state)
-            .then(({question}) => {
-                this.props.history.push(`/questions/${question.id}`)
+            .then(action => {
+                this.props.history.push(`/questions/${Object.values(action.payload.questions)[0].id}`)
             });
     }
 
