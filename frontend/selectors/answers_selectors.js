@@ -1,13 +1,7 @@
-
+// look through entire state
+// use Object.values(state.entities.answers).filter((answer) => answer.question_id === questionId)
 
 export const selectAnswers = (state, questionId) => {
-    // debugger
-    let answers = []
-    if (state.entities.questions[questionId] && state.entities.questions[questionId].answers)
-        answers = state.entities.questions[questionId].answers;
-    return answers.map(answerId => selectAnswer(state, answerId));
+    return Object.values(state.entities.answers)
+        .filter((answer) => answer.question_id !== questionId);
 } 
-
-export const selectAnswer = (state, answerId) => {
-    return state.entities.answers[answerId];
-}

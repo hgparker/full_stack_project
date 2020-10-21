@@ -1,41 +1,34 @@
 import * as QuestionUtil from "../util/questions_api_util";
-import {RECEIVE_ANSWERS, receiveAnswers} from "./answer_actions";
-
 export const RECEIVE_QUESTIONS = "RECEIVE_QUESTIONS";
 export const RECEIVE_QUESTION = "RECEIVE_QUESTION";
 export const REMOVE_QUESTION = "REMOVE_QUESTION";
 export const RECEIVE_QUESTION_ERRORS = "RECEIVE_QUESTION_ERRORS";
 
-export const receiveQuestions = (questions) => {
+export const receiveQuestions = (payload) => {
     return {
         type: RECEIVE_QUESTIONS,
-        questions: questions
+        payload
     }
 }
 
-export const receiveQuestion = (question) => {
+export const receiveQuestion = (payload) => {
     return {
         type: RECEIVE_QUESTION,
-        question: {
-            id: question.id,
-            title: question.title,
-            body: question.body,
-            answers: Object.keys(question.answers)
-        }
+        payload
     };
 };
 
 export const removeQuestion = (questionId) => {
     return {
         type: REMOVE_QUESTION,
-        questionId: questionId
+        questionId
     }
 }
 
 const receiveQuestionErrors = (errors) => {
     return {
         type: RECEIVE_QUESTION_ERRORS,
-        errors: errors
+        errors
     };
 };
 
@@ -53,10 +46,8 @@ export const fetchQuestions = () => {
 export const fetchQuestion = (questionId) => {
     return (dispatch) => {
         return QuestionUtil.fetchQuestion(questionId)
-            .then((question) => {
-                dispatch(receiveAnswers(question.answers))
-                return dispatch(receiveQuestion(question))
-            }).fail((errors) => dispatch(receiveQuestionErrors(errors.responseJSON)));
+            .then((question) => dispatch(receiveQuestion(question)))
+            .fail((errors) => dispatch(receiveQuestionErrors(errors.responseJSON)));
     };
 }
 

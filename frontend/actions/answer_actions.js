@@ -5,32 +5,31 @@ export const RECEIVE_ANSWER = "RECEIVE_ANSWER";
 export const REMOVE_ANSWER = "REMOVE_ANSWER";
 export const RECEIVE_ANSWER_ERRORS = "RECEIVE_ANSWER_ERRORS";
 
-export const receiveAnswers = (answers) => {
+export const receiveAnswers = (payload) => {
     return {
         type: RECEIVE_ANSWERS,
-        answers: answers
+        payload
     }
 }
 
-export const receiveAnswer = (answer) => {
+export const receiveAnswer = (payload) => {
     return {
         type: RECEIVE_ANSWER,
-        answer: answer
+        payload
     };
 };
 
-export const removeAnswer = (answer) => {
+export const removeAnswer = (answerId) => {
     return {
         type: REMOVE_ANSWER,
-        questionId: answer.question_id,
-        answerId: answer.id
+        answerId
     }
 }
 
 const receiveAnswerErrors = (errors) => {
     return {
         type: RECEIVE_ANSWER_ERRORS,
-        errors: errors
+        errors
     };
 };
 

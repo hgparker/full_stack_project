@@ -42,7 +42,7 @@ class QuestionShow extends React.Component {
                         Ask Question
                     </button>
                 </Link>);
-    
+
             return (
                 <div className="QuestionShowBox1">
                     <div className="QuestionShowBox2">

@@ -4,6 +4,7 @@ const AnswerItem = (props) => {
     return (
         <div>
             {props.answer.body}
+            by
             {props.answer.author_id}
         </div>
     );
