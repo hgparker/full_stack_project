@@ -35,3 +35,24 @@ a6 = Answer.create(author_id: berivan.id, question_id: q3.id, body: "If you’re
 
 Vote.destroy_all
 
+Vote.create(:voter => berivan, :votable => q1, :vote_direction => 1)
+Vote.create(:voter => berivan, :votable => q2, :vote_direction => 1)
+Vote.create(:voter => berivan, :votable => q3, :vote_direction => 1)
+Vote.create(:voter => berivan, :votable => q4, :vote_direction => -1)
+Vote.create(:voter => abdullah, :votable => q1, :vote_direction => 1)
+Vote.create(:voter => sakine, :votable => q1, :vote_direction => 1)
+Vote.create(:voter => selahattin, :votable => q1, :vote_direction => 1)
+
+Vote.create(:voter => berivan, :votable => a2, :vote_direction => -1)
+Vote.create(:voter => abdullah, :votable => a2, :vote_direction => -1)
+Vote.create(:voter => berivan, :votable => a1, :vote_direction => 1)
+Vote.create(:voter => berivan, :votable => a3, :vote_direction => -1)
+Vote.create(:voter => berivan, :votable => a4, :vote_direction => 1)
+Vote.create(:voter => sakine, :votable => a5, :vote_direction => 1)
+Vote.create(:voter => sakine, :votable => a6, :vote_direction => 1)
+Vote.create(:voter => selahattin, :votable => a5, :vote_direction => 1)
+Vote.create(:voter => selahattin, :votable => a6, :vote_direction => 1)
+
+
+
+

@@ -5,7 +5,10 @@ Rails.application.routes.draw do
     resource :session, only: [:create, :destroy]
     resources :questions, only: [:create, :destroy, :index, :show, :update]
     resources :answers, only: [:create, :update, :destroy]
+    resources :votes, only: [:create]
   end
+
+
   root to: 'static#root'
 
 end
