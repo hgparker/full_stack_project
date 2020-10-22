@@ -34,3 +34,4 @@ a5 = Answer.create(author_id: selahattin.id, question_id: q3.id, body:"You don�
 a6 = Answer.create(author_id: berivan.id, question_id: q3.id, body: "If you’re searching for primes within a large range of numbers, say 1 to n, then checking individual numbers for primality is very inefficient. Rather, you should use the famous Sieve of Eratosthenes. Start with a large data-structure (a simple array works best) that records primality for 2 to n. Make everything prime to start. Now, starting with two, check to see if each number is prime. If it is, go ahead and mark all of its multiples as composite and record the number as prime. If it isn’t, skip to the next number. Uneliminated numbers must be prime and be used to eliminate all their multiples as non-prime. The sieve only leaves the primes. Doing things this way is much more efficient because it allows eliminating large groups of composite numbers rapidly one after the other.")
 
 Vote.destroy_all
+
