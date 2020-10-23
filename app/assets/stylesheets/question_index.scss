@@ -13,19 +13,25 @@
 .QuestionIndexBox2 {
     display: flex;
     flex-direction: row;
-    width: 65%;
+    width: 70%;
     justify-content: space-between;
     align-items: center;
     margin: 20px;
+    padding-bottom: 20px;
     font-size: 30px;
+    border-bottom: solid grey;
     // background-color: red;
+
 }
 
 .QuestionIndexItem {
-    margin: 30px;
     display: flex;
     width: 100%;
     justify-content: space-between;
+    border-bottom: solid grey;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
     // background-color: magenta;
 }
 

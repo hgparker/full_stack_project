@@ -7,6 +7,7 @@ class AnswerControl extends React.Component {
             <div className="AnswerControl">
 
                 <button
+                    className="ButtonStyle1"
                     onClick={() => upvote(voteId, votableId, currentUserId)}
                 >Upvote
                 </button>
@@ -17,6 +18,7 @@ class AnswerControl extends React.Component {
                 </div>
                 
                 <button
+                    className="ButtonStyle2"
                     onClick={() => downvote(voteId, votableId, currentUserId)}
                 >Downvote
                 </button>
