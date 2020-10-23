@@ -1,10 +1,11 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import QuestionInfoContainer from './question_info_container';
 
 const QuestionIndexItem = (props) => {
     return (
         <div className="QuestionIndexItem">
-            {props.voteTotal || 0}
+            <QuestionInfoContainer voteTotal={props.voteTotal}/>
             <Link to={`/questions/${props.question.id}`}>
                 {props.question.title}
             </Link>

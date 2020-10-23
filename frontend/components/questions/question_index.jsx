@@ -12,7 +12,6 @@ class QuestionIndex extends React.Component {
     }
 
     render() {
-        debugger
         return (
             <div className="QuestionIndexBox1">
                 <div className="QuestionIndexBox2">

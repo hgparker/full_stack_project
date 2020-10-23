@@ -37,6 +37,7 @@ class QuestionShow extends React.Component {
                         </div>
                     </div>
                     <div className="QuestionShowBox3">
+                        {this.props.voteTotal}
                         {this.props.question.body} 
                     </div>
 
@@ -47,7 +48,7 @@ class QuestionShow extends React.Component {
                     <List 
                     component={AnswerItem}
                     list={this.props.answers}
-                    itemCallback={(answer) => ({answer})}
+                    itemCallback={(answer) => ({answer, voteTotal: this.props.voteHash[answer.id]})}
                     />
                     
                     <AnswerFormContainer questionId={this.props.question.id}/>
