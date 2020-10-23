@@ -1,7 +1,7 @@
 import {connect} from 'react-redux';
 import QuestionIndex from './question_index';
 import {fetchQuestions} from "../../actions/question_actions";
-import { loggedIn } from '../../selectors/auth_selectors';
+import {loggedIn} from '../../selectors/auth_selectors';
 import {selectQuestions} from '../../selectors/questions_selectors';
 import {selectVoteHashQuestions} from '../../selectors/votes_selectors';
 

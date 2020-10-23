@@ -1,15 +1,12 @@
 import QuestionInfo from "./question_info";
 import {connect} from 'react-redux';
+import {loggedIn} from "../../selectors/auth_selectors";
 
 const mSTP = (state, ownProps) => {
     return {   
-        voteTotal: ownProps.voteTotal
+        voteTotal: ownProps.voteTotal,
+        loggedIn: loggedIn(state)
     };
 }
 
-const mDTP = (dispatch) => {
-    return {
-    }
-}
-
-export default connect(mSTP, mDTP)(QuestionInfo);
+export default connect(mSTP, null)(QuestionInfo);

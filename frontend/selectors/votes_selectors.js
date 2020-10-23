@@ -1,8 +1,15 @@
-export const selectEquivalentVotes = (state, newVote) => {
-    return Object.values(state.entities.votes)
-        .filter(vote => vote.votable_id == newVote.votable_id &&
-                        vote.votable_type == newVote.votable_type &&
-                        vote.user_id == newVote.user_id)
+import { currentUser } from "./auth_selectors";
+
+export const selectEquivalentVoteHash = (state, currentUserId) => {
+    let voteHash = {};
+    if (currentUserId == null)
+        return voteHash;
+    Object.values(state.entities.votes)
+        .filter(vote => vote.user_id == currentUserId)
+        .forEach((vote) => {
+            voteHash[vote.votable_id] = vote.id
+        });
+    return voteHash;
 }
 
 export const selectTotalVotesQuestion = (state, questionId) => {

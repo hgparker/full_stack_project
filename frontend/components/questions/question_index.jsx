@@ -23,7 +23,8 @@ class QuestionIndex extends React.Component {
                     component={QuestionIndexItem}
                     list={this.props.questions}
                     itemCallback={(question) =>
-                        ({question, voteTotal: this.props.voteHash[question.id]})}
+                        ({question,
+                            voteTotal: this.props.voteHash[question.id]})}
                 />
                 </div>
                 

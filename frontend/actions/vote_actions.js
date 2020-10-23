@@ -30,15 +30,30 @@ export const clearVoteErrors = () => {
     return receiveVoteErrors([]);
 }
 
-// this won't work
-// new plan : fetch equivalent vote as part map state to props
-// dispatch -> remove equivalent and add new
-export const postVote = (vote) => {
+export const postVote = (voteId, vote) => {
     return (dispatch) => {
-        selectEquivalentVotes(vote).forEach(
-            eVote => dispatch(removeVote(eVote.id)));
+        if (voteId)
+            dispatch(removeVote(voteId));
         return VoteUtil.postVote(vote)
             .then(newVote => dispatch(receiveVote(newVote)))
             .fail(errors => dispatch(receiveVoteErrors(errors.responseJSON)));
     }
+}
+
+export const upvote = (voteId, votableId, votableType, userId) => {
+    return postVote(voteId, {
+        votable_id: votableId,
+        votable_type: votableType,
+        user_id: userId,
+        vote_direction: 1    
+    });
+}
+
+export const downvote = (voteId, votableId, votableType, userId) => {
+    return postVote(voteId, {
+        votable_id: votableId,
+        votable_type: votableType,
+        user_id: userId,
+        vote_direction: -1    
+    });
 }

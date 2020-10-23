@@ -4,16 +4,18 @@ import {fetchQuestion, deleteQuestion} from "../../actions/question_actions";
 import {selectAnswers} from '../../selectors/answers_selectors';
 import {selectQuestion} from '../../selectors/questions_selectors';
 import { currentUser, loggedIn } from '../../selectors/auth_selectors';
-import {selectVoteHashAnswers, selectTotalVotesQuestion} from '../../selectors/votes_selectors';
+import {selectVoteHashAnswers, selectTotalVotesQuestion, selectEquivalentVoteHash} from '../../selectors/votes_selectors';
 
 const mSTP = (state, ownProps) => {
     let questionId = ownProps.match.params.questionId;
+    let currentUserId = currentUser(state)
     return {    
         question: selectQuestion(state, questionId),
         answers: selectAnswers(state, questionId),
-        currentUserId: currentUser(state),
+        currentUserId: currentUserId,
         loggedIn: loggedIn(state),
         voteHash: selectVoteHashAnswers(state),
+        currentUserVoteHash: selectEquivalentVoteHash(state, currentUserId),
         voteTotal: selectTotalVotesQuestion(state, questionId)
     };
 }

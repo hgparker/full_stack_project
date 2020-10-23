@@ -4,6 +4,7 @@ import List from '../list';
 import AnswerItem from '../answers/answer_item'
 import AnswerFormContainer from '../answers/answer_form_container';
 import {conditionalNewQuestion, conditionalDelete, conditionalButton} from '../conditional_buttons';
+import QuestionControlContainer from './question_control_container';
 
 class QuestionShow extends React.Component {
     componentDidMount() {
@@ -37,10 +38,13 @@ class QuestionShow extends React.Component {
                         </div>
                     </div>
                     <div className="QuestionShowBox3">
-                        {this.props.voteTotal}
+                        <QuestionControlContainer
+                            voteTotal={this.props.voteTotal}
+                            voteId={this.props.currentUserVoteHash[this.props.question.id]}
+                            votableId={this.props.question.id}
+                            />
                         {this.props.question.body} 
                     </div>
-
                         <div className="QuestionShowBox4">
                             Answers:
                         </div>
@@ -48,7 +52,13 @@ class QuestionShow extends React.Component {
                     <List 
                     component={AnswerItem}
                     list={this.props.answers}
-                    itemCallback={(answer) => ({answer, voteTotal: this.props.voteHash[answer.id]})}
+                    itemCallback={answer => ({
+                            answer,
+                            voteTotal: this.props.voteHash[answer.id],
+                            voteId: this.props.currentUserVoteHash[answer.id],
+                            votableId: answer.id
+                            })
+                        }
                     />
                     
                     <AnswerFormContainer questionId={this.props.question.id}/>

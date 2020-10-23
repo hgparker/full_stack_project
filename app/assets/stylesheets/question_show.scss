@@ -31,6 +31,7 @@
 }
 
 .QuestionShowBox3 {   
+    display: flex;
     margin-top: 30px;
     padding-bottom: 20px;
     border-bottom: solid grey;
@@ -40,12 +41,19 @@
 .QuestionShowBox4 {
     margin-top: 20px;
     font-size: 25px;
+    // background-color: purple;
 }
 
 .AnswerItem {
+    display: flex;
     margin-top: 30px;
     padding-bottom: 20px;
     border-bottom: solid grey;
     // background-color: yellow;
 }
 
+.QuestionControl,.AnswerControl {
+    padding-right: 30px;
+    display: flex;
+    align-items: center;
+}
