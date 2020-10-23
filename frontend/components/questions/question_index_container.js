@@ -6,10 +6,11 @@ import {selectQuestions} from '../../selectors/questions_selectors';
 import {selectVoteHashQuestions} from '../../selectors/votes_selectors';
 
 const mSTP = (state) => {
+    let voteHash = selectVoteHashQuestions(state);
     return {
         loggedIn: loggedIn(state),
-        questions: selectQuestions(state),
-        voteHash: selectVoteHashQuestions(state)
+        questions: selectQuestions(state, voteHash),
+        voteHash: voteHash
     };
 }
 

@@ -9,12 +9,13 @@ import {selectVoteHashAnswers, selectTotalVotesQuestion, selectEquivalentVoteHas
 const mSTP = (state, ownProps) => {
     let questionId = ownProps.match.params.questionId;
     let currentUserId = currentUser(state)
+    let voteHash = selectVoteHashAnswers(state, questionId, voteHash);
     return {    
         question: selectQuestion(state, questionId),
-        answers: selectAnswers(state, questionId),
+        answers: selectAnswers(state, questionId, voteHash),
         currentUserId: currentUserId,
         loggedIn: loggedIn(state),
-        voteHash: selectVoteHashAnswers(state),
+        voteHash: voteHash,
         currentUserVoteHash: selectEquivalentVoteHash(state, currentUserId),
         voteTotal: selectTotalVotesQuestion(state, questionId)
     };
