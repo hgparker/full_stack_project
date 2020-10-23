@@ -1,4 +1,3 @@
-import {} from "../actions/answer_actions"
 import {RECEIVE_ANSWER_ERRORS, RECEIVE_ANSWER} from "../actions/answer_actions";
 
 const answerErrorsReducer = (oldState = [], action) => {

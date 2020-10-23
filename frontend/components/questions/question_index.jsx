@@ -12,6 +12,7 @@ class QuestionIndex extends React.Component {
     }
 
     render() {
+        debugger
         return (
             <div className="QuestionIndexBox1">
                 <div className="QuestionIndexBox2">
@@ -22,7 +23,8 @@ class QuestionIndex extends React.Component {
                 <List 
                     component={QuestionIndexItem}
                     list={this.props.questions}
-                    itemCallback={(question) => ({question})}
+                    itemCallback={(question) =>
+                        ({question, voteTotal: this.props.voteHash[question.id]})}
                 />
                 </div>
                 

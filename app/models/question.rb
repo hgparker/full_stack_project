@@ -25,7 +25,8 @@ class Question < ApplicationRecord
         dependent: :destroy
 
     has_many :votes,
-        as: :votable
+        as: :votable,
+        dependent: :destroy
         
     has_many :answer_votes,
         through: :answers,

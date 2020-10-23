@@ -25,5 +25,6 @@ class Answer < ApplicationRecord
         class_name: :Question
 
     has_many :votes,
-        as: :votable
+        as: :votable,
+        dependent: :destroy
 end
