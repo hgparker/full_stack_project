@@ -109,7 +109,7 @@ export const postVote = (voteId, vote) => {
 
 ### Gathering Vote Statistics Efficiently
 
-Another key problem to be solved is the calculation of voting statistics for every votable item to be displayed on the page. As state is normalized, the votes slice of state is indexed by vote id. This means that to select which votes are for or against some given item, the selector must look at every vote in state. So far, so good – that is not unusual for a selector. The trouble arises if one naively does this for every votable item on the page. If there are M votes in state, and N votable items to be displayed, then the resulting operation will be O(MN), which is unacceptable as M and N could each plausibly be in the thousands. The solution I employed is rather to make one single pass through state building a hash by item_id with the vote tally as value. This hash is calculated only once in the Redux mapStateToProps() method for each page, and it is then passed down to all sub-components as a prop for them to make use of it. The result is O(M), which is acceptable.
+Another key problem to be solved is the calculation of voting statistics for every votable item to be displayed on the page. As state is normalized, the votes slice of state is indexed by vote id. This means that to select which votes are for or against some given item, the selector must look at every vote in state. So far, so good – that is not unusual for a selector. The trouble arises if one naively does this for *every* votable item on the page. If there are M votes in state, and N votable items to be displayed, then the resulting operation will be O(MN), which is unacceptable as M and N could each plausibly be in the thousands. The solution I employed is rather to make one single pass through state building a hash by item_id with the vote tally as value. This hash is calculated only once in the Redux mapStateToProps() method for each page, and it is then passed down to all sub-components as a prop for them to make use of it. The result is O(M), which is acceptable.
 
 Take a look at the following code.
 
@@ -145,7 +145,8 @@ const mSTP = (state, ownProps) => {
 
 // sample use of voteHash in question_show.jsx
 // the relevant value from voteHash is passed on to <AnswerItem>
-// <List> is a utility component which generates an <ul> with a series of <li>-wrapped sub-components using a callback which feeds the right props into each listed sub-component
+// <List> is a utility component which generates an <ul> with a series of <li>-wrapped
+// sub-components using a callback which feeds the right props into each listed sub-component
 
                     <List 
                     component={AnswerItem}
