@@ -164,3 +164,6 @@ const mSTP = (state, ownProps) => {
 
 ### Screenshots of App
 
+![Auth](https://github.com/hgparker/full_stack_project/blob/main/auth_screenshot.png)
+![Question Index](https://github.com/hgparker/full_stack_project/blob/main/index_screenshot.png)
+![Question_Show](https://github.com/hgparker/full_stack_project/blob/main/question_show_screenshot.png)
