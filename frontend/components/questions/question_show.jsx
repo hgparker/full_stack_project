@@ -12,7 +12,6 @@ class QuestionShow extends React.Component {
     }
 
     render() {
-
         if (!this.props.question)
             return (
                 <h1> Loading... </h1>
