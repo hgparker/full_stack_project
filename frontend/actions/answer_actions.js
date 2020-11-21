@@ -19,10 +19,10 @@ export const receiveAnswer = (payload) => {
     };
 };
 
-export const removeAnswer = (answerId) => {
+export const removeAnswer = (payload) => {
     return {
         type: REMOVE_ANSWER,
-        answerId
+        payload
     }
 }
 

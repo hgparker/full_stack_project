@@ -10,7 +10,7 @@ const answersReducer = (oldState = {}, action) => {
             return Object.assign({}, oldState, action.payload.answers)
         case REMOVE_ANSWER:
             let nextState = Object.assign({}, oldState);
-            delete nextState[action.answerId]
+            Object.keys(action.payload.answers).map((answerId) => delete nextState[answerId])
             return nextState;
         case RECEIVE_QUESTION:
             return Object.assign({}, oldState, action.payload.answers)
