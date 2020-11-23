@@ -1,7 +1,7 @@
 import {connect} from 'react-redux';
 import QuestionShow from './question_show';
 import {fetchQuestion, deleteQuestion} from "../../actions/question_actions";
-import {selectAnswers} from '../../selectors/answers_selectors';
+import {selectAnswers, hasAnswered} from '../../selectors/answers_selectors';
 import {selectQuestion} from '../../selectors/questions_selectors';
 import { currentUser, loggedIn } from '../../selectors/auth_selectors';
 import {selectVoteHashAnswers, selectTotalVotesQuestion, selectEquivalentVoteHash} from '../../selectors/votes_selectors';
@@ -17,7 +17,8 @@ const mSTP = (state, ownProps) => {
         loggedIn: loggedIn(state),
         voteHash: voteHash,
         currentUserVoteHash: selectEquivalentVoteHash(state, currentUserId),
-        voteTotal: selectTotalVotesQuestion(state, questionId)
+        voteTotal: selectTotalVotesQuestion(state, questionId),
+        hasAnswered: hasAnswered(state, questionId, currentUserId)
     };
 }
 

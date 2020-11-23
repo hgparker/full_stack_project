@@ -1,12 +1,12 @@
 import React from 'react';
-import AnswerControlContainer from './answer_control_container';
-import AnswerSecondaryControlContainer from './answer_secondary_control_container';
+import LeftAnswerControlContainer from './left_answer_control_container';
+import LowerAnswerControlContainer from './answer_lower_control_container';
 
 const AnswerItem = (props) => {
     return (
         <div className = "AnswerItem">
             <div>
-                <AnswerControlContainer
+                <LeftAnswerControlContainer
                     voteTotal={props.voteTotal}
                     voteId={props.voteId}
                     votableId={props.votableId}
@@ -19,7 +19,7 @@ const AnswerItem = (props) => {
                 {props.answer.author_id}
                 </div>
                 <div>
-                    <AnswerSecondaryControlContainer
+                    <LowerAnswerControlContainer
                         answerAuthorId={props.answer.author_id}
                         answerId={props.answer.id}
                     />

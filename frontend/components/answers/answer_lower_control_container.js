@@ -1,4 +1,4 @@
-import AnswerSecondaryControl from "./answer_secondary_control";
+import LowerAnswerControl from "./lower_answer_control";
 import {connect} from 'react-redux';
 import { currentUser } from '../../selectors/auth_selectors';
 import {deleteAnswer} from "../../actions/answer_actions";
@@ -17,4 +17,4 @@ const mDTP = (dispatch) => {
     }
 }
 
-export default connect(mSTP, mDTP)(AnswerSecondaryControl);
+export default connect(mSTP, mDTP)(LowerAnswerControl);

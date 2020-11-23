@@ -1,7 +1,7 @@
 import React from 'react';
 import {conditionalDelete} from './../conditional_buttons';
 
-class AnswerSecondaryControl extends React.Component {
+class LowerAnswerControl extends React.Component {
     render() {
         let {answerId, answerAuthorId, currentUserId, deleteAnswer} = this.props;
         return (
@@ -12,4 +12,4 @@ class AnswerSecondaryControl extends React.Component {
     }
 }
 
-export default AnswerSecondaryControl;
+export default LowerAnswerControl;

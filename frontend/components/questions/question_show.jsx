@@ -60,7 +60,7 @@ class QuestionShow extends React.Component {
                         }
                     />
                     
-                    <AnswerFormContainer questionId={this.props.question.id}/>
+                    {!this.props.hasAnswered ? (<AnswerFormContainer questionId={this.props.question.id}/>) : null}
 
                 </div>
             );
