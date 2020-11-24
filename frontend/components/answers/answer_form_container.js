@@ -1,6 +1,6 @@
 import {connect} from 'react-redux';
 import AnswerForm from './answer_form';
-import {postAnswer, clearAnswerErrors} from '../../actions/answer_actions';
+import {postAnswer, clearAnswerErrors, enterAnswerViewMode} from '../../actions/answer_actions';
 import {loggedIn, currentUser} from '../../selectors/auth_selectors';
 import {answerErrors} from '../../selectors/errors_selectors';
 
@@ -19,12 +19,8 @@ const mSTP = (state, ownProps) => {
 
 const mDTP = (dispatch) => {
     return {
-        submit: (answer) => {
-            return dispatch(postAnswer(answer))
-        },
-        clearAnswerErrors: () => {
-            dispatch(clearAnswerErrors())
-        }
+        submit: (answer) => dispatch(postAnswer(answer)),
+        clearAnswerErrors: () => dispatch(clearAnswerErrors()),
     }
 }
 

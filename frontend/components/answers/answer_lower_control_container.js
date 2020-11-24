@@ -1,7 +1,7 @@
 import LowerAnswerControl from "./lower_answer_control";
 import {connect} from 'react-redux';
 import { currentUser } from '../../selectors/auth_selectors';
-import {deleteAnswer} from "../../actions/answer_actions";
+import {deleteAnswer, enterAnswerEditMode} from "../../actions/answer_actions";
 
 const mSTP = (state, ownProps) => {
     return {   
@@ -13,7 +13,8 @@ const mSTP = (state, ownProps) => {
 
 const mDTP = (dispatch) => {
     return {
-      deleteAnswer: (answerId) => dispatch(deleteAnswer(answerId))
+      deleteAnswer: (answerId) => dispatch(deleteAnswer(answerId)),
+      editAnswer: (answerId) => dispatch(enterAnswerEditMode(answerId))
     }
 }
 

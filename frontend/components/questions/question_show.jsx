@@ -3,12 +3,21 @@ import {Link} from 'react-router-dom';
 import List from '../list';
 import AnswerItem from '../answers/answer_item'
 import AnswerFormContainer from '../answers/answer_form_container';
+import EditAnswerFormContainer from "../answers/edit_answer_form_container";
 import {conditionalNewQuestion, conditionalDelete, conditionalButton} from '../conditional_buttons';
 import QuestionControlContainer from './question_control_container';
+import {enterAnswerLoginMode, enterAnswerViewMode, enterAnswerPostMode, ANSWER_POST_MODE, ANSWER_EDIT_MODE, ANSWER_LOGIN_MODE} from "../../actions/answer_actions";
 
 class QuestionShow extends React.Component {
     componentDidMount() {
+        // debugger;
         this.props.fetchQuestion(this.props.match.params.questionId);
+        if (!this.props.loggedIn)
+            this.props.enterAnswerLoginMode();
+        else if (this.props.hasAnswered)
+            this.props.enterAnswerViewMode();
+        else
+            this.props.enterAnswerPostMode();
     }
 
     render() {
@@ -55,13 +64,24 @@ class QuestionShow extends React.Component {
                             answer,
                             voteTotal: this.props.voteHash[answer.id],
                             voteId: this.props.currentUserVoteHash[answer.id],
-                            votableId: answer.id
+                            votableId: answer.id,
+                            sessionAnswer: this.props.sessionAnswer
                             })
                         }
                     />
                     
-                    {!this.props.hasAnswered ? (<AnswerFormContainer questionId={this.props.question.id}/>) : null}
-
+                    {this.props.sessionAnswer.currentAnswerMode == ANSWER_POST_MODE ?
+                        (<AnswerFormContainer questionId={this.props.question.id}/>) :null}
+                    {this.props.sessionAnswer.currentAnswerMode == ANSWER_EDIT_MODE ?
+                        (<EditAnswerFormContainer answerId={this.props.sessionAnswer.currentAnswerId}/>) : null}
+                    {this.props.sessionAnswer.currentAnswerMode == ANSWER_LOGIN_MODE ?
+                        (
+                            <div className="AnswerAlternative">
+                                <Link to='/login'>
+                                Log in
+                                </Link> or <Link to='/signup'>sign up</Link> to post your answer</div>
+                        ) : null}
+                    
                 </div>
             );
         }

@@ -8,14 +8,8 @@ class LowerAnswerControl extends React.Component {
             <div className="AnswerSecondaryControl">
                 {conditionalDelete(answerAuthorId == currentUserId, () => deleteAnswer(answerId))}
                 {conditionalButton(answerAuthorId == currentUserId,
-                    () => {
-                        console.log("edit action here");
-                    }, "ButtonStyle1", "Edit your answer"
-                    )}            
-
-
-                {/* export const conditionalButton = (successCondition, callback, buttonStyle, buttonText) => { */}
-
+                    () => this.props.editAnswer(answerId), "ButtonStyle1", "Edit your answer"
+                )}
             </div>
         );
     }

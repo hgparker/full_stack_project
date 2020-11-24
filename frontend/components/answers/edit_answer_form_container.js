@@ -2,7 +2,8 @@ import React from 'react';
 import {connect} from 'react-redux';
 import { loggedIn } from '../../selectors/auth_selectors';
 import { answerErrors } from '../../selectors/errors_selectors';
-import {updateAnswer, selectAnswer, clearAnswerErrors} from "./../../actions/answer_actions";
+import {updateAnswer, clearAnswerErrors, enterAnswerViewMode} from "./../../actions/answer_actions";
+import {selectAnswer} from "../../selectors/answers_selectors";
 import AnswerForm from "./answer_form";
 
 const mSTP = (state, ownProps) => {

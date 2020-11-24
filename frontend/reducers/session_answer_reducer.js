@@ -1,4 +1,4 @@
-import {RECEIVE_SESSION_ANSWER, ANSWER_EDIT_MODE, ANSWER_POST_MODE, ANSWER_LOGIN_MODE} from "../actions/answer_actions";
+import {RECEIVE_SESSION_ANSWER, ANSWER_LOGIN_MODE} from "../actions/answer_actions";
 
 const _nullAnswer = {
   currentAnswerId: null,

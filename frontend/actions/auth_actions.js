@@ -1,4 +1,5 @@
 import * as AuthApiUtil from "../util/auth_api_util";
+import {enterAnswerLoginMode} from "./answer_actions";
 
 export const RECEIVE_CURRENT_USER = "RECEIVE_CURRENT_USER";
 export const REMOVE_CURRENT_USER = "REMOVE_CURRENT_USER";
@@ -40,6 +41,7 @@ export const logout = () => {
     return (dispatch) => {
         return AuthApiUtil.logout()
             .then(() => dispatch(removeCurrentUser()))
+            .then(() => dispatch(enterAnswerLoginMode()))
             .fail((errors) => dispatch(receiveAuthErrors(errors.responseJSON)));
     };
 };
