@@ -5,6 +5,19 @@ export const RECEIVE_ANSWER = "RECEIVE_ANSWER";
 export const REMOVE_ANSWER = "REMOVE_ANSWER";
 export const RECEIVE_ANSWER_ERRORS = "RECEIVE_ANSWER_ERRORS";
 
+export const ANSWER_LOGIN_MODE = "ANSWER_LOGIN_MODE";
+export const ANSWER_VIEW_MODE = "ANSWER_VIEW_MODE";
+export const ANSWER_POST_MODE = "ANSWER_POST_MODE";
+export const ANSWER_EDIT_MODE = "ANSWER_EDIT_MODE";
+export const CHANGE_ANSWER_MODE = "CHANGE_ANSWER_MODE";
+
+export const changeAnswerMode = (newMode) => {
+    return {
+        type: CHANGE_ANSWER_MODE,
+        newMode
+    }
+}
+
 export const receiveAnswers = (payload) => {
     return {
         type: RECEIVE_ANSWERS,
