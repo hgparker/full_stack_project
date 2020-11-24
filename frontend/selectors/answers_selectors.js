@@ -13,3 +13,5 @@ export const hasAnswered = (state, questionId, currentUserId) => {
         .filter(answer => answer.question_id == questionId && answer.author_id == currentUserId)
         .length != 0
 }
+
+// export const
