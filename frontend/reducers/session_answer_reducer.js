@@ -1,6 +1,11 @@
-import {RECEIVE_SESSION_ANSWER, ANSWER_EDIT_MODE, ANSWER_POST_MODE, ANSWER_LOGIN_MODE, and} from "../actions/answer_actions";
+import {RECEIVE_SESSION_ANSWER, ANSWER_EDIT_MODE, ANSWER_POST_MODE, ANSWER_LOGIN_MODE} from "../actions/answer_actions";
 
-const sessionAnswerReducer = (oldState = {}, action) => {
+const _nullAnswer = {
+  currentAnswerId: null,
+  currentAnswerMode: ANSWER_LOGIN_MODE
+}
+
+const sessionAnswerReducer = (oldState = _nullAnswer, action) => {
   Object.freeze(oldState);
   switch (action.type) {
     case RECEIVE_SESSION_ANSWER:

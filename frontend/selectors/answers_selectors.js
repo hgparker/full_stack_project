@@ -14,4 +14,6 @@ export const hasAnswered = (state, questionId, currentUserId) => {
         .length != 0
 }
 
-// export const
+export const selectSessionAnswer = (state) => {
+    return state.session.answer
+}
