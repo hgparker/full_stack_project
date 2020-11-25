@@ -65,6 +65,7 @@ class QuestionShow extends React.Component {
                             voteTotal: this.props.voteHash[answer.id],
                             voteId: this.props.currentUserVoteHash[answer.id],
                             votableId: answer.id,
+                            comments: this.props.commentHash[answer.id],
                             sessionAnswer: this.props.sessionAnswer
                             })
                         }

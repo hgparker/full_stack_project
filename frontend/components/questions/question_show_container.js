@@ -6,6 +6,7 @@ import {selectQuestion} from '../../selectors/questions_selectors';
 import { currentUser, loggedIn } from '../../selectors/auth_selectors';
 import {selectVoteHashAnswers, selectTotalVotesQuestion, selectEquivalentVoteHash} from '../../selectors/votes_selectors';
 import { enterAnswerLoginMode, enterAnswerPostMode, enterAnswerViewMode } from '../../actions/answer_actions';
+import {selectCommentHashAnswers} from "../../selectors/comments_selectors";
 
 const mSTP = (state, ownProps) => {
     let questionId = ownProps.match.params.questionId;
@@ -17,6 +18,7 @@ const mSTP = (state, ownProps) => {
         currentUserId: currentUserId,
         loggedIn: loggedIn(state),
         voteHash: voteHash,
+        commentHash: selectCommentHashAnswers(state),
         currentUserVoteHash: selectEquivalentVoteHash(state, currentUserId),
         voteTotal: selectTotalVotesQuestion(state, questionId),
         hasAnswered: hasAnswered(state, questionId, currentUserId),
