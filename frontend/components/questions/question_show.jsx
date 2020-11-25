@@ -21,7 +21,10 @@ class QuestionShow extends React.Component {
     }
 
     render() {
-        if (!this.props.question)
+        let {question, currentUserId, loggedIn, voteTotal, voteHash, currentUserVoteHash, answers, commentHash, sessionAnswer} = this.props;
+        let {deleteQuestion} = this.props;
+       
+        if (!question)
             return (
                 <h1> Loading... </h1>
             )
@@ -31,27 +34,27 @@ class QuestionShow extends React.Component {
                 <div className="QuestionShowBox1">
                     <div className="QuestionShowBox2">
                         <div className="LeftQuestionShowBox2">
-                            {this.props.question.title} 
+                            {question.title} 
                         </div>
                         <div className="RightQuestionShowBox2">
-                            {conditionalButton(this.props.currentUserId === this.props.question.author_id,
-                        () => this.props.history.push(`/questions/${this.props.question.id}/edit`),
+                            {conditionalButton(currentUserId === question.author_id,
+                        () => this.props.history.push(`/questions/${question.id}/edit`),
                         "ButtonStyle1", "Edit")}
-                            {conditionalDelete(this.props.currentUserId === this.props.question.author_id, 
+                            {conditionalDelete(currentUserId === question.author_id, 
                                 () => {
-                                    this.props.deleteQuestion(this.props.question.id)
+                                    deleteQuestion(question.id)
                                         .then(() => this.props.history.push('/questions'))
                             })}
-                            {conditionalNewQuestion(this.props.loggedIn)}
+                            {conditionalNewQuestion(loggedIn)}
                         </div>
                     </div>
                     <div className="QuestionShowBox3">
                         <QuestionControlContainer
-                            voteTotal={this.props.voteTotal}
-                            voteId={this.props.currentUserVoteHash[this.props.question.id]}
-                            votableId={this.props.question.id}
+                            voteTotal={voteTotal}
+                            voteId={currentUserVoteHash[question.id]}
+                            votableId={question.id}
                             />
-                        {this.props.question.body} 
+                        {question.body} 
                     </div>
                         <div className="QuestionShowBox4">
                             Answers:
@@ -59,23 +62,23 @@ class QuestionShow extends React.Component {
                         
                     <List 
                     component={AnswerItem}
-                    list={this.props.answers}
+                    list={answers}
                     itemCallback={answer => ({
                             answer,
-                            voteTotal: this.props.voteHash[answer.id],
-                            voteId: this.props.currentUserVoteHash[answer.id],
+                            voteTotal: voteHash[answer.id],
+                            voteId: currentUserVoteHash[answer.id],
                             votableId: answer.id,
-                            comments: this.props.commentHash[answer.id],
-                            sessionAnswer: this.props.sessionAnswer
+                            comments: commentHash[answer.id],
+                            sessionAnswer: sessionAnswer
                             })
                         }
                     />
                     
-                    {this.props.sessionAnswer.currentAnswerMode == ANSWER_POST_MODE ?
-                        (<AnswerFormContainer questionId={this.props.question.id}/>) :null}
-                    {this.props.sessionAnswer.currentAnswerMode == ANSWER_EDIT_MODE ?
-                        (<EditAnswerFormContainer answerId={this.props.sessionAnswer.currentAnswerId}/>) : null}
-                    {this.props.sessionAnswer.currentAnswerMode == ANSWER_LOGIN_MODE ?
+                    {sessionAnswer.currentAnswerMode == ANSWER_POST_MODE ?
+                        (<AnswerFormContainer questionId={question.id}/>) :null}
+                    {sessionAnswer.currentAnswerMode == ANSWER_EDIT_MODE ?
+                        (<EditAnswerFormContainer answerId={sessionAnswer.currentAnswerId}/>) : null}
+                    {sessionAnswer.currentAnswerMode == ANSWER_LOGIN_MODE ?
                         (
                             <div className="AnswerAlternative">
                                 <Link to='/login'>

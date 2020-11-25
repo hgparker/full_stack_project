@@ -3,13 +3,15 @@ import {connect} from 'react-redux';
 import {updateQuestion, clearQuestionErrors, fetchQuestion} from '../../actions/question_actions';
 import QuestionForm from './question_form';
 import { Redirect } from 'react-router-dom';
+import {currentUser} from "../../selectors/auth_selectors";
+import {selectQuestion} from "../../selectors/questions_selectors";
 
 const mSTP = (state, ownProps) => {
     return {
-        currentUserId: state.session.currentUserId,
+        currentUserId: currentUser(state),
         formType: "Edit your question",
-        errors: state.errors.question,
-        question: state.entities.questions[ownProps.match.params.questionId]
+        errors: questionErrors(state),
+        question: selectQuestion(state, ownProps.match.params.questionId)
     };
 }
 
