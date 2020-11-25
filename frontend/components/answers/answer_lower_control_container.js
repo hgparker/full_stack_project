@@ -1,13 +1,14 @@
-import LowerAnswerControl from "./lower_answer_control";
+import AnswerLowerControl from "./answer_lower_control";
 import {connect} from 'react-redux';
-import { currentUser } from '../../selectors/auth_selectors';
+import { currentUser, loggedIn } from '../../selectors/auth_selectors';
 import {deleteAnswer, enterAnswerEditMode} from "../../actions/answer_actions";
 
 const mSTP = (state, ownProps) => {
     return {   
       currentUserId: currentUser(state),
       answerAuthorId: ownProps.answerAuthorId,
-      answerId: ownProps.answerId
+      answerId: ownProps.answerId,
+      loggedIn: loggedIn(state)
     };
 }
 
@@ -18,4 +19,4 @@ const mDTP = (dispatch) => {
     }
 }
 
-export default connect(mSTP, mDTP)(LowerAnswerControl);
+export default connect(mSTP, mDTP)(AnswerLowerControl);
