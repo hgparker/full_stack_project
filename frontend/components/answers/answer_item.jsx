@@ -2,22 +2,8 @@ import React from 'react';
 import AnswerLeftControlContainer from './answer_left_control_container';
 import AnswerLowerControlContainer from './answer_lower_control_container';
 import { ANSWER_EDIT_MODE } from '../../actions/answer_actions';
-
-
-{/* <List 
-component={AnswerItem}
-list={answers}
-itemCallback={answer => ({
-        answer,
-        voteTotal: voteHash[answer.id],
-        voteId: currentUserVoteHash[answer.id],
-        votableId: answer.id,
-        comments: commentHash[answer.id],
-        sessionAnswer: sessionAnswer
-        })
-    }
-/> */}
-
+import List from "../list";
+import CommentItem from "../comments/comment_item";
 
 const AnswerItem = (props) => {
     
@@ -46,6 +32,20 @@ const AnswerItem = (props) => {
                     <AnswerLowerControlContainer
                         answerAuthorId={answer.author_id}
                         answerId={answer.id}
+                    />
+                </div>
+
+                <div>
+                    Answer comments go here...
+                    <List
+                        component={CommentItem}
+                        list={comments}
+                        itemCallback={
+                            comment => ({
+                                comment
+                            })
+                        }                
+                    
                     />
                 </div>
             </div>
