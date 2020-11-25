@@ -1,4 +1,4 @@
-import LeftAnswerControl from "./left_answer_control";
+import AnswerLeftControl from "./answer_left_control";
 import {upvote, downvote} from '../../actions/vote_actions'
 import {connect} from 'react-redux';
 import { currentUser } from '../../selectors/auth_selectors';
@@ -19,4 +19,4 @@ const mDTP = (dispatch) => {
     }
 }
 
-export default connect(mSTP, mDTP)(LeftAnswerControl);
+export default connect(mSTP, mDTP)(AnswerLeftControl);

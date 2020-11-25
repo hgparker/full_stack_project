@@ -1,6 +1,6 @@
 import React from 'react';
 
-class LeftAnswerControl extends React.Component {
+class AnswerLeftControl extends React.Component {
     render() {
         let {upvote, downvote, voteId, votableId, voteTotal, currentUserId} = this.props
         return (
@@ -27,4 +27,4 @@ class LeftAnswerControl extends React.Component {
     }
 }
 
-export default LeftAnswerControl;
+export default AnswerLeftControl;

@@ -1,6 +1,6 @@
 import React from 'react';
-import LeftAnswerControlContainer from './left_answer_control_container';
-import LowerAnswerControlContainer from './answer_lower_control_container';
+import AnswerLeftControlContainer from './answer_left_control_container';
+import AnswerLowerControlContainer from './answer_lower_control_container';
 import { ANSWER_EDIT_MODE } from '../../actions/answer_actions';
 
 
@@ -30,7 +30,7 @@ const AnswerItem = (props) => {
     return (
         <div className = "AnswerItem">
             <div>
-                <LeftAnswerControlContainer
+                <AnswerLeftControlContainer
                     voteTotal={voteTotal}
                     voteId={voteId}
                     votableId={votableId}
@@ -43,7 +43,7 @@ const AnswerItem = (props) => {
                 {answer.author_id}
                 </div>
                 <div>
-                    <LowerAnswerControlContainer
+                    <AnswerLowerControlContainer
                         answerAuthorId={answer.author_id}
                         answerId={answer.id}
                     />
