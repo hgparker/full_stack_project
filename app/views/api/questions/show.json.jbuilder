@@ -26,7 +26,13 @@ json.votes do
     end
 end
 
-
+json.comments do
+    @question.answer_comments.each do |comment|
+        json.set! comment.id do
+            json.extract! comment, :id, :body, :author_id, :answer_id
+        end
+    end
+end
 
 
 
