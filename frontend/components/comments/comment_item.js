@@ -1,8 +1,13 @@
 import React from 'react';
 
 const CommentItem = (props) => {
+    let {comment} = props;
     return (
-      null
+      <div>
+        {comment.body}
+        by 
+        {comment.author_id}
+      </div>
     );
 }
 
