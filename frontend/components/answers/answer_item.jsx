@@ -3,37 +3,49 @@ import LeftAnswerControlContainer from './left_answer_control_container';
 import LowerAnswerControlContainer from './answer_lower_control_container';
 import { ANSWER_EDIT_MODE } from '../../actions/answer_actions';
 
-// voteTotal: this.props.voteHash[answer.id],
-// voteId: this.props.currentUserVoteHash[answer.id],
-// votableId: answer.id,
-// sessionAnswer: this.props.sessionAnswer
 
+{/* <List 
+component={AnswerItem}
+list={answers}
+itemCallback={answer => ({
+        answer,
+        voteTotal: voteHash[answer.id],
+        voteId: currentUserVoteHash[answer.id],
+        votableId: answer.id,
+        comments: commentHash[answer.id],
+        sessionAnswer: sessionAnswer
+        })
+    }
+/> */}
 
 
 const AnswerItem = (props) => {
-    if (props.sessionAnswer.currentAnswerId == props.answer.id &&
-        props.sessionAnswer.currentAnswerMode == ANSWER_EDIT_MODE)
+    
+    let {voteTotal, voteId, votableId, sessionAnswer, comments, answer} = props;
+    
+    if (sessionAnswer.currentAnswerId == answer.id &&
+        sessionAnswer.currentAnswerMode == ANSWER_EDIT_MODE)
         return null;
     
     return (
         <div className = "AnswerItem">
             <div>
                 <LeftAnswerControlContainer
-                    voteTotal={props.voteTotal}
-                    voteId={props.voteId}
-                    votableId={props.votableId}
+                    voteTotal={voteTotal}
+                    voteId={voteId}
+                    votableId={votableId}
                 />
             </div>
             <div className = "AnswerRight">
                 <div>
-                {props.answer.body}
+                {answer.body}
                 by
-                {props.answer.author_id}
+                {answer.author_id}
                 </div>
                 <div>
                     <LowerAnswerControlContainer
-                        answerAuthorId={props.answer.author_id}
-                        answerId={props.answer.id}
+                        answerAuthorId={answer.author_id}
+                        answerId={answer.id}
                     />
                 </div>
             </div>
