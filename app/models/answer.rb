@@ -27,4 +27,11 @@ class Answer < ApplicationRecord
     has_many :votes,
         as: :votable,
         dependent: :destroy
+
+    has_many :comments,
+        primary_key: :id,
+        foreign_key: :answer_id,
+        class_name: :Comment,
+        dependent: :destroy
+
 end

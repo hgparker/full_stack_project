@@ -31,4 +31,9 @@ class Question < ApplicationRecord
     has_many :answer_votes,
         through: :answers,
         source: :votes
+
+    has_many :answer_comments,
+        through: :answers,
+        source: :comments
+        
 end
