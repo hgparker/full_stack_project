@@ -1,5 +1,3 @@
-import { currentUser } from "./auth_selectors";
-
 export const selectEquivalentVoteHash = (state, currentUserId) => {
     let voteHash = {};
     if (currentUserId == null)
