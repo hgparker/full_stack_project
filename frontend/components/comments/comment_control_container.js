@@ -8,7 +8,7 @@ const mSTP = (state, ownProps) => {
       currentUserId: currentUser(state),
       commentAuthorId: ownProps.commentAuthorId,
       commentId: ownProps.commentId,
-      loggedIn: loggedIn(state)
+      loggedIn: loggedIn(state),
     };
 }
 

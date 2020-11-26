@@ -34,7 +34,6 @@ class QuestionShow extends React.Component {
                 <h1> Loading... </h1>
             )
         else {
-
             return (
                 <div className="QuestionShowBox1">
                     <div className="QuestionShowBox2">
@@ -75,7 +74,7 @@ class QuestionShow extends React.Component {
                             votableId: answer.id,
                             comments: commentHash[answer.id],
                             sessionAnswer: sessionAnswer,
-                            userComment: userComments[answer.id],
+                            userCommentId: userComments[answer.id],
                             sessionComment: sessionComment
                             })
                         }

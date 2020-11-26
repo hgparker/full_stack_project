@@ -3,7 +3,7 @@ import {conditionalDelete, conditionalButton} from '../conditional_buttons';
 
 class CommentControl extends React.Component {
   render() {
-    let {currentUserId, commentAuthorId, commentId, loggedIn} = this.props;
+    let {currentUserId, commentAuthorId, commentId} = this.props;
     let {deleteComment, editComment} = this.props;
     return (
       <div>

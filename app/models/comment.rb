@@ -12,7 +12,7 @@
 class Comment < ApplicationRecord
 
   validates :author_id, :answer_id, :body, presence: true
-  validates :author_id, uniqueness: {scope: :question_id, message: "You have already commented upon this answer"}
+  validates :author_id, uniqueness: {scope: :answer_id, message: "You have already commented upon this answer"}
 
   belongs_to :author,
     primary_key: :id,

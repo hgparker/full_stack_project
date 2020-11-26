@@ -1,5 +1,6 @@
 import * as AuthApiUtil from "../util/auth_api_util";
 import {enterAnswerLoginMode} from "./answer_actions";
+import {enterCommentLoginMode} from "./comment_actions";
 
 export const RECEIVE_CURRENT_USER = "RECEIVE_CURRENT_USER";
 export const REMOVE_CURRENT_USER = "REMOVE_CURRENT_USER";

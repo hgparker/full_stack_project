@@ -10,7 +10,8 @@ const mSTP = (state, ownProps) => {
       currentUserId: currentUser(state),
       answerAuthorId: ownProps.answerAuthorId,
       answerId: ownProps.answerId,
-      sessionComment: selectSessionComment(state)
+      sessionComment: selectSessionComment(state),
+      hasCommented: !!ownProps.userCommentId
     };
 }
 

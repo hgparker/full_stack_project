@@ -5,15 +5,17 @@ import { ANSWER_EDIT_MODE } from '../../actions/answer_actions';
 import List from "../list";
 import CommentItem from "../comments/comment_item";
 import CommentFormContainer from "../comments/comment_form_container";
+import { COMMENT_POST_MODE } from '../../actions/comment_actions';
 
 const AnswerItem = (props) => {
     
-    let {voteTotal, voteId, votableId, sessionAnswer, comments, answer, userComment, sessionComment} = props;
+    let {voteTotal, voteId, votableId, sessionAnswer, comments, answer, sessionComment, userCommentId} = props;
     
     if (sessionAnswer.currentAnswerId == answer.id &&
         sessionAnswer.currentAnswerMode == ANSWER_EDIT_MODE)
         return null;
     
+    console.log(props);
     return (
         <div className = "AnswerItem">
             <div>
@@ -33,6 +35,7 @@ const AnswerItem = (props) => {
                     <AnswerLowerControlContainer
                         answerAuthorId={answer.author_id}
                         answerId={answer.id}
+                        userCommentId={userCommentId}
                     />
                 </div>
 
@@ -42,16 +45,19 @@ const AnswerItem = (props) => {
                         component={CommentItem}
                         list={comments}
                         itemCallback={
-                            comment => ({
+                            (comment) => ({
                                 comment,
-                                userComment: userComment,
-                                sessionComment: sessionComment
+                                sessionComment: sessionComment,
+                                userCommentId: userCommentId
                             })
                         }                
                     />
                 </div>
 
-                <CommentFormContainer/>
+                {sessionComment.currentAnswerId == answer.id && sessionComment.currentCommentMode == COMMENT_POST_MODE ?
+                    <CommentFormContainer
+                        answerId={answer.id}
+                    /> : null}
             </div>
         </div>
     );
