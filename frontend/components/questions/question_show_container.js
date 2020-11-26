@@ -6,7 +6,7 @@ import {selectQuestion} from '../../selectors/questions_selectors';
 import { currentUser, loggedIn } from '../../selectors/auth_selectors';
 import {selectVoteHashAnswers, selectTotalVotesQuestion, selectEquivalentVoteHash} from '../../selectors/votes_selectors';
 import { enterAnswerLoginMode, enterAnswerPostMode, enterAnswerViewMode } from '../../actions/answer_actions';
-import {selectCommentHashAnswers, selectUserComments} from "../../selectors/comments_selectors";
+import {selectCommentHashAnswers, selectUserComments, selectSessionComment} from "../../selectors/comments_selectors";
 import {enterCommentLoginMode, enterCommentViewMode} from "../../actions/comment_actions";
 
 const mSTP = (state, ownProps) => {
@@ -24,7 +24,8 @@ const mSTP = (state, ownProps) => {
         voteTotal: selectTotalVotesQuestion(state, questionId),
         hasAnswered: hasAnswered(state, questionId, currentUserId),
         sessionAnswer: selectSessionAnswer(state),
-        userComments: selectUserComments(state, currentUserId)
+        userComments: selectUserComments(state, currentUserId),
+        sessionComment: selectSessionComment(state, currentUserId)
     };
 }
 

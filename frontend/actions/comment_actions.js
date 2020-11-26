@@ -18,10 +18,14 @@ const receiveSessionComment = (sessionComment) => {
     }
 }
 
-export const enterCommentLoginMode = () => receiveSessionComment({currentCommentId: null, currentCommentMode: COMMENT_LOGIN_MODE});
-export const enterCommentViewMode = () => receiveSessionComment({currentCommentId: null, currentCommentMode: COMMENT_VIEW_MODE});
-export const enterCommentPostMode = () => receiveSessionComment({currentCommentId: null, currentCommentMode: COMMENT_POST_MODE});
-export const enterCommentEditMode = (commentId) => receiveSessionComment({currentCommentId: commentId, currentCommentMode: COMMENT_EDIT_MODE});
+export const enterCommentLoginMode = () => receiveSessionComment(
+  {currentCommentId: null, currentAnswerId: null, currentCommentMode: COMMENT_LOGIN_MODE});
+export const enterCommentViewMode = () => receiveSessionComment(
+  {currentCommentId: null, currentAnswerId: null, currentCommentMode: COMMENT_VIEW_MODE});
+export const enterCommentPostMode = (answerId) => receiveSessionComment(
+  {currentCommentId: null, currentAnswerId: answerId, currentCommentMode: COMMENT_POST_MODE});
+export const enterCommentEditMode = (commentId, answerId) => receiveSessionComment(
+  {currentCommentId: commentId, currentAnswerId: answerId, currentCommentMode: COMMENT_EDIT_MODE});
 
 export const receiveComments = (payload) => {
   return {

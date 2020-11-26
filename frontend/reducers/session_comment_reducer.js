@@ -2,6 +2,7 @@ import {RECEIVE_SESSION_COMMENT, COMMENT_LOGIN_MODE} from "../actions/comment_ac
 
 const _nullComment = {
   currentCommentId: null,
+  currentAnswerID: null,
   currentCommentMode: COMMENT_LOGIN_MODE
 }
 

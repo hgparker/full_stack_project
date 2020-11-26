@@ -25,7 +25,8 @@ class QuestionShow extends React.Component {
     }
 
     render() {
-        let {question, currentUserId, loggedIn, voteTotal, voteHash, currentUserVoteHash, answers, commentHash, userComments, sessionAnswer} = this.props;
+        let {question, currentUserId, loggedIn, voteTotal, voteHash, currentUserVoteHash,
+            answers, commentHash, userComments, sessionAnswer, sessionComment} = this.props;
         let {deleteQuestion} = this.props;
        
         if (!question)
@@ -74,7 +75,8 @@ class QuestionShow extends React.Component {
                             votableId: answer.id,
                             comments: commentHash[answer.id],
                             sessionAnswer: sessionAnswer,
-                            userComment: userComments[answer.id]
+                            userComment: userComments[answer.id],
+                            sessionComment: sessionComment
                             })
                         }
                     />

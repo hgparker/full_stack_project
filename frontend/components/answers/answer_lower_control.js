@@ -4,7 +4,7 @@ import {COMMENT_VIEW_MODE} from "../../actions/comment_actions";
 
 class LowerAnswerControl extends React.Component {
     render() {
-        let {answerId, answerAuthorId, currentUserId, deleteAnswer, loggedIn, sessionComment} = this.props;
+        let {answerId, answerAuthorId, currentUserId, deleteAnswer, sessionComment} = this.props;
         let {editAnswer, addComment} = this.props
         return (
             <div className="AnswerSecondaryControl">
@@ -12,8 +12,9 @@ class LowerAnswerControl extends React.Component {
                 {conditionalButton(answerAuthorId == currentUserId,
                     () => editAnswer(answerId), "ButtonStyle1", "Edit your answer"
                 )}
-                {conditionalButton(sessionComment.currentCommentMode == COMMENT_VIEW_MODE,
-                    addComment, "ButtonStyle1", "Add a comment"    
+                {conditionalButton(sessionComment.currentCommentMode == COMMENT_VIEW_MODE
+                    || sessionComment.currentAnswerId != answerId,
+                    () => addComment(answerId), "ButtonStyle1", "Add a comment"    
                 )}
             </div>
         );

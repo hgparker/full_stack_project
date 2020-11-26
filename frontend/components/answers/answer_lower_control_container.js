@@ -10,7 +10,6 @@ const mSTP = (state, ownProps) => {
       currentUserId: currentUser(state),
       answerAuthorId: ownProps.answerAuthorId,
       answerId: ownProps.answerId,
-      loggedIn: loggedIn(state),
       sessionComment: selectSessionComment(state)
     };
 }
@@ -19,7 +18,7 @@ const mDTP = (dispatch) => {
     return {
       deleteAnswer: (answerId) => dispatch(deleteAnswer(answerId)),
       editAnswer: (answerId) => dispatch(enterAnswerEditMode(answerId)),
-      addComment: () => dispatch(enterCommentPostMode())
+      addComment: (answerId) => dispatch(enterCommentPostMode(answerId))
     }
 }
 
