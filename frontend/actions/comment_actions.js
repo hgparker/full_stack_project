@@ -5,24 +5,23 @@ export const RECEIVE_COMMENT = "RECEIVE_COMMENT";
 export const REMOVE_COMMENT = "REMOVE_COMMENT";
 export const RECEIVE_COMMENT_ERRORS = "RECEIVE_COMMENT_ERRORS";
 
-// if you decide to implement this functionality later .... here are corresponding answer uses
-// export const ANSWER_LOGIN_MODE = "ANSWER_LOGIN_MODE";
-// export const RECEIVE_SESSION_ANSWER = "RECEIVE_SESSION_ANSWER";
-// export const ANSWER_VIEW_MODE = "ANSWER_VIEW_MODE";
-// export const ANSWER_POST_MODE = "ANSWER_POST_MODE";
-// export const ANSWER_EDIT_MODE = "ANSWER_EDIT_MODE";
+export const COMMENT_LOGIN_MODE = "COMMENT_LOGIN_MODE";
+export const RECEIVE_SESSION_COMMENT = "RECEIVE_SESSION_COMMENT";
+export const COMMENT_VIEW_MODE = "COMMENT_VIEW_MODE";
+export const COMMENT_POST_MODE = "COMMENT_POST_MODE";
+export const COMMENT_EDIT_MODE = "COMMENT_EDIT_MODE";
 
-// const receiveSessionAnswer = (sessionAnswer) => {
-//     return {
-//         type: RECEIVE_SESSION_ANSWER,
-//         sessionAnswer
-//     }
-// }
+const receiveSessionComment = (sessionComment) => {
+    return {
+        type: RECEIVE_SESSION_Comment,
+        sessionComment
+    }
+}
 
-// export const enterAnswerLoginMode = () => receiveSessionAnswer({currentAnswerId: null, currentAnswerMode: ANSWER_LOGIN_MODE});
-// export const enterAnswerViewMode = (answerId) => receiveSessionAnswer({currentAnswerId: answerId, currentAnswerMode: ANSWER_VIEW_MODE});
-// export const enterAnswerPostMode = () => receiveSessionAnswer({currentAnswerId: null, currentAnswerMode: ANSWER_POST_MODE});
-// export const enterAnswerEditMode = (answerId) => receiveSessionAnswer({currentAnswerId: answerId, currentAnswerMode: ANSWER_EDIT_MODE});
+export const enterCommentLoginMode = () => receiveSessionComment({currentCommentId: null, currentCommentMode: COMMENT_LOGIN_MODE});
+export const enterCommentViewMode = () => receiveSessionComment({currentCommentId: null, currentCommentMode: COMMENT_VIEW_MODE});
+export const enterCommentPostMode = () => receiveSessionComment({currentCommentId: null, currentCommentMode: COMMENT_POST_MODE});
+export const enterCommentEditMode = (commentId) => receiveSessionComment({currentCommentId: commentId, currentCommentMode: COMMENT_EDIT_MODE});
 
 export const receiveComments = (payload) => {
   return {
@@ -60,7 +59,7 @@ export const postComment = (comment) => {
     return (dispatch) => {
         return CommentUtil.postComment(comment)
             .then((newComment) => dispatch(receiveComment(newComment)))
-            // .then((receivedAnswer) => dispatch(enterAnswerViewMode(receivedAnswer.id)))
+            .then(() => dispatch(enterCommentViewMode()))
             .fail((errors) => dispatch(receiveCommentErrors(errors.responseJSON)));
     };
 }
@@ -69,16 +68,16 @@ export const updateComment = (comment) => {
     return (dispatch) => {
         return CommentUtil.updateComment(comment)
             .then((updatedComment) => dispatch(receiveComment(updatedComment)))
-            // .then((receivedAnswer) => dispatch(enterAnswerViewMode(receivedAnswer.id)))
+            .then(() => dispatch(enterCommentViewMode()))
             .fail((errors) => dispatch(receiveCommentErrors(errors.responseJSON)));
     };
 }
 
-export const deleteComment = (answerId) => {
+export const deleteComment = (commentId) => {
     return (dispatch) => {
         return CommentUtil.deleteComment(commentId)
             .then((deletedComment) => dispatch(removeComment(deletedComment)))
-            // .then(() => dispatch(enterAnswerPostMode()))
+            .then(() => dispatch(enterCommentViewMode()))
             .fail((errors) => dispatch(receiveCommentErrors(errors.responseJSON)));
     };
 }
