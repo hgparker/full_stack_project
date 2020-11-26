@@ -6,7 +6,6 @@ import {updateComment, clearCommentErrors} from "./../../actions/comment_actions
 import CommentForm from "./comment_form";
 
 const mSTP = (state, ownProps) => {
-  debugger;
   return {
       errors: commentErrors(state),
       formType: "Edit your comment",
