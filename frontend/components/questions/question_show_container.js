@@ -6,7 +6,8 @@ import {selectQuestion} from '../../selectors/questions_selectors';
 import { currentUser, loggedIn } from '../../selectors/auth_selectors';
 import {selectVoteHashAnswers, selectTotalVotesQuestion, selectEquivalentVoteHash} from '../../selectors/votes_selectors';
 import { enterAnswerLoginMode, enterAnswerPostMode, enterAnswerViewMode } from '../../actions/answer_actions';
-import {selectCommentHashAnswers} from "../../selectors/comments_selectors";
+import {selectCommentHashAnswers, selectUserComments} from "../../selectors/comments_selectors";
+import {enterCommentLoginMode, enterCommentViewMode} from "../../actions/comment_actions";
 
 const mSTP = (state, ownProps) => {
     let questionId = ownProps.match.params.questionId;
@@ -22,7 +23,8 @@ const mSTP = (state, ownProps) => {
         currentUserVoteHash: selectEquivalentVoteHash(state, currentUserId),
         voteTotal: selectTotalVotesQuestion(state, questionId),
         hasAnswered: hasAnswered(state, questionId, currentUserId),
-        sessionAnswer: selectSessionAnswer(state)
+        sessionAnswer: selectSessionAnswer(state),
+        userComments: selectUserComments(state, currentUserId)
     };
 }
 
@@ -36,7 +38,9 @@ const mDTP = (dispatch) => {
         },
         enterAnswerLoginMode: () => dispatch(enterAnswerLoginMode()),
         enterAnswerViewMode: () => dispatch(enterAnswerViewMode()),
-        enterAnswerPostMode: () => dispatch(enterAnswerPostMode())
+        enterAnswerPostMode: () => dispatch(enterAnswerPostMode()),
+        enterCommentLoginMode: () => dispatch(enterCommentLoginMode()),
+        enterCommentViewMode: () => dispatch(enterCommentViewMode())
     }
 }
 

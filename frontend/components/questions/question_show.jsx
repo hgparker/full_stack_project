@@ -6,11 +6,10 @@ import AnswerFormContainer from '../answers/answer_form_container';
 import EditAnswerFormContainer from "../answers/edit_answer_form_container";
 import {conditionalNewQuestion, conditionalDelete, conditionalButton} from '../conditional_buttons';
 import QuestionControlContainer from './question_control_container';
-import {enterAnswerLoginMode, enterAnswerViewMode, enterAnswerPostMode, ANSWER_POST_MODE, ANSWER_EDIT_MODE, ANSWER_LOGIN_MODE} from "../../actions/answer_actions";
+import {ANSWER_POST_MODE, ANSWER_EDIT_MODE, ANSWER_LOGIN_MODE} from "../../actions/answer_actions";
 
 class QuestionShow extends React.Component {
     componentDidMount() {
-        // debugger;
         this.props.fetchQuestion(this.props.match.params.questionId);
         if (!this.props.loggedIn)
             this.props.enterAnswerLoginMode();
@@ -18,10 +17,15 @@ class QuestionShow extends React.Component {
             this.props.enterAnswerViewMode();
         else
             this.props.enterAnswerPostMode();
+        
+        if (!this.props.loggedIn)
+            this.props.enterCommentLoginMode();
+        else
+            this.props.enterCommentViewMode();
     }
 
     render() {
-        let {question, currentUserId, loggedIn, voteTotal, voteHash, currentUserVoteHash, answers, commentHash, sessionAnswer} = this.props;
+        let {question, currentUserId, loggedIn, voteTotal, voteHash, currentUserVoteHash, answers, commentHash, userComments, sessionAnswer} = this.props;
         let {deleteQuestion} = this.props;
        
         if (!question)
@@ -69,7 +73,8 @@ class QuestionShow extends React.Component {
                             voteId: currentUserVoteHash[answer.id],
                             votableId: answer.id,
                             comments: commentHash[answer.id],
-                            sessionAnswer: sessionAnswer
+                            sessionAnswer: sessionAnswer,
+                            userComment: userComments[answer.id]
                             })
                         }
                     />

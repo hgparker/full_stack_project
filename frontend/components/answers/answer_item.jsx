@@ -8,7 +8,7 @@ import CommentFormContainer from "../comments/comment_form_container";
 
 const AnswerItem = (props) => {
     
-    let {voteTotal, voteId, votableId, sessionAnswer, comments, answer} = props;
+    let {voteTotal, voteId, votableId, sessionAnswer, comments, answer, userComment} = props;
     
     if (sessionAnswer.currentAnswerId == answer.id &&
         sessionAnswer.currentAnswerMode == ANSWER_EDIT_MODE)
@@ -33,6 +33,7 @@ const AnswerItem = (props) => {
                     <AnswerLowerControlContainer
                         answerAuthorId={answer.author_id}
                         answerId={answer.id}
+                        userComment={userComment}
                     />
                 </div>
 

@@ -42,6 +42,7 @@ export const logout = () => {
         return AuthApiUtil.logout()
             .then(() => dispatch(removeCurrentUser()))
             .then(() => dispatch(enterAnswerLoginMode()))
+            .then(() => dispatch(enterCommentLoginMode()))
             .fail((errors) => dispatch(receiveAuthErrors(errors.responseJSON)));
     };
 };

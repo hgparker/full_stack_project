@@ -13,7 +13,7 @@ export const COMMENT_EDIT_MODE = "COMMENT_EDIT_MODE";
 
 const receiveSessionComment = (sessionComment) => {
     return {
-        type: RECEIVE_SESSION_Comment,
+        type: RECEIVE_SESSION_COMMENT,
         sessionComment
     }
 }

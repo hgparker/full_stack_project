@@ -1,18 +1,21 @@
 
-// in case need for comments
-// export const selectAnswer = (state, answerId) => {
-//   return state.entities.answers[answerId];
-// }
-// future hasCommented
-// export const hasAnswered = (state, questionId, currentUserId) => {
-//   return Object.values(state.entities.answers)
-//       .filter(answer => answer.question_id == questionId && answer.author_id == currentUserId)
-//       .length != 0
-// }
-// sessionComment
-// export const selectSessionAnswer = (state) => {
-//   return state.session.answer
-// }
+export const selectComment = (state, commentId) => {
+  return state.entities.comments[commentId];
+}
+
+export const selectUserComments = (state, currentUserId) => {
+  let userCommentHash = {}
+  if (currentUserId == null)
+    return userCommentHash;
+  Object.values(state.entities.comments)
+    .filter(comment => comment.author_id == currentUserId)
+    .forEach(comment => userCommentHash[comment.answer_id] = comment.id);
+  return userCommentHash
+}
+
+export const selectSessionComment = (state) => {
+  return state.session.comment
+}
 
 export const selectCommentHashAnswers = (state) => {    
     let commentHash = {};
