@@ -9,13 +9,14 @@ const mSTP = (state, ownProps) => {
       commentAuthorId: ownProps.commentAuthorId,
       commentId: ownProps.commentId,
       loggedIn: loggedIn(state),
+      answerId: ownProps.answerId
     };
 }
 
 const mDTP = (dispatch) => {
     return {
       deleteComment: (commentId) => dispatch(deleteComment(commentId)),
-      editComment: (commentId) => dispatch(enterCommentEditMode(commentId))
+      editComment: (commentId, answerId) => dispatch(enterCommentEditMode(commentId, answerId))
     }
 }
 

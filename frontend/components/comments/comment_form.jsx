@@ -34,7 +34,6 @@ class CommentForm extends React.Component {
             onSubmit={this.handleSubmit}
         >
           <div>
-          <label>Comment</label>
               <textarea
                   // className="QuestionFormBody"
                   cols="30"
