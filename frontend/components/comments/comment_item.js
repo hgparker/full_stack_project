@@ -8,7 +8,10 @@ const CommentItem = (props) => {
         {comment.body}
         by 
         {comment.author_id}
-          <CommentControlContainer/>
+          <CommentControlContainer
+            commentAuthorId={comment.author_id}
+            commentId={comment.id}
+          />
       </div>
     );
 }
