@@ -4,6 +4,7 @@ import AnswerLowerControlContainer from './answer_lower_control_container';
 import { ANSWER_EDIT_MODE } from '../../actions/answer_actions';
 import List from "../list";
 import CommentItem from "../comments/comment_item";
+import CommentFormContainer from "../comments/comment_form_container";
 
 const AnswerItem = (props) => {
     
@@ -48,6 +49,8 @@ const AnswerItem = (props) => {
                     
                     />
                 </div>
+
+                <CommentFormContainer/>
             </div>
         </div>
     );
