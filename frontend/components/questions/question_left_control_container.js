@@ -1,13 +1,17 @@
-import QuestionControl from "./question_control";
 import {connect} from 'react-redux';
+import QuestionLeftControl from "./question_left_control";
 import {upvote, downvote} from '../../actions/vote_actions'
 import { currentUser } from '../../selectors/auth_selectors';
+import {isUpvote, isDownvote} from "../../selectors/votes_selectors";
 
 const mSTP = (state, ownProps) => {
+    let voteId = ownProps.voteId
     return {   
         voteTotal: ownProps.voteTotal,
-        voteId: ownProps.voteId,
+        voteId: voteId,
         votableId: ownProps.votableId,
+        upVoted: isUpvote(state, voteId),
+        downVoted: isDownvote(state, voteId),
         currentUserId: currentUser(state)
     };
 }
@@ -21,4 +25,4 @@ const mDTP = (dispatch) => {
 
 
 
-export default connect(mSTP, mDTP)(QuestionControl);
+export default connect(mSTP, mDTP)(QuestionLeftControl);

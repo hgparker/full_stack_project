@@ -1,11 +1,14 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+
 import List from '../list';
-import AnswerItem from '../answers/answer_item'
-import AnswerFormContainer from '../answers/answer_form_container';
-import EditAnswerFormContainer from "../answers/edit_answer_form_container";
 import {conditionalNewQuestion, conditionalDelete, conditionalButton} from '../conditional_buttons';
-import QuestionControlContainer from './question_control_container';
+
+import QuestionLeftControlContainer from './question_left_control_container';
+
+import AnswerFormContainer from '../answers/answer_form_container';
+import AnswerItem from '../answers/answer_item'
+import EditAnswerFormContainer from "../answers/edit_answer_form_container";
 import {ANSWER_POST_MODE, ANSWER_EDIT_MODE, ANSWER_LOGIN_MODE} from "../../actions/answer_actions";
 
 class QuestionShow extends React.Component {
@@ -53,11 +56,11 @@ class QuestionShow extends React.Component {
                         </div>
                     </div>
                     <div className="QuestionShowBox3">
-                        <QuestionControlContainer
+                        <QuestionLeftControlContainer
                             voteTotal={voteTotal}
                             voteId={currentUserVoteHash[question.id]}
                             votableId={question.id}
-                            />
+                        />
                         {question.body} 
                     </div>
                         <div className="QuestionShowBox4">
