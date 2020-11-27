@@ -1,27 +1,28 @@
 import React from 'react';
+import {conditionalUpvote, conditionalDownvote} from "../voting_components"
 
 class AnswerLeftControl extends React.Component {
     render() {
-        let {upvote, downvote, voteId, votableId, voteTotal, currentUserId} = this.props
+        let {upvote, downvote, voteId, votableId, voteTotal, upVoted, downVoted, currentUserId} = this.props
+
         return (
             <div className="AnswerControl">
 
-                <button
-                    className="ButtonStyle1"
-                    onClick={() => upvote(voteId, votableId, currentUserId)}
-                >Upvote
-                </button>
+                {
+                    conditionalUpvote(true, upVoted, () => upvote(voteId, votableId, currentUserId))
+                }
+
+
 
                 <div className="VoteColumn">
-                    <div> {this.props.voteTotal || 0} </div>
-                    <div> {this.props.voteTotal == 1 || this.props.voteTotal == -1 ? "vote" : "votes"} </div>
+                    <div> {voteTotal || 0} </div>
+                    <div> {voteTotal == 1 || voteTotal == -1 ? "vote" : "votes"} </div>
                 </div>
-                
-                <button
-                    className="ButtonStyle2"
-                    onClick={() => downvote(voteId, votableId, currentUserId)}
-                >Downvote
-                </button>
+
+                {
+                    conditionalDownvote(true, downVoted, () => downvote(voteId, votableId, currentUserId))
+                }
+
             </div>
         );
     }

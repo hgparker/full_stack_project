@@ -7,3 +7,15 @@
     margin-right: 20px;
     // background-color: yellow;
 }
+
+.VotingBox:hover {
+    cursor: pointer
+}
+
+.VoteTriangle {
+    fill: grey;
+}
+
+.VotedTriangle {
+    fill: blue;
+}

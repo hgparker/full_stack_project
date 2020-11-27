@@ -16,7 +16,6 @@ const AnswerItem = (props) => {
         sessionAnswer.currentAnswerMode == ANSWER_EDIT_MODE)
         return null;
     
-    console.log(props);
     return (
         <div className = "AnswerItem">
             <div>

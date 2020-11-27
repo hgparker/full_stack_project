@@ -37,3 +37,11 @@ export const selectVoteHashAnswers = (state) => {
         })
     return voteHash;
 }
+
+export const isUpvote = (state, voteId) => {
+    return state.entities.votes[voteId] && state.entities.votes[voteId].vote_direction == 1; 
+}
+
+export const isDownvote = (state, voteId) => {
+    return state.entities.votes[voteId] && state.entities.votes[voteId].vote_direction == -1; 
+}

@@ -1,12 +1,16 @@
-import AnswerLeftControl from "./answer_left_control";
-import {upvote, downvote} from '../../actions/vote_actions'
 import {connect} from 'react-redux';
+import AnswerLeftControl from "./answer_left_control";
 import { currentUser } from '../../selectors/auth_selectors';
+import {isUpvote, isDownvote} from "../../selectors/votes_selectors";
+import {upvote, downvote} from '../../actions/vote_actions'
+
 
 const mSTP = (state, ownProps) => {
     return {   
         voteTotal: ownProps.voteTotal,
         voteId: ownProps.voteId,
+        upVoted: isUpvote(state, ownProps.voteId),
+        downVoted: isDownvote(state, ownProps.voteId),
         votableId: ownProps.votableId,
         currentUserId: currentUser(state)
     };
