@@ -12,8 +12,6 @@ const CommentItem = (props) => {
     return (
       <div>
         {comment.body}
-        by 
-        {comment.author_id}
           <CommentControlContainer
             commentAuthorId={comment.author_id}
             commentId={comment.id}

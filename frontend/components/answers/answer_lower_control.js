@@ -4,7 +4,7 @@ import {COMMENT_VIEW_MODE, COMMENT_LOGIN_MODE, COMMENT_EDIT_MODE, COMMENT_POST_M
 
 class LowerAnswerControl extends React.Component {
     render() {
-        let {answerId, answerAuthorId, currentUserId, deleteAnswer, sessionComment, hasCommented} = this.props;
+        let {answerId, answerAuthorId, currentUserId, deleteAnswer, sessionComment, hasCommented, answerUsername} = this.props;
         let {editAnswer, addComment} = this.props
         return (
             <div className="AnswerSecondaryControl">
@@ -21,6 +21,7 @@ class LowerAnswerControl extends React.Component {
                     && !hasCommented,
                     () => addComment(answerId), "ButtonStyle1", "Add a comment"    
                 )}
+                {answerUsername}
             </div>
         );
     }

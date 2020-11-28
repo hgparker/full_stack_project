@@ -34,5 +34,21 @@ json.comments do
     end
 end
 
+json.users do
+    json.set! @question.author.id do
+        json.extract! @question.author, :username
+    end
 
+    @question.answer_authors.each do |answer_author|
+        json.set! answer_author.id do
+            json.extract! answer_author, :username
+        end
+    end
+
+    @question.answer_comment_authors.each do |answer_comment_author|
+        json.set! answer_comment_author.id do
+            json.extract! answer_comment_author, :username
+        end
+    end
+end
 

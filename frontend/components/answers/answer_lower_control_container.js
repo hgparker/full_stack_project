@@ -1,17 +1,21 @@
 import AnswerLowerControl from "./answer_lower_control";
 import {connect} from 'react-redux';
 import { currentUser, loggedIn } from '../../selectors/auth_selectors';
+import {selectUsername} from "../../selectors/user_selectors";
 import {deleteAnswer, enterAnswerEditMode} from "../../actions/answer_actions";
 import {enterCommentPostMode} from "../../actions/comment_actions"
 import {selectSessionComment} from "../../selectors/comments_selectors";
 
 const mSTP = (state, ownProps) => {
+    let answerAuthorId = ownProps.answerAuthorId;
+
     return {   
       currentUserId: currentUser(state),
-      answerAuthorId: ownProps.answerAuthorId,
+      answerAuthorId: answerAuthorId,
       answerId: ownProps.answerId,
       sessionComment: selectSessionComment(state),
-      hasCommented: !!ownProps.userCommentId
+      hasCommented: !!ownProps.userCommentId,
+      answerUsername: selectUsername(state, answerAuthorId)
     };
 }
 

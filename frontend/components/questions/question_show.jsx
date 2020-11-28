@@ -29,7 +29,8 @@ class QuestionShow extends React.Component {
 
     render() {
         let {question, currentUserId, loggedIn, voteTotal, voteHash, currentUserVoteHash,
-            answers, commentHash, userComments, sessionAnswer, sessionComment} = this.props;
+            answers, commentHash, userComments, sessionAnswer, sessionComment,
+            questionUsername} = this.props;
         let {deleteQuestion} = this.props;
        
         if (!question)
@@ -61,7 +62,8 @@ class QuestionShow extends React.Component {
                             voteId={currentUserVoteHash[question.id]}
                             votableId={question.id}
                         />
-                        {question.body} 
+                        {question.body}
+                        by {questionUsername} 
                     </div>
                         <div className="QuestionShowBox4">
                             Answers:

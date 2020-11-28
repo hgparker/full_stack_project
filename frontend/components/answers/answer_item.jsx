@@ -28,8 +28,6 @@ const AnswerItem = (props) => {
             <div className = "AnswerRight">
                 <div>
                 {answer.body}
-                by
-                {answer.author_id}
                 </div>
                 <div>
                     <AnswerLowerControlContainer

@@ -35,5 +35,13 @@ class Question < ApplicationRecord
     has_many :answer_comments,
         through: :answers,
         source: :comments
+
+    has_many :answer_authors,
+        through: :answers,
+        source: :author
+
+    has_many :answer_comment_authors,
+        through: :answer_comments,
+        source: :author
         
 end
