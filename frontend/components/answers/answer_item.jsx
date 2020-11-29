@@ -3,7 +3,7 @@ import AnswerLeftControlContainer from './answer_left_control_container';
 import AnswerLowerControlContainer from './answer_lower_control_container';
 import { ANSWER_EDIT_MODE } from '../../actions/answer_actions';
 import List from "../list";
-import CommentItem from "../comments/comment_item";
+import CommentItemContainer from "../comments/comment_item_container";
 import CommentFormContainer from "../comments/comment_form_container";
 import EditCommentFormContainer from "../comments/edit_comment_form_container";
 import { COMMENT_POST_MODE, COMMENT_EDIT_MODE } from '../../actions/comment_actions';
@@ -39,14 +39,12 @@ const AnswerItem = (props) => {
 
                 <div>
                     <List
-                        component={CommentItem}
+                        component={CommentItemContainer}
                         list={comments}
                         itemCallback={  
                             (comment) => ({
                                 comment,
-                                sessionComment: sessionComment,
                                 userCommentId: userCommentId,
-                                answerId: answer.id
                             })
                         }                
                     />

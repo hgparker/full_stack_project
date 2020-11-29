@@ -3,7 +3,7 @@ import CommentControlContainer from "./comment_control_container";
 import {COMMENT_EDIT_MODE} from "../../actions/comment_actions";
 
 const CommentItem = (props) => {
-    let {comment, userComment, sessionComment, answerId} = props;
+    let {comment, userCommentId, sessionComment, commentUsername} = props;
 
     if (sessionComment.currentCommentId == comment.id 
       && sessionComment.currentCommentMode == COMMENT_EDIT_MODE)
@@ -11,12 +11,12 @@ const CommentItem = (props) => {
 
     return (
       <div>
-        {comment.body}
+        {comment.body} - <span className="CommentItem-UserInfo">
+          {commentUsername}
+        </span>
           <CommentControlContainer
-            commentAuthorId={comment.author_id}
-            commentId={comment.id}
-            userComment={userComment}
-            answerId={answerId}
+            comment={comment}
+            userCommentId={userCommentId}
           />
       </div>
     );
