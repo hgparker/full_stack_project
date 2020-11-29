@@ -9,6 +9,7 @@ import PageUnknown from './page_unknown';
 import QuestionShowContainer from './questions/question_show_container';
 import QuestionFormContainer from './questions/question_form_container';
 import EditQuestionFormContainer from './questions/edit_question_form_container';
+import Footer from "./footer";
 
 const App = (props) => {
     return (
@@ -42,6 +43,7 @@ const App = (props) => {
                 />
                 <Route component={PageUnknown}/>
             </Switch>
+            <Footer/>
         </div>
     );
 }

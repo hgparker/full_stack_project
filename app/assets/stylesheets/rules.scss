@@ -42,3 +42,11 @@ a:visited {
     border-width: 1px;
     margin: 5px; 
 }
+
+.Footer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 30px;
+}
