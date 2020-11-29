@@ -1,4 +1,16 @@
 
+.QuestionLowerControl, .AnswerLowerControl {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 10px;
+    // background-color: green;
+}
+
+.QLC-UserInfo, .ALC-UserInfo {
+    font-weight: bold;
+}
 
 .QuestionShowBox1 {
 

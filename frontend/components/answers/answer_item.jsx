@@ -41,7 +41,7 @@ const AnswerItem = (props) => {
                     <List
                         component={CommentItem}
                         list={comments}
-                        itemCallback={
+                        itemCallback={  
                             (comment) => ({
                                 comment,
                                 sessionComment: sessionComment,

@@ -9,7 +9,8 @@ export const selectQuestionUsername = (state, questionId) => {
 }
 
 export const selectUsername = (state, userId) => {
-  return state.entities.users[userId].username;
+  if (state.entities.users[userId])
+    return state.entities.users[userId].username;
 }
 
 // export const selectAnswerUsername = (state, answerId) => {

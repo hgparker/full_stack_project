@@ -5,6 +5,7 @@ import List from '../list';
 import {conditionalNewQuestion, conditionalDelete, conditionalButton} from '../conditional_buttons';
 
 import QuestionLeftControlContainer from './question_left_control_container';
+import QuestionLowerControlContainer from "./question_lower_control_container";
 
 import AnswerFormContainer from '../answers/answer_form_container';
 import AnswerItem from '../answers/answer_item'
@@ -29,8 +30,7 @@ class QuestionShow extends React.Component {
 
     render() {
         let {question, currentUserId, loggedIn, voteTotal, voteHash, currentUserVoteHash,
-            answers, commentHash, userComments, sessionAnswer, sessionComment,
-            questionUsername} = this.props;
+            answers, commentHash, userComments, sessionAnswer, sessionComment} = this.props;
         let {deleteQuestion} = this.props;
        
         if (!question)
@@ -62,8 +62,12 @@ class QuestionShow extends React.Component {
                             voteId={currentUserVoteHash[question.id]}
                             votableId={question.id}
                         />
+                        <div>
                         {question.body}
-                        by {questionUsername} 
+                        <QuestionLowerControlContainer
+                            userId={question.author_id}
+                        />
+                        </div>
                     </div>
                         <div className="QuestionShowBox4">
                             Answers:

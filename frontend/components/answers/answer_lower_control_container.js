@@ -1,7 +1,9 @@
-import AnswerLowerControl from "./answer_lower_control";
 import {connect} from 'react-redux';
-import { currentUser, loggedIn } from '../../selectors/auth_selectors';
+import AnswerLowerControl from "./answer_lower_control";
+
+import { currentUser} from '../../selectors/auth_selectors';
 import {selectUsername} from "../../selectors/user_selectors";
+
 import {deleteAnswer, enterAnswerEditMode} from "../../actions/answer_actions";
 import {enterCommentPostMode} from "../../actions/comment_actions"
 import {selectSessionComment} from "../../selectors/comments_selectors";
