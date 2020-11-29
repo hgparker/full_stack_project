@@ -10,7 +10,7 @@ const CommentItem = (props) => {
       return null;
 
     return (
-      <div>
+      <div className="CommentItem">
         {comment.body} - <span className="CommentItem-UserInfo">
           {commentUsername}
         </span>

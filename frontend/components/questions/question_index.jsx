@@ -13,21 +13,22 @@ class QuestionIndex extends React.Component {
 
     render() {
         return (
-            <div className="QuestionIndexBox1">
-                <div className="QuestionIndexBox2">
+            <div className="QuestionIndex-QuestionIndexElements">
+                <div className="QuestionIndex-TitleBox">
                     <div>Top Questions </div>
                     <div> {conditionalNewQuestion(this.props.loggedIn)} </div>
                 </div>
-                <div>
+            
+                <div className = "QuestionIndex-Questions">    
                 <List 
                     component={QuestionIndexItem}
                     list={this.props.questions}
+                    listClassName="QuestionIndex-Questions"
                     itemCallback={(question) =>
                         ({question,
                             voteTotal: this.props.voteHash[question.id]})}
                 />
                 </div>
-                
             </div>
         );
     }

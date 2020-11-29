@@ -1,6 +1,6 @@
 
 
-.QuestionIndexBox1 {
+.QuestionIndex-QuestionIndexElements {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -10,10 +10,10 @@
     // background-color: green;
 }
 
-.QuestionIndexBox2 {
+.QuestionIndex-TitleBox {
     display: flex;
     flex-direction: row;
-    width: 70%;
+    width: 100%;
     justify-content: space-between;
     align-items: center;
     margin: 20px;
@@ -21,20 +21,26 @@
     font-size: 30px;
     border-bottom: solid grey;
     // background-color: red;
+}
 
+.QuestionIndex-Questions {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 100%;
+    // background-color: maroon;
 }
 
 .QuestionIndexItem {
     display: flex;
+    flex-direction: row;
     width: 100%;
     justify-content: space-between;
-    border-bottom: solid grey;
+    flex-wrap: wrap;
     margin-top: 20px;
     margin-bottom: 30px;
     padding-bottom: 20px;
+    border-bottom: solid grey;
     // background-color: magenta;
 }
 
-.QuestionInfo {
-    padding-right: 60px;
-}

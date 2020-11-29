@@ -6,7 +6,7 @@ class CommentControl extends React.Component {
     let {currentUserId, comment} = this.props;
     let {deleteComment, editComment} = this.props;
     return (
-      <div>
+      <div className="CommentControl">
         {conditionalDelete(comment.author_id == currentUserId, () => deleteComment(comment.id))}
         {conditionalButton(comment.author_id == currentUserId,
           () => editComment(comment.id, comment.answer_id), "ButtonStyle1", "Edit your comment")}

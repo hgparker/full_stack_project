@@ -3,11 +3,11 @@ import React from 'react';
 // component is list item component
 // itemCallback returns mSTP-style object with props needed by component
 
-const List = ({component: Component, list, itemCallback}) => {
+const List = ({component: Component, list, itemCallback, listClassName}) => {
     if (!list)
         return null;   
     return (
-        <ul>
+        <ul className={listClassName}>
             {
                 list.map((item, index) => {
                     return (

@@ -66,6 +66,7 @@
     align-items: center;
     justify-content: space-between;
     padding-top: 10px;
+    padding-bottom: 10px;
     // background-color: green;
 }
 
@@ -86,4 +87,15 @@
     padding-right: 30px;
     display: flex;
     align-items: center;
+}
+
+.CommentItem {
+    padding-left: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-top: solid grey;
+}
+
+.CommentControl {
+    padding-top: 5px;
 }
