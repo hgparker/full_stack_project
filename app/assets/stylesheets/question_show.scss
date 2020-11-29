@@ -1,18 +1,6 @@
 
-.QuestionLowerControl, .AnswerLowerControl {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    padding-top: 10px;
-    // background-color: green;
-}
 
-.QLC-UserInfo, .ALC-UserInfo, .CommentItem-UserInfo {
-    font-weight: bold;
-}
-
-.QuestionShowBox1 {
+.QuestionShow-MainColumn {
 
     display: flex;
     flex-direction: column;
@@ -25,7 +13,7 @@
 }
 
 
-.QuestionShowBox2 {
+.QuestionShow-TitleBox {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -42,7 +30,7 @@
     // background-color: cornflowerblue;
 }
 
-.QuestionShowBox3 {   
+.QuestionShow-QuestionElements {   
     display: flex;
     margin-top: 30px;
     padding-bottom: 20px;
@@ -50,11 +38,34 @@
     // background-color: coral;
 }
 
+.QuestionShow-RightQuestionElements {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
 .QuestionShowBox4 {
     margin-top: 20px;
     font-size: 25px;
     // background-color: purple;
 }
+
+// separate out marginal css stuff
+// put answer stuf in own sheet
+
+.QuestionLowerControl, .AnswerLowerControl {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 10px;
+    // background-color: green;
+}
+
+.QLC-UserInfo, .ALC-UserInfo, .CommentItem-UserInfo {
+    font-weight: bold;
+}
+
 
 .AnswerItem {
     display: flex;

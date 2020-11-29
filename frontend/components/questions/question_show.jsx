@@ -39,8 +39,8 @@ class QuestionShow extends React.Component {
             )
         else {
             return (
-                <div className="QuestionShowBox1">
-                    <div className="QuestionShowBox2">
+                <div className="QuestionShow-MainColumn">
+                    <div className="QuestionShow-TitleBox">
                         <div className="LeftQuestionShowBox2">
                             {question.title} 
                         </div>
@@ -56,19 +56,20 @@ class QuestionShow extends React.Component {
                             {conditionalNewQuestion(loggedIn)}
                         </div>
                     </div>
-                    <div className="QuestionShowBox3">
+                    <div className="QuestionShow-QuestionElements">
                         <QuestionLeftControlContainer
                             voteTotal={voteTotal}
                             voteId={currentUserVoteHash[question.id]}
                             votableId={question.id}
                         />
-                        <div>
+                        <div className="QuestionShow-RightQuestionElements">
                         {question.body}
                         <QuestionLowerControlContainer
                             userId={question.author_id}
                         />
                         </div>
                     </div>
+
                         <div className="QuestionShowBox4">
                             Answers:
                         </div>
