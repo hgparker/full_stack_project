@@ -53,6 +53,13 @@
 // separate out marginal css stuff
 // put answer stuf in own sheet
 
+.AnswerItem-RightAnswerElements {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    // background-color: lightskyblue;
+}
+
 .QuestionLowerControl, .AnswerLowerControl {
     display: flex;
     flex-direction: row;

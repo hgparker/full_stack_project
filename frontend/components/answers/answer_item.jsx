@@ -25,30 +25,23 @@ const AnswerItem = (props) => {
                     votableId={votableId}
                 />
             </div>
-            <div className = "AnswerRight">
-                <div>
+            <div className = "AnswerItem-RightAnswerElements">
                 {answer.body}
-                </div>
-                <div>
-                    <AnswerLowerControlContainer
-                        answerAuthorId={answer.author_id}
-                        answerId={answer.id}
-                        userCommentId={userCommentId}
-                    />
-                </div>
-
-                <div>
-                    <List
-                        component={CommentItemContainer}
-                        list={comments}
-                        itemCallback={  
-                            (comment) => ({
-                                comment,
-                                userCommentId: userCommentId,
-                            })
-                        }                
-                    />
-                </div>
+                <AnswerLowerControlContainer
+                    answerAuthorId={answer.author_id}
+                    answerId={answer.id}
+                    userCommentId={userCommentId}
+                />
+                <List
+                    component={CommentItemContainer}
+                    list={comments}
+                    itemCallback={  
+                        (comment) => ({
+                            comment,
+                            userCommentId: userCommentId,
+                        })
+                    }                
+                />
 
                 {sessionComment.currentAnswerId == answer.id && sessionComment.currentCommentMode == COMMENT_POST_MODE ?
                     <CommentFormContainer
