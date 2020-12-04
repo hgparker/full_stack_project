@@ -2,17 +2,15 @@ import React from "react";
 
 const Footer = (props) => {
   return (
-    <footer className="Footer">
+    <footer className="footer">
       <div>
-          <a href="https://github.com/hgparker">GitHub</a>
+        <a href="https://github.com/hgparker"><img src="/assets/GitHub.png"/></a>
       </div>
       <div> 
-        <a href="https://www.linkedin.com/in/harold-hal-parker-74b6191bb/">LinkedIn</a>
+        <a href="https://www.linkedin.com/in/harold-hal-parker-74b6191bb/"> <img src="/assets/linkedin-64.png"/></a>
       </div>
-  </footer>
+    </footer>
   );
 }
 
 export default Footer;
-
-
