@@ -7,16 +7,16 @@ class NavBar extends React.Component {
     render() {
         return (
             <div className="NavBar">
-                <div className="LeftNavBar">
                     <Link
                         to="/"
                     >
+                    <div className="LeftNavBar">
                         <img src="/assets/babka.png"/> 
-                    </Link>
                     <div className="LeftNavBarText">
                         babka overflow
                     </div>
                 </div>
+                </Link>
                 <div className="RightNavBar">
                     {conditionalLogin(!this.props.loggedIn)}
                     {conditionalSignup(!this.props.loggedIn)}
