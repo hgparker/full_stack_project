@@ -2,19 +2,42 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-
-  margin-top: 300px;
-  background-color: yellowgreen;
+  margin-top: 55px;
+  // background-color: yellowgreen;
 }
 
 .SplashUpperSection {
-  background-color: red;
+  display: flex;
+  flex-direction: column;
+  height: 500px;
+  align-items: center;
+  background-color: #FFCF10;
+  background-image: url("splash.svg");
+  background-position: center;
+}
+
+.SplashWeLove {
+  font-size: 3rem;
+  font-weight: 700;
+  font-family: RobotoSlabBold;
+  margin-top: 130px;
+}
+
+
+.SplashIntroductory {
+  width: 430px;
+  text-align: center;
+  margin-top: 30px;
+  font-family: SourceSansPro;
+  font-size: 1.6rem;
+  line-height: normal;
+  // background-color: red;
 }
 
 .SplashMiddleSection {
-  background-color: orange;
+  // background-color:green;
 }
 
 .SplashLowerSection {
-  background-color: orchid;
+  // background-color: orchid;
 }

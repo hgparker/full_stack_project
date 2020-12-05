@@ -4,7 +4,14 @@ const Splash = (props) => {
   return (
     <div className="SplashElements">
       <div className="SplashUpperSection">
-      Yo dawg, we heard you like splash pages... 
+          <div className="SplashWeLove">
+            We &lt;3 puppies who code
+          </div>
+          <div className="SplashIntroductory">
+            Babka Overflow is a clone of Stack Overflow.
+            Ask a question or answer one.
+            Comment, vote. <br></br>Get cozy in the discourse.
+          </div>
       </div>
       <div className="SplashMiddleSection">
         middle
