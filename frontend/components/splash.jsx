@@ -10,15 +10,14 @@ const Splash = (props) => {
           </div>
           <div className="SplashIntroductory">
             Babka Overflow is a clone of Stack Overflow.
-            Ask a question or answer one.
+            Ask a question or answer one. <br></br>
             Comment, vote. <br></br>Get cozy in the discourse.
           </div>
           <div className="SplashLaunchBar">
               
-          {/* export const conditionalLinkButton = (successCondition, buttonDestination, buttonStyle, buttonText) => { */}
-            {conditionalLinkButton(true, "/login", "ButtonStyle1", "Log in")}
-            {conditionalLinkButton(true, "/signup", "ButtonStyle2", "Sign up")}
-            {conditionalLinkButton(true, "/questions", "ButtonStyle1", "All Questions")}
+            {conditionalLinkButton(true, "/login", "ButtonStyle3", "Log in")}
+            {conditionalLinkButton(true, "/signup", "ButtonStyle4", "Sign up")}
+            {conditionalLinkButton(true, "/questions", "ButtonStyle3", "All Questions")}
           
           </div>
       </div>
