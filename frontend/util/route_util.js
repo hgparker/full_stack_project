@@ -16,7 +16,7 @@ const OnlyLoggedOut = ({component: Component, path, loggedIn}) => {
             render= {
                 (props) => {
                     return (
-                        loggedIn ? <Redirect to="/"/> : <Component {...props}/>
+                        loggedIn ? <Redirect to="/questions"/> : <Component {...props}/>
                     )
                 }
             }

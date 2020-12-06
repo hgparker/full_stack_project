@@ -19,9 +19,6 @@ const App = (props) => {
             <NavBarContainer/>
             <Switch>
                 <Route
-                    exact path = "/" component={Splash}
-                />
-                <Route
                     exact path = "/questions" component={QuestionIndexContainer}
                 />
                 <OnlyLoggedInRoute
@@ -42,6 +39,10 @@ const App = (props) => {
                 <OnlyLoggedOutRoute
                     path="/signup"
                     component={SignupFormContainer}
+                />
+                <OnlyLoggedOutRoute
+                    path="/"
+                    component={Splash}
                 />
                 <Route component={PageUnknown}/>
             </Switch>

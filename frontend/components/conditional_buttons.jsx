@@ -77,3 +77,17 @@ export const conditionalButton = (successCondition, callback, buttonStyle, butto
         </button>
     );
 }
+
+export const conditionalLinkButton = (successCondition, buttonDestination, buttonStyle, buttonText) => {
+    if (!successCondition)
+        return null;
+    return (
+        <Link
+        to={buttonDestination}
+        >
+            <button className={buttonStyle}>
+                {buttonText}
+            </button>
+        </Link>       
+    );
+}

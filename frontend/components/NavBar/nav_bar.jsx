@@ -8,7 +8,7 @@ class NavBar extends React.Component {
         return (
             <div className="NavBar">
                 <Link
-                    to="/"
+                    to="/questions"
                 >
                     <div className="LeftNavBar">
                         <img src="/assets/babka.png"/> 
