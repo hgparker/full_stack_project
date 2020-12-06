@@ -22,7 +22,13 @@ const Splash = (props) => {
           </div>
       </div>
       <div className="SplashMiddleSection">
-        middle
+        <div className="SplashFor">
+          For recruiters, by a jobseeker
+        </div>
+
+        <div className="SplashOrangeBar">
+
+        </div>
       </div>
       <div className="SplashLowerSection">
         lower

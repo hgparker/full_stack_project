@@ -43,9 +43,28 @@
 }
 
 .SplashMiddleSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 60px;
   // background-color:green;
 }
 
+.SplashFor {
+  // background-color: yellow;
+  font-family: RobotoSlabBold;
+  font-size: 2rem;
+}
+
+.SplashOrangeBar {
+  background-color: #F48024;
+  height: 8px;
+  width: 60px;
+  border-radius: 20px;
+  margin-top: 30px;
+}
+
 .SplashLowerSection {
-  // background-color: orchid;
+  margin-top: 40px;
+  background-color: orchid;
 }
