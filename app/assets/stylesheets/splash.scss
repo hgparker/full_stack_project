@@ -73,6 +73,46 @@
 }
 
 .SplashLowerSection {
-  margin-top: 40px;
-  background-color: orchid;
+  display: flex;
+  flex-direction: row;
+  // align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+  margin-top: 30px;
+  // background-color: orchid;
+}
+
+.SplashTech1, .SplashTech2, .SplashTech3 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px;
+  width: 200px;
+  height: 220px;
+  text-align: center;
+  border-radius: 3px;
+  box-shadow: 1px 1px 3px gray;
+}
+
+.SplashTech1, .SplashTech3 {
+  margin-top: 80px;
+}
+
+.SplashIconBar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.SplashTechTitle {
+  font-family: RobotoSlabRegular;
+  font-size: 1.2rem;
+}
+
+.SplashTechText {
+  font-family: SourceSansPro;
+  font-size: medium;
+  line-height: normal;
 }

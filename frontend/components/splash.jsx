@@ -35,22 +35,29 @@ const Splash = (props) => {
         the ability to post and edit comments on answers,
         and the ability to vote on questions and answers.
         Don't take this &lt;div&gt;'s word for it, though. Click around for yourself and see!
-        Below is some more information about the specific technologies used in the site.        
+        {/* Below is some more information about the specific technologies used in the site.         */}
 
         </div>
       </div>
       <div className="SplashLowerSection">
         <div className="SplashTech1">
-
+          <div className="SplashIconBar">
+            <img src="/assets/react.ico"/>
+            <img src="/assets/redux-64.png"/>
+          </div>
+          <div className="SplashTechTitle">
+          React + Redux
+          </div>
+          <div className="SplashTechText">
+            The frontend of Babka Overflow
+            runs on React and Redux. Languages used are JavaScript, HTML, and CSS.
+          </div>
         </div>
         <div className="SplashTech2">
-
+          splashtech2
         </div>
         <div className="SplashTech3">
-
-        </div>
-        <div className="SplashTech4">
-
+          splashtech3
         </div>
       </div>
     </div>
