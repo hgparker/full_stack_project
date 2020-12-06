@@ -54,10 +54,28 @@ const Splash = (props) => {
           </div>
         </div>
         <div className="SplashTech2">
-          splashtech2
+        <div className="SplashIconBar">
+            <img src="/assets/rails.png"/>
+            <img src="/assets/postgresql.png"/>
+          </div>
+          <div className="SplashTechTitle">
+            Ruby on Rails + PostgreSQL
+          </div>
+          <div className="SplashTechText">
+            The backend of Babka Overflow
+            uses Ruby on Rails. The database is PostgreSQL.
+          </div>
         </div>
         <div className="SplashTech3">
-          splashtech3
+        <div className="SplashTechTitle">
+            Labrador Retriever + Poodle
+          </div>
+          <div className="SplashTechText">
+            Babka is a labradoodle puppy who gave lots of coding advice
+            during the creation of this website. It is named in her honor.
+            Babka herself is named in honor of the sweet – and stackable – dessert-like bread.
+          </div>
+
         </div>
       </div>
     </div>
