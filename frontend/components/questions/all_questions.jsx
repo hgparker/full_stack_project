@@ -10,8 +10,8 @@ class AllQuestions extends React.Component {
 
     render() {
         return (
-            <div className="QuestionIndex-QuestionIndexElements">
-                <div className="QuestionIndex-TitleBox">
+            <div className="AnyQuestionIndex-Elements">
+                <div className="AllQuestions">
                     <div>All Questions </div>
                     <div> {conditionalNewQuestion(this.props.loggedIn)} </div>
                 </div>

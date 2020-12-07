@@ -1,6 +1,7 @@
+// Base column for upper section info and lower indexing
+// Used by both AllQuestions and SearchQuestions
 
-
-.QuestionIndex-QuestionIndexElements {
+.AnyQuestionIndex-Elements {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -13,7 +14,9 @@
     // background-color: green;
 }
 
-.QuestionIndex-TitleBox {
+// AllQuestion-specific CSS
+
+.AllQuestions {
     display: flex;
     flex-direction: row;
     width: 100%;
@@ -25,6 +28,30 @@
     border-bottom: solid grey;
     // background-color: red;
 }
+
+// SearchQuestions-specific CSS
+
+.SearchQuestions {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    // background-color: antiquewhite;
+}
+
+.SearchQuestions-TitleBar {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    // background-color: azure;
+}
+
+.SearchResults {
+    font-size: 1.8rem;
+}
+
+// Question Index stuff...common to both AllQuestions and SearchQuestions
 
 .QuestionIndex-Questions {
     display: flex;

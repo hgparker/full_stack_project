@@ -13,9 +13,7 @@ export const mSTP = (state, ownProps) => {
 
 export const mDTP = (dispatch) => {
   return {
-    fetchQuestions: (searchString) => {
-      console.log("got here at least");
-      return dispatch(fetchSearch(searchString))}
+    fetchQuestions: (searchString) => dispatch(fetchSearch(searchString))
   }
 }
 

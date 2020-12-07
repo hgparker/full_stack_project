@@ -14,7 +14,7 @@ const logger = store => next => action => {
   }
 
 const configureStore = (preloadedState = {}) => {
-    return createStore(rootReducer, preloadedState, applyMiddleware(thunk));
+    return createStore(rootReducer, preloadedState, applyMiddleware(thunk, logger));
 }
 
 export default configureStore;

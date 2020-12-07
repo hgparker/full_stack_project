@@ -13,7 +13,7 @@ const votesReducer = (oldState = {}, action) => {
         case RECEIVE_QUESTION:
             return Object.assign({}, oldState, action.payload.votes);
         case RECEIVE_QUESTIONS:
-                return Object.assign({}, oldState, action.payload.votes);
+            return Object.assign({}, oldState, action.payload.votes);
         default:
             return oldState;
     }
