@@ -5,7 +5,9 @@ import {receiveQuestions} from "./question_actions";
 export const fetchSearch = (searchString) => {
   return (dispatch) => {
     return SearchUtil.fetchSearch(searchString)
-      .then((questions) => dispatch(receiveQuestions(questions)))
+      .then((questions) => {
+        console.log(questions);
+        dispatch(receiveQuestions(questions))})
   };
 }
 

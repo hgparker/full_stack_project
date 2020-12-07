@@ -1,37 +1,22 @@
-// import {connect} from 'react-redux';
-// import QuestionIndex from "./all_questions";
+import {connect} from 'react-redux';
+import SearchQuestions from "./search_questions";
 
-// export const mSTP = (state) => {
+import {fetchSearch} from "../../actions/search_actions";
+import {loggedIn} from '../../selectors/auth_selectors';
 
-// }
+export const mSTP = (state, ownProps) => {
+  return {
+    loggedIn: loggedIn(state),
+    searchString: ownProps.match.params.searchString
+  };
+}
 
-// export const mDTP = (dispatch) => {
-//   fetchQuestions:
-// }
+export const mDTP = (dispatch) => {
+  return {
+    fetchQuestions: (searchString) => {
+      console.log("got here at least");
+      return dispatch(fetchSearch(searchString))}
+  }
+}
 
-// export default connect(mSTP, null)()
-
-
-// // import {fetchQuestions} from "../../actions/question_actions";
-// // import {loggedIn} from '../../selectors/auth_selectors';
-// // import {selectQuestions} from '../../selectors/questions_selectors';
-// // import {selectVoteHashQuestions} from '../../selectors/votes_selectors';
-
-// // const mSTP = (state) => {
-// //     let voteHash = selectVoteHashQuestions(state);
-// //     return {
-// //         loggedIn: loggedIn(state),
-// //         questions: selectQuestions(state, voteHash),
-// //         voteHash: voteHash
-// //     };
-// // }
-
-// // const mDTP = (dispatch) => {
-// //     return {
-// //         fetchQuestions: () => {
-// //             return dispatch(fetchQuestions())
-// //         }
-// //     }
-// // }
-
-// // export default connect(mSTP, mDTP)(QuestionIndex);
+export default connect(mSTP, mDTP)(SearchQuestions);

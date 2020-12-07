@@ -10,7 +10,7 @@ import PageUnknown from './page_unknown';
 import QuestionShowContainer from './questions/question_show_container';
 import QuestionFormContainer from './questions/question_form_container';
 import EditQuestionFormContainer from './questions/edit_question_form_container';
-import SearchContainer from "./questions/search_questions_container";
+import SearchQuestionsContainer from "./questions/search_questions_container";
 import Footer from "./footer";
 import Splash from "./splash";
 
@@ -33,9 +33,9 @@ const App = (props) => {
                 <Route
                     path = "/questions/:questionId" component={QuestionShowContainer}
                 />
-                {/* <Route
-                    path = "/search/:searchString" component={SearchContainer}
-                /> */}
+                <Route
+                    path = "/search/:searchString" component={SearchQuestionsContainer}
+                />
                 <OnlyLoggedOutRoute
                     path="/login"
                     component={SessionFormContainer}
