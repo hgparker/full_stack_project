@@ -44,12 +44,19 @@
     width: 100%;
     align-items: center;
     justify-content: space-between;
+    margin-bottom: 20px;
     // background-color: azure;
 }
 
 .SearchResults {
     font-size: 1.8rem;
 }
+
+.SearchInfo {
+    font-size: small;
+    color: #6A7E7C;
+}
+
 
 // Question Index stuff...common to both AllQuestions and SearchQuestions
 

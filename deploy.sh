@@ -4,5 +4,5 @@ git add .
 git commit -m "$1"
 git push origin main
 git push heroku main
-heroku run rails db:migrate
-heroku run rails db:seed
+# heroku run rails db:migrate
+# heroku run rails db:seed

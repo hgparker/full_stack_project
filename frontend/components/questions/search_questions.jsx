@@ -9,6 +9,8 @@ class SearchQuestions extends React.Component {
   }
 
   render() {
+    let {searchString} = this.props;
+
     return (
       <div className="AnyQuestionIndex-Elements">
         <div className="SearchQuestions">
@@ -17,6 +19,9 @@ class SearchQuestions extends React.Component {
               Search Results
             </div>
               {conditionalNewQuestion(this.props.loggedIn)}
+          </div>
+          <div className="SearchInfo">
+            Results for {searchString}
           </div>
         </div>
         <QuestionIndexContainer/>
