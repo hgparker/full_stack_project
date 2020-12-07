@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     resources :comments, only: [:create, :update, :destroy]
   end
 
+  get 'api/search' => 'api/searches#show'
 
   root to: 'static#root'
 
