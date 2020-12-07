@@ -1,4 +1,5 @@
 import React from 'react';
+// import {} from 'react-router-dom';
 import QuestionIndexContainer from './question_index_container';
 import {conditionalNewQuestion} from '../conditional_buttons';
 
@@ -18,6 +19,7 @@ class SearchQuestions extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.fetchQuestions(this.state.searchString)
+    this.props.history.replace(this.state.searchString);
   }
 
   handleChange(e) {
