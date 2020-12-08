@@ -1,5 +1,6 @@
 // Base column for upper section info and lower indexing
 // Used by both AllQuestions and SearchQuestions
+// Other shared elements above as well
 
 .AnyQuestionIndex-Elements {
     display: flex;
@@ -7,55 +8,56 @@
     align-items: center;
     width: 70%;
     margin-left: 200px;    
-    // margin-top: 75px;
-    // padding-left: 30px;
     padding-top: 75px;
     border-left: solid grey;
-    // background-color: green;
 }
 
-// AllQuestion-specific CSS
-
-.AllQuestions {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    justify-content: space-between;
-    align-items: center;
-    margin: 20px;
-    padding-bottom: 20px;
-    font-size: 30px;
-    border-bottom: solid grey;
-    // background-color: red;
-}
-
-// SearchQuestions-specific CSS
-
-.SearchQuestions {
+.AllQuestions, .SearchQuestions {
     display: flex;
     flex-direction: column;
     width: 100%;
     padding-bottom: 30px;
     border-bottom: solid grey;
-    // background-color: antiquewhite;
 }
-.SearchQuestions > * {
+
+.AllQuestions > *, .SearchQuestions > * {
     padding-left: 30px;
 }
 
-.SearchQuestions-TitleBar {
+.AllQuestions-TitleBar, .SearchQuestions-TitleBar {
+    display: flex;
+    flex-direction: row;
+    // flex-grow: 0;
+    width: auto;
+    max-width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    // background-color: violet;
+}
+
+.AllQuestions-Text, .SearchResults {
+    font-size: 1.8rem;
+}
+
+.AllQuestionsLowerControl, .SearchQuestionsLowerControl {
     display: flex;
     flex-direction: row;
     width: 100%;
     align-items: center;
-    justify-content: space-between;
-    margin-bottom: 20px;
-    // background-color: azure;
+    justify-content: left;
+    margin-top: 20px;
 }
 
-.SearchResults {
-    font-size: 1.8rem;
+.AQLC-Left, .SQLC-Left {
+    // background-color: lightsalmon;
 }
+
+// AllQuestion-specific CSS
+
+// nothing yet !
+
+// SearchQuestions-specific CSS
 
 .SearchInfo {
     font-size: small;
@@ -83,19 +85,6 @@
 .AnotherSearchInput:focus {
     outline: 1px solid blue;
     box-shadow: 0 0 3pt 2pt lightblue;
-}
-
-.SearchQuestionsLowerControl {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    align-items: center;
-    justify-content: left;
-    margin-top: 20px;
-}
-
-.SQLC-Left {
-    // background-color: lightsalmon;
 }
 
 // Question Index stuff...common to both AllQuestions and SearchQuestions

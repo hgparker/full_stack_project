@@ -1,11 +1,15 @@
 import {connect} from 'react-redux';
 import AllQuestions from './all_questions';
-import {fetchQuestions} from "../../actions/question_actions";
+
 import {loggedIn} from '../../selectors/auth_selectors';
+import {selectQuestionNumber} from "../../selectors/questions_selectors";
+
+import {fetchQuestions} from "../../actions/question_actions";
 
 const mSTP = (state) => {
     return {
         loggedIn: loggedIn(state),
+        numResults: selectQuestionNumber(state)
     };
 }
 
