@@ -3,7 +3,6 @@ import {Link, withRouter} from 'react-router-dom';
 import {conditionalLogin, conditionalSignup, conditionalLogout} from '../conditional_buttons';
 
 class NavBar extends React.Component {
-
     constructor(props) {
         super(props);
         this.state = {searchString: ""};
