@@ -13,12 +13,15 @@ class SearchQuestions extends React.Component {
 
   componentDidMount() {
     this.props.fetchQuestions(this.props.searchString);
-    // this.setState({oldURLString: this.props.searchString})
+    this.setState({oldURLString: this.props.searchString})
   }
 
-  // componentDidUpdate() {
-  //   console.log(this.state.oldURLString, this.props.searchString, this.props.location);
-  // }
+  componentDidUpdate() {
+    if (this.props.searchString != this.state.oldURLString) {
+      this.setState({oldURLString: this.props.searchString, searchString: this.props.searchString})
+      this.props.fetchQuestions(this.props.searchString);
+    }
+  }
 
   handleSubmit(e) {
     e.preventDefault();

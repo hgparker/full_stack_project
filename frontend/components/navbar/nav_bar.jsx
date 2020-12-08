@@ -11,8 +11,7 @@ class NavBar extends React.Component {
     }
 
     handleSubmit(e) {
-        e.preventDefault();
-        console.log(this.state.searchString);
+        // e.preventDefault();
         this.props.history.push(`/search/${this.state.searchString}`);
         // this.props.fetchQuestions(this.state.searchString)
         // this.props.history.replace(this.state.searchString);
