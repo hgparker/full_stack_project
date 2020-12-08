@@ -76,14 +76,23 @@
 }
 
 .AnotherSearchInput:focus {
-    // border-width: 2px;
-    // border-style: groove;
-    // border-color: blue;
     outline: 1px solid blue;
     box-shadow: 0 0 3pt 2pt lightblue;
 }
 
-// 0 0 3pt 2pt red
+.SearchQuestionsLowerControl {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    justify-content: left;
+    margin-top: 20px;
+}
+
+.SQLC-Left {
+    // background-color: lightsalmon;
+}
+
 // Question Index stuff...common to both AllQuestions and SearchQuestions
 
 .QuestionIndex-Questions {

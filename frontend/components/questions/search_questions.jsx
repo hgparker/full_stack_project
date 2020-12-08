@@ -32,7 +32,7 @@ class SearchQuestions extends React.Component {
   }
 
   render() {
-    let {searchString} = this.props;
+    let {searchString, numResults} = this.props;
 
     return (
       <div className="AnyQuestionIndex-Elements">
@@ -60,6 +60,11 @@ class SearchQuestions extends React.Component {
               value="submit"
             >Search </button>
           </form>
+        </div>
+        <div className="SearchQuestionsLowerControl">
+          <div className="SQLC-Left">
+            {numResults} results
+          </div>
         </div>
         <QuestionIndexContainer/>
       </div>
