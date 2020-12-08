@@ -14,6 +14,11 @@ class SearchQuestions extends React.Component {
 
   componentDidMount() {
     this.props.fetchQuestions(this.props.searchString);
+    this.setState({oldURLString: this.props.searchString})
+  }
+
+  componentDidUpdate() {
+    console.log(this.state.oldURLString, this.props.searchString, this.props.location);
   }
 
   handleSubmit(e) {
@@ -45,6 +50,7 @@ class SearchQuestions extends React.Component {
             onSubmit={this.handleSubmit}
           >
             <input
+              className="AnotherSearchInput"
               type="text"
               value={this.state.searchString}
               onChange={this.handleChange}
