@@ -1,5 +1,8 @@
 import React from 'react';
 import {Link, withRouter} from 'react-router-dom';
+
+// import Dropdown from "./dropdown";
+
 import {conditionalLogin, conditionalSignup, conditionalLogout} from '../conditional_buttons';
 
 class NavBar extends React.Component {
@@ -61,6 +64,9 @@ class NavBar extends React.Component {
                             </div>
                         }
                         {conditionalLogout(loggedIn, this.props.dispatch)}
+                        {/* {!loggedIn ? null :
+                            <Dropdown/>
+                        } */}
                     </div>
             </div>
         );

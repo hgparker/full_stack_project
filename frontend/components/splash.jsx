@@ -54,7 +54,7 @@ const Splash = (props) => {
           </div>
         </div>
         <div className="SplashTech2">
-        <div className="SplashIconBar">
+          <div className="SplashIconBar">
             <img src="/assets/rails.png"/>
             <img src="/assets/postgresql.png"/>
           </div>
@@ -67,13 +67,16 @@ const Splash = (props) => {
           </div>
         </div>
         <div className="SplashTech3">
-        <div className="SplashTechTitle">
-            Labrador Retriever + Poodle
+          <div className="SplashIconBar">
+            <img src="/assets/babka_head2.jpg"/>
+          </div>
+          <div className="SplashTechTitle">
+            Labrador + Poodle
           </div>
           <div className="SplashTechText">
-            Babka is a labradoodle puppy who gave lots of coding advice
-            during the creation of this website. It is named in her honor.
-            Babka herself is named in honor of the sweet – and stackable – dessert-like bread.
+            Babka the labradoodle puppy gave essential coding advice.
+            The website is named in her honor.
+            {/* Babka herself is named in honor of the sweet – and stackable – dessert-like bread. */}
           </div>
 
         </div>
