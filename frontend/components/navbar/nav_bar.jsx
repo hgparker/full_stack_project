@@ -24,14 +24,12 @@ class NavBar extends React.Component {
     render() {
         return (
             <div className="NavBar">
-                <Link
+                <Link className="LeftNavBar"
                     to={this.props.loggedIn ? "/questions" : "/"}
                 >
-                    <div className="LeftNavBar">
-                        <img src="/assets/babka.png"/> 
-                        <div className="LeftNavBarText">
-                            babka overflow
-                        </div>
+                    <img src="/assets/babka.png"/> 
+                    <div className="LeftNavBarText">
+                        babka overflow
                     </div>
                 </Link>
                 <div className="RightNavBar">

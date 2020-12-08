@@ -19,13 +19,9 @@
 .LeftNavBar {
     display: flex;
     align-items: center;
-}
-
-.LeftNavBarText {
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
-    letter-spacing: 1px;
-    padding-left: 3px;
+    height: 100%;
+    width: 200px;
+    // background-color: mediumorchid;
 }
 
 .NavBar a {
@@ -33,10 +29,19 @@
     text-decoration: none;
     color: black;
 }
-
-.NavBar a:hover {
+.LeftNavBar:hover {
     background-color: lightgray;
-    filter: brightness(0.8)
+    // filter: brightness(0.99);
+    outline: solid 1px lightgray;
+}
+
+.LeftNavBarText {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: large;
+    letter-spacing: 1px;
+    padding-left: 3px;
+    // background-color: midnightblue;
 }
 
 // Right NavBar CSS
