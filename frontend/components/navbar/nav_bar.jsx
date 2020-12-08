@@ -32,6 +32,13 @@ class NavBar extends React.Component {
                         babka overflow
                     </div>
                 </Link>
+                <Link className="MiddleNavBar"
+                    to="/questions"
+                >
+                    <div className="MiddleNavBarText">
+                    Questions
+                    </div>
+                </Link>
                 <div className="RightNavBar">
                     <form className="NavSearchBar"
                         onSubmit={this.handleSubmit}

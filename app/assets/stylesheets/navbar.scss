@@ -4,7 +4,7 @@
     position: fixed;
     top: 0;
     display: flex;  
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     background: white;
     width: 100%;
@@ -29,9 +29,9 @@
     text-decoration: none;
     color: black;
 }
+
 .LeftNavBar:hover {
     background-color: lightgray;
-    // filter: brightness(0.99);
     outline: solid 1px lightgray;
 }
 
@@ -42,6 +42,32 @@
     letter-spacing: 1px;
     padding-left: 3px;
     // background-color: midnightblue;
+}
+
+// Middle NavBar CSS
+
+.MiddleNavBar {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    align-items: center;
+    justify-content: flex-start;
+    // background-color: turquoise;
+}
+
+
+.MiddleNavBarText {
+    padding-left: 8px;
+    padding-right: 8px;
+    font-size: large;
+    color: #535A60;
+    border-radius: 100px; 
+    padding: 8px;
+}
+
+.MiddleNavBarText:hover {
+    background-color: lightgray;
+    // outline: solid 1px lightgray;
 }
 
 // Right NavBar CSS
