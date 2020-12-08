@@ -9,7 +9,7 @@
     width: 70%;
     margin-left: 200px;    
     padding-top: 75px;
-    border-left: solid grey;
+    border-left: 1px ridge grey;
 }
 
 .AllQuestions, .SearchQuestions {
@@ -17,7 +17,7 @@
     flex-direction: column;
     width: 100%;
     padding-bottom: 30px;
-    border-bottom: solid grey;
+    border-bottom: 1px ridge grey;
 }
 
 .AllQuestions > *, .SearchQuestions > * {
@@ -106,7 +106,7 @@
     margin-top: 20px;
     margin-bottom: 30px;
     padding-bottom: 20px;
-    border-bottom: solid grey;
+    border-bottom: 1px ridge grey;
     // background-color: magenta;
 }
 
