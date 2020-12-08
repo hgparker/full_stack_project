@@ -22,10 +22,12 @@ class NavBar extends React.Component {
     }
 
     render() {
+        let {currentUsername, loggedIn} = this.props;
+
         return (
             <div className="NavBar">
                 <Link className="LeftNavBar"
-                    to={this.props.loggedIn ? "/questions" : "/"}
+                    to={loggedIn ? "/questions" : "/"}
                 >
                     <img src="/assets/babka.png"/> 
                     <div className="LeftNavBarText">
@@ -51,9 +53,14 @@ class NavBar extends React.Component {
                             onChange={this.handleChange}
                         />
                     </form>
-                        {conditionalLogin(!this.props.loggedIn)}
-                        {conditionalSignup(!this.props.loggedIn)}
-                        {conditionalLogout(this.props.loggedIn, this.props.dispatch)}
+                        {conditionalLogin(!loggedIn)}
+                        {conditionalSignup(!loggedIn)}
+                        {!loggedIn ? null :
+                            <div className="NavUsernameBox">
+                                <div className="NavUsernameText"> {currentUsername}</div> 
+                            </div>
+                        }
+                        {conditionalLogout(loggedIn, this.props.dispatch)}
                     </div>
             </div>
         );

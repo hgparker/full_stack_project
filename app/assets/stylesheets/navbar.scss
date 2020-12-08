@@ -21,6 +21,7 @@
     align-items: center;
     height: 100%;
     width: 200px;
+    flex-shrink: 0;
     // background-color: mediumorchid;
 }
 
@@ -75,7 +76,8 @@
 .RightNavBar {
     display: flex;
     flex-direction: row;
-    width: 70%;
+    width: 100%;
+    height: 100%;
     align-items: center;
     justify-content: flex-end;
     // background-color: mediumblue;   
@@ -97,11 +99,31 @@
     border-style: solid;
     border-color: lightgrey;
     border-radius: 3px;
-    margin-right: 20px;
+    margin-right: 5px;
     // background-color: maroon;
 }
 
 .NavSearchInput:focus {
     outline: 1px solid blue;
     box-shadow: 0 0 3pt 3pt lightblue;
+}
+
+.NavUsernameBox {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 100%;
+    // background-color: violet;
+}
+
+.NavUsernameBox:hover {
+    background-color: lightgray;
+    outline: solid 1px lightgray;
+}
+
+.NavUsernameText {
+    font-size: large;
+    font-weight: bold;
+    padding-left: 8px;
+    padding-right: 8px;
 }
