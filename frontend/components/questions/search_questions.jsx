@@ -63,7 +63,7 @@ class SearchQuestions extends React.Component {
 
           <div className="SearchQuestionsLowerControl">
             <div className="SQLC-Left">
-              {numResults} results
+              {numResults} {numResults == 1 ? " result" : " results"}
             </div>
           </div>
         
