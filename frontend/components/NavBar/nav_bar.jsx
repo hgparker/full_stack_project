@@ -1,8 +1,27 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import {Link, withRouter} from 'react-router-dom';
 import {conditionalLogin, conditionalSignup, conditionalLogout} from '../conditional_buttons';
 
 class NavBar extends React.Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {searchString: ""};
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleChange = this.handleChange.bind(this);
+    }
+
+    handleSubmit(e) {
+        e.preventDefault();
+        console.log(this.state.searchString);
+        this.props.history.push(`/search/${this.state.searchString}`);
+        // this.props.fetchQuestions(this.state.searchString)
+        // this.props.history.replace(this.state.searchString);
+    }
+
+    handleChange(e) {
+        this.setState({searchString: e.currentTarget.value});
+    }
 
     render() {
         return (
@@ -17,6 +36,19 @@ class NavBar extends React.Component {
                         </div>
                     </div>
                 </Link>
+
+                <form className="NavSearchBar"
+                    onSubmit={this.handleSubmit}
+                >
+                    <input
+                        className="NavSearchInput"
+                        type="search"
+                        placeholder="Search"
+                        value={this.state.searchString}
+                        onChange={this.handleChange}
+                    />
+                </form>
+
                 <div className="RightNavBar">
                     {conditionalLogin(!this.props.loggedIn)}
                     {conditionalSignup(!this.props.loggedIn)}
@@ -27,4 +59,11 @@ class NavBar extends React.Component {
     }
 }
 
-export default NavBar;
+export default withRouter(NavBar);
+
+
+
+
+
+        
+

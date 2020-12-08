@@ -5,7 +5,7 @@ import {fetchSearch} from "../../actions/search_actions";
 import {loggedIn} from '../../selectors/auth_selectors';
 import {selectQuestionNumber} from "../../selectors/questions_selectors";
 
-export const mSTP = (state, ownProps) => {
+const mSTP = (state, ownProps) => {
   return {
     loggedIn: loggedIn(state),
     searchString: ownProps.match.params.searchString,
@@ -13,7 +13,7 @@ export const mSTP = (state, ownProps) => {
   };
 }
 
-export const mDTP = (dispatch) => {
+const mDTP = (dispatch) => {
   return {
     fetchQuestions: (searchString) => dispatch(fetchSearch(searchString))
   }
