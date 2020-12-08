@@ -8,7 +8,7 @@
     width: 70%;
     margin-left: 200px;    
     // margin-top: 75px;
-    padding-left: 30px;
+    // padding-left: 30px;
     padding-top: 75px;
     border-left: solid grey;
     // background-color: green;
@@ -35,7 +35,12 @@
     display: flex;
     flex-direction: column;
     width: 100%;
+    padding-bottom: 30px;
+    border-bottom: solid grey;
     // background-color: antiquewhite;
+}
+.SearchQuestions > * {
+    padding-left: 30px;
 }
 
 .SearchQuestions-TitleBar {
@@ -119,7 +124,7 @@
 .QuestionInfo {
     display: flex;
     flex-direction: row;
-    // padding-right: 30px;
+    padding-left: 30px;
     width: 80px;
     // background-color: yellowgreen;
 }

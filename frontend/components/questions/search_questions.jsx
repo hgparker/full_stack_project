@@ -60,12 +60,15 @@ class SearchQuestions extends React.Component {
               value="submit"
             >Search </button>
           </form>
-        </div>
-        <div className="SearchQuestionsLowerControl">
-          <div className="SQLC-Left">
-            {numResults} results
+
+          <div className="SearchQuestionsLowerControl">
+            <div className="SQLC-Left">
+              {numResults} results
+            </div>
           </div>
+        
         </div>
+
         <QuestionIndexContainer/>
       </div>
     );
