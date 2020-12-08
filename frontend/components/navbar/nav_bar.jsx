@@ -35,24 +35,22 @@ class NavBar extends React.Component {
                         </div>
                     </div>
                 </Link>
-
-                <form className="NavSearchBar"
-                    onSubmit={this.handleSubmit}
-                >
-                    <input
-                        className="NavSearchInput"
-                        type="search"
-                        placeholder="Search"
-                        value={this.state.searchString}
-                        onChange={this.handleChange}
-                    />
-                </form>
-
                 <div className="RightNavBar">
-                    {conditionalLogin(!this.props.loggedIn)}
-                    {conditionalSignup(!this.props.loggedIn)}
-                    {conditionalLogout(this.props.loggedIn, this.props.dispatch)}
-                </div>
+                    <form className="NavSearchBar"
+                        onSubmit={this.handleSubmit}
+                    >
+                        <input
+                            className="NavSearchInput"
+                            type="search"
+                            placeholder="Search"
+                            value={this.state.searchString}
+                            onChange={this.handleChange}
+                        />
+                    </form>
+                        {conditionalLogin(!this.props.loggedIn)}
+                        {conditionalSignup(!this.props.loggedIn)}
+                        {conditionalLogout(this.props.loggedIn, this.props.dispatch)}
+                    </div>
             </div>
         );
     }
