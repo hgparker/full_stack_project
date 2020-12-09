@@ -1,0 +1,58 @@
+.AnswerItem {
+  display: flex;
+  flex-direction: row;
+  padding-top: 20px;
+  // padding-bottom: 20px;
+  border-bottom: 1px ridge grey;
+  // background-color: yellow;
+}
+
+.AnswerLeftControl {
+  padding-right: 30px;
+}
+
+.AnswerItem-RightAnswerElements {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: lightskyblue;
+}
+
+.AnswerLowerControl {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: indianred;
+}
+
+.ALC-ControlElements {
+  background-color: khaki;
+}
+
+.ALC-UserInfo {
+  font-weight: bold;
+  // background-color: hotpink;
+}
+
+
+
+.CommentItem-UserInfo {
+  font-weight: bold;
+}
+
+
+.CommentItem {
+  padding-left: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-top: solid grey;
+}
+
+.CommentControl {
+  padding-top: 5px;
+}
+
+.AnswerAlternative {
+  margin-top: 30px;
+}

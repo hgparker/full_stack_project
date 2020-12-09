@@ -88,67 +88,9 @@
     // background-color: hotpink;
 }
 
-// "Answers" 
-
 .QuestionShow-AnswersText {
     margin-top: 20px;
     // font-size: 1.25rem;
     // background-color: purple;
 }
 
-// separate out marginal css stuff
-// put answer stuf in own sheet
-
-.AnswerItem-RightAnswerElements {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    // background-color: lightskyblue;
-}
-
-// .QuestionLowerControl, .AnswerLowerControl {
-.AnswerLowerControl {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    // background-color: green;
-}
-
-.ALC-UserInfo, .CommentItem-UserInfo {
-    font-weight: bold;
-}
-
-
-.AnswerItem {
-    display: flex;
-    margin-top: 30px;
-    padding-bottom: 20px;
-    border-bottom: solid grey;
-    // background-color: yellow;
-}
-
-// .QuestionLeftControl,.AnswerLeftControl {
-//     padding-right: 30px;
-//     display: flex;
-//     align-items: center;
-// }
-
-
-
-.CommentItem {
-    padding-left: 30px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    border-top: solid grey;
-}
-
-.CommentControl {
-    padding-top: 5px;
-}
-
-.AnswerAlternative {
-    margin-top: 30px;
-}

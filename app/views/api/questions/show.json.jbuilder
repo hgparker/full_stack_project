@@ -7,7 +7,7 @@ end
 json.answers do 
     @question.answers.each do |answer|
         json.set! answer.id do
-            json.extract! answer, :id, :body, :author_id, :question_id
+            json.extract! answer, :id, :body, :author_id, :question_id, :created_at
         end
     end
 end
@@ -29,7 +29,7 @@ end
 json.comments do
     @question.answer_comments.each do |comment|
         json.set! comment.id do
-            json.extract! comment, :id, :body, :author_id, :answer_id
+            json.extract! comment, :id, :body, :author_id, :answer_id, :created_at
         end
     end
 end

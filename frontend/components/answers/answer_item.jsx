@@ -28,8 +28,7 @@ const AnswerItem = (props) => {
             <div className = "AnswerItem-RightAnswerElements">
                 {answer.body}
                 <AnswerLowerControlContainer
-                    answerAuthorId={answer.author_id}
-                    answerId={answer.id}
+                    answer={answer}
                     userCommentId={userCommentId}
                 />
                 <List

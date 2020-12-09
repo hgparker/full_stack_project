@@ -9,12 +9,10 @@ import {enterCommentPostMode} from "../../actions/comment_actions"
 import {selectSessionComment} from "../../selectors/comments_selectors";
 
 const mSTP = (state, ownProps) => {
-    let answerAuthorId = ownProps.answerAuthorId;
-
-    return {   
+    let answerAuthorId = ownProps.answer.author_id;
+    return {
+      answer: ownProps.answer,
       currentUserId: currentUser(state),
-      answerAuthorId: answerAuthorId,
-      answerId: ownProps.answerId,
       sessionComment: selectSessionComment(state),
       hasCommented: !!ownProps.userCommentId,
       answerUsername: selectUsername(state, answerAuthorId)
