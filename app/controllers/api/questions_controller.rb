@@ -1,12 +1,13 @@
 class Api::QuestionsController < ApplicationController
 
     def index
-        @questions = Question.all.includes(:votes).select(:id, :title) 
+        @questions = Question.all.includes(:votes, :author).select(:id, :title, :created_at, :author_id) 
         render :index
     end
 
     def show
-        @question = Question.includes(:votes, :answers, :answer_votes, :answer_comments).find_by(id: params[:id])        
+        @question = Question.includes(:author, :votes, :answers, :answer_votes, :answer_comments).find_by(id: params[:id])        
+        print(@question.title)
         if @question
             render :show
         else

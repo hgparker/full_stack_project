@@ -1,7 +1,7 @@
 json.questions do
   @results.each do |question|
     json.set! question.id do
-      json.extract! question, :id, :title
+      json.extract! question, :id, :title, :created_at
     end
   end
 end
@@ -14,5 +14,13 @@ json.votes do
             end
         end
     end
+end
+
+json.users do
+  @results.each do |question|
+    json.set! question.author.id do
+      json.extract! question.author, :id, :username
+    end
+  end
 end
 

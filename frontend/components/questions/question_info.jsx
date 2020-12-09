@@ -5,7 +5,9 @@ const QuestionInfo = (props) => {
         <div className="QuestionInfo">
             <div className="VoteColumn">
                 <div> {props.voteTotal || 0} </div>
-                <div> {props.voteTotal == 1 || props.voteTotal == -1 ? "vote" : "votes"} </div>
+                <div className="VoteText">
+                    {props.voteTotal == 1 || props.voteTotal == -1 ? "vote" : "votes"}
+                </div>
             </div>
         </div>
     );
