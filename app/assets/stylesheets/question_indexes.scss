@@ -101,8 +101,6 @@
     display: flex;
     flex-direction: row;
     width: 100%;
-    // justify-content: space-between;
-    flex-wrap: wrap;
     margin-top: 20px;
     margin-bottom: 30px;
     padding-bottom: 20px;
@@ -115,5 +113,22 @@
     flex-direction: row;
     padding-left: 30px;
     width: 80px;
-    // background-color: yellowgreen;
+}
+
+.QII-Main {
+    display: flex;
+    flex-direction: column;
+    width: 100%;    
+}
+
+.QII-LowerControl {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    justify-content: flex-end;
+    // background-color: red;
+    margin-top: 10px;
+    font-size: small;
+    color: #848D95;
 }

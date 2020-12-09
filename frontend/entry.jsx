@@ -3,6 +3,11 @@ import ReactDOM from 'react-dom';
 import configureStore from "./store/store";
 import Root from "./components/root";
 
+// TimeAgo initialization imports
+import TimeAgo from "javascript-time-ago";
+import en from 'javascript-time-ago/locale/en';
+
+
 document.addEventListener("DOMContentLoaded", () => {
     const root = document.getElementById("root");
     let store;
@@ -22,6 +27,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // window.getState = store.getState;
     // window.dispatch = store.dispatch;
+
+    // TimeAgo initialization
+
+    TimeAgo.addDefaultLocale(en);
       
     ReactDOM.render(<Root store={store}/>, root);
 })

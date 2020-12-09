@@ -11,12 +11,15 @@ const QuestionIndexItem = (props) => {
                 voteTotal={voteTotal}
                 voteId={voteId}
             />
-            <Link to={`/questions/${question.id}`}>
-                {question.title}
-            </Link>
-            <QuestionIndexLowerControlContainer
+            <div className="QII-Main">
+                <Link to={`/questions/${question.id}`}>
+                    {question.title}
+                </Link>
+                <QuestionIndexLowerControlContainer
                 question={question}
             />
+            </div>
+
         </div>
     )
 }
