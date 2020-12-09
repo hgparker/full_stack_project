@@ -30,37 +30,76 @@
     align-items: center;
 }
 
+.QuestionShow-TitleText {
+    font-size: 30px;
+    // background-color: cornflowerblue;
+}
+
 .QuestionShow-TitleInfo {
     margin-top: 5px;
     color: #6A737C;
     font-size: small;
 }
 
-.LeftQuestionShowBox2 {
-    font-size: 30px;
-    // background-color: cornflowerblue;
+.QuestionShow-TitleRowRight {
+    // background-color: green;
 }
+
+// End QuestionTitle CSS
+// Begin QuestionElements CSS
 
 .QuestionShow-QuestionElements {   
     display: flex;
     flex-direction: row;
-    // align-items: baseline;
+    // align-items: flex-start;
     margin-top: 20px;
-    padding-bottom: 10px;
+    // padding-bottom: 10px;
     border-bottom: 1px ridge grey;
-    background-color: coral;
-}
-
-.QuestionShow-RightQuestionElements {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    background-color: lemonchiffon;
+    // background-color: coral;
 }
 
 .QuestionLeftControl {
-    background-color: green;
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: flex-start;
+    // align-items: center;
+    padding-right: 30px;
+    // background-color: green;
 }
+
+.QuestionShow-RightQuestionElements {
+    // display: flex;
+    // flex-direction: column;
+    // width: 100%;
+    // background-color: lemonchiffon;
+}
+
+.QuestionLowerControl {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    // background-color: green;
+}
+
+.QLC-UserInfo {
+    font-size: small;
+    color: #6A737C;
+    // background-color: hotpink;
+}
+
+// .AnswerLowerControl {
+//     display: flex;
+//     flex-direction: row;
+//     align-items: center;
+//     justify-content: space-between;
+//     padding-top: 10px;
+//     padding-bottom: 10px;
+//     // background-color: green;
+// }
+
+
+// "Answers" 
 
 .QuestionShowBox4 {
     margin-top: 20px;
@@ -78,7 +117,8 @@
     // background-color: lightskyblue;
 }
 
-.QuestionLowerControl, .AnswerLowerControl {
+// .QuestionLowerControl, .AnswerLowerControl {
+.AnswerLowerControl {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -88,7 +128,7 @@
     // background-color: green;
 }
 
-.QLC-UserInfo, .ALC-UserInfo, .CommentItem-UserInfo {
+.ALC-UserInfo, .CommentItem-UserInfo {
     font-weight: bold;
 }
 
@@ -101,11 +141,13 @@
     // background-color: yellow;
 }
 
-.QuestionLeftControl,.AnswerLeftControl {
-    padding-right: 30px;
-    display: flex;
-    align-items: center;
-}
+// .QuestionLeftControl,.AnswerLeftControl {
+//     padding-right: 30px;
+//     display: flex;
+//     align-items: center;
+// }
+
+
 
 .CommentItem {
     padding-left: 30px;

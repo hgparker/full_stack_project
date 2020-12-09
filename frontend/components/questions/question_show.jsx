@@ -43,10 +43,10 @@ class QuestionShow extends React.Component {
                 <div className="QuestionShow-MainColumn">
                     <div className="QuestionShow-TitleBox">
                         <div className="QuestionShow-TitleRow">
-                            <div className="LeftQuestionShowBox2">
+                            <div className="QuestionShow-TitleText">
                                 {question.title} 
                             </div>
-                            <div className="RightQuestionShowBox2">
+                            <div className="QuestionShow-TitleRowRight">
                                 {conditionalButton(currentUserId === question.author_id,
                             () => this.props.history.push(`/questions/${question.id}/edit`),
                             "ButtonStyle1", "Edit")}
@@ -70,10 +70,11 @@ class QuestionShow extends React.Component {
                             votableId={question.id}
                         />
                         <div className="QuestionShow-RightQuestionElements">
-                        {question.body}
-                        <QuestionLowerControlContainer
-                            userId={question.author_id}
-                        />
+                            {question.body}
+                            <QuestionLowerControlContainer
+                                userId={question.author_id}
+                                question={question}
+                            />
                         </div>
                     </div>
 

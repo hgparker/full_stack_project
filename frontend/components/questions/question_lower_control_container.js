@@ -5,7 +5,8 @@ import {selectUsername} from "../../selectors/user_selectors";
 
 const mSTP = (state, ownProps) => {
 
-    return {   
+    return {
+      question: ownProps.question,   
       questionUsername: selectUsername(state, ownProps.userId)
     };
 }

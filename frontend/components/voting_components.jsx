@@ -11,7 +11,7 @@ export const conditionalUpvote = (successCondition, upVoted, callback) => {
     >
       <svg height="36" width="36">
           <polygon
-            points="18,18 30,30 6,30" 
+            points="18,6, 33,21, 3,21" 
             className={!upVoted ? "VoteTriangle" : "VotedTriangle"}
           />
       </svg>
@@ -29,7 +29,8 @@ export const conditionalDownvote = (successCondition, downVoted, callback) => {
     >
       <svg height="36" width="36">
           <polygon
-            points="6,6 18,18 30,6" 
+            points="18, 30, 33, 15, 3, 15"
+            // points="6,15 18,27 30,15" 
             className={!downVoted ? "VoteTriangle" : "VotedTriangle"}
           />
       </svg>
