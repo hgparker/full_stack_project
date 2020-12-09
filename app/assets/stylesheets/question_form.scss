@@ -1,3 +1,37 @@
+// New Question-specific CSS
+
+.NewQuestion {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: flex-start;
+    background-color: lightgrey;
+    height: 800px;
+    margin-top: 55px;    
+    // background-position: top;
+    // background-position: right;
+    // background-color: red;
+}
+
+.NewQuestion-Title {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 0;
+    width: 100%;
+    height: 130px;
+    align-items: center;
+    background-image: url("ask.svg");
+    background-repeat: no-repeat;
+    background-position: right bottom;
+}
+
+.NewQuestion-TitleText {
+    padding-left: 20px;
+    font-size: x-large;
+}
+
+// QuestionForm CSS
+
 
 .QuestionFormBox1 {
     display: flex;

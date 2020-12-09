@@ -1,12 +1,10 @@
 import React from 'react';
-import { Redirect } from 'react-router-dom';
 import Errors from '../errors';
 
 class QuestionForm extends React.Component {
     constructor(props) {
         super(props)
         this.state = this.props.question;
-
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleChange = this.handleChange.bind(this);
     }

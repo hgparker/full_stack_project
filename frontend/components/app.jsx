@@ -13,6 +13,7 @@ import EditQuestionFormContainer from './questions/edit_question_form_container'
 import SearchQuestionsContainer from "./questions/search_questions_container";
 import Footer from "./footer";
 import Splash from "./splash";
+import NewQuestion from './questions/new_question';
 
 const App = (props) => {
     return (
@@ -21,7 +22,7 @@ const App = (props) => {
             <Switch>
                 <OnlyLoggedInRoute
                     exact path="/questions/ask"
-                    component={QuestionFormContainer}
+                    component={NewQuestion}
                 />
                 <OnlyLoggedInRoute
                     path="/questions/:questionId/edit"
