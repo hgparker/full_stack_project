@@ -1,22 +1,13 @@
 // New Question-specific CSS
 
 .NewQuestion {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    align-items: flex-start;
     background-color: lightgrey;
-    height: 800px;
     margin-top: 55px;    
-    // background-position: top;
-    // background-position: right;
-    // background-color: red;
 }
 
 .NewQuestion-Title {
     display: flex;
     flex-direction: row;
-    flex-grow: 0;
     width: 100%;
     height: 130px;
     align-items: center;
@@ -32,32 +23,54 @@
 
 // QuestionForm CSS
 
+.QuestionForm {
+    margin-left: 20px;
+}
 
-.QuestionFormBox1 {
+.QuestionWhiteBox {
     display: flex;
     flex-direction: column;
-    align-items: center;
     width: 70%;
-    margin: auto;
-    margin-top: 75px;
-    // background-color: yellowgreen;
+    padding: 16px;
+    box-shadow: 1px 1px 3px gray;
+    border-radius: 3px;
+    background-color: white;
+    margin-bottom: 20px;
 }
 
-.QuestionFormBox {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 10px;
-    // background-color: turquoise;
+.QuestionFieldName {
+    font-size: medium;
+    font-weight: 600;
+    margin-top: 10px;
 }
 
-.QuestionFormTitle {
-    width: 600px;
+.QuestionFieldTips {
+    font-size: small;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
-.QuestionFormBody {
-    width: 600px;
-    height: 300px;
+.QuestionInputTitle, .QuestionInputBody {
+    font-size: small;
+    padding: 8px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: lightgrey;
+    border-radius: 3px;
 }
+
+.QuestionInputTitle:focus, .QuestionInputBody:focus {
+    outline: 1px solid blue;
+    box-shadow: 0 0 3pt 3pt lightblue;   
+}
+
+.QuestionInputBody {
+    height: 200px;
+}
+
+
+
+// Misc...shouldn't be here!
 
 .AnswerAlternative {
     margin-top: 30px;

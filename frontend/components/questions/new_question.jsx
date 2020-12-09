@@ -1,4 +1,5 @@
 import React from "react";
+import QuestionFormContainer from "./question_form_container";
 
 class NewQuestion extends React.Component {
   render() {
@@ -9,6 +10,7 @@ class NewQuestion extends React.Component {
           Ask a public question
           </div>
         </div>
+        <QuestionFormContainer/>
       </div>
     );
   }
