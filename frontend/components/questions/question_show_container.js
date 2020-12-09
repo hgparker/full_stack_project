@@ -15,7 +15,6 @@ const mSTP = (state, ownProps) => {
     let questionId = ownProps.match.params.questionId;
     let currentUserId = currentUser(state)
     let voteHash = selectVoteHashAnswers(state, questionId, voteHash);
-    
     return {    
         question: selectQuestion(state, questionId),
         answers: selectAnswers(state, questionId, voteHash),
@@ -29,6 +28,7 @@ const mSTP = (state, ownProps) => {
         sessionAnswer: selectSessionAnswer(state),
         userComments: selectUserComments(state, currentUserId),
         sessionComment: selectSessionComment(state, currentUserId),
+
     };
 }
 

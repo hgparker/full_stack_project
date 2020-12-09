@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import ReactTimeAgo from 'react-time-ago';
 
 import List from '../list';
 import {conditionalNewQuestion, conditionalDelete, conditionalButton} from '../conditional_buttons';
@@ -41,19 +42,25 @@ class QuestionShow extends React.Component {
             return (
                 <div className="QuestionShow-MainColumn">
                     <div className="QuestionShow-TitleBox">
-                        <div className="LeftQuestionShowBox2">
-                            {question.title} 
+                        <div className="QuestionShow-TitleRow">
+                            <div className="LeftQuestionShowBox2">
+                                {question.title} 
+                            </div>
+                            <div className="RightQuestionShowBox2">
+                                {conditionalButton(currentUserId === question.author_id,
+                            () => this.props.history.push(`/questions/${question.id}/edit`),
+                            "ButtonStyle1", "Edit")}
+                                {conditionalDelete(currentUserId === question.author_id, 
+                                    () => {
+                                        deleteQuestion(question.id)
+                                            .then(() => this.props.history.push('/questions'))
+                                })}
+                                {conditionalNewQuestion(loggedIn)}
+                            </div>
                         </div>
-                        <div className="RightQuestionShowBox2">
-                            {conditionalButton(currentUserId === question.author_id,
-                        () => this.props.history.push(`/questions/${question.id}/edit`),
-                        "ButtonStyle1", "Edit")}
-                            {conditionalDelete(currentUserId === question.author_id, 
-                                () => {
-                                    deleteQuestion(question.id)
-                                        .then(() => this.props.history.push('/questions'))
-                            })}
-                            {conditionalNewQuestion(loggedIn)}
+                        <div className="QuestionShow-TitleInfo">
+                            Asked&nbsp;
+                            <ReactTimeAgo date={question.created_at} locale="en-US"/>
                         </div>
                     </div>
                     <div className="QuestionShow-QuestionElements">
@@ -70,9 +77,9 @@ class QuestionShow extends React.Component {
                         </div>
                     </div>
 
-                        <div className="QuestionShowBox4">
-                            Answers:
-                        </div>
+                    <div className="QuestionShowBox4">
+                        Answers:
+                    </div>
                         
                     <List 
                     component={AnswerItem}

@@ -1,28 +1,39 @@
+// This file contains css for question_show that pertains to questions.
 
+// Ideally, answer and comment stuff will be in different files
 
 .QuestionShow-MainColumn {
 
     display: flex;
     flex-direction: column;
-    // align-items: center;
     width: 70%;
-    // margin: auto;
     margin-left: 200px;
-    margin-top: 75px;
+    margin-top: 55px;
+    border-left: 1px ridge grey;
+    padding-left: 30px;
     // background-color: aqua;
 }
 
-
 .QuestionShow-TitleBox {
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px ridge grey;
+    // background-color: blueviolet;
+}
+
+.QuestionShow-TitleRow {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    margin-top: 20px;
-    padding-bottom: 20px;
-    border-bottom: solid grey;
-    // background-color: blueviolet;
+}
 
+.QuestionShow-TitleInfo {
+    margin-top: 5px;
+    color: #6A737C;
+    font-size: small;
 }
 
 .LeftQuestionShowBox2 {
@@ -32,16 +43,23 @@
 
 .QuestionShow-QuestionElements {   
     display: flex;
-    margin-top: 30px;
-    padding-bottom: 20px;
-    border-bottom: solid grey;
-    // background-color: coral;
+    flex-direction: row;
+    // align-items: baseline;
+    margin-top: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px ridge grey;
+    background-color: coral;
 }
 
 .QuestionShow-RightQuestionElements {
     display: flex;
     flex-direction: column;
     width: 100%;
+    background-color: lemonchiffon;
+}
+
+.QuestionLeftControl {
+    background-color: green;
 }
 
 .QuestionShowBox4 {
@@ -98,4 +116,8 @@
 
 .CommentControl {
     padding-top: 5px;
+}
+
+.AnswerAlternative {
+    margin-top: 30px;
 }
