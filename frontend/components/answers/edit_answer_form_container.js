@@ -1,5 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
+
 import { loggedIn } from '../../selectors/auth_selectors';
 import { answerErrors } from '../../selectors/errors_selectors';
 import {updateAnswer, clearAnswerErrors, enterAnswerViewMode} from "./../../actions/answer_actions";

@@ -1,11 +1,11 @@
-// New Question-specific CSS
+// CSS pertaining to New and Edit Question upper sections
 
-.NewQuestion {
+.NewQuestion, .EditQuestion {
     background-color: lightgrey;
     margin-top: 55px;    
 }
 
-.NewQuestion-Title {
+.NewQuestion-Title, .EditQuestion-Title {
     display: flex;
     flex-direction: row;
     width: 100%;
@@ -16,7 +16,7 @@
     background-position: right bottom;
 }
 
-.NewQuestion-TitleText {
+.NewQuestion-TitleText, .EditQuestion-TitleText {
     padding-left: 20px;
     font-size: x-large;
 }
@@ -67,8 +67,6 @@
 .QuestionInputBody {
     height: 200px;
 }
-
-
 
 // Misc...shouldn't be here!
 

@@ -8,7 +8,6 @@ import SignupFormContainer from "./Auth/signup_form_container";
 import NavBarContainer from "./navbar/nav_bar_container";
 import PageUnknown from './page_unknown';
 import QuestionShowContainer from './questions/question_show_container';
-import QuestionFormContainer from './questions/question_form_container';
 import EditQuestionFormContainer from './questions/edit_question_form_container';
 import SearchQuestionsContainer from "./questions/search_questions_container";
 import Footer from "./footer";

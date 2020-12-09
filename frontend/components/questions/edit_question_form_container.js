@@ -1,10 +1,13 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {updateQuestion, clearQuestionErrors, fetchQuestion} from '../../actions/question_actions';
 import QuestionForm from './question_form';
-import { Redirect } from 'react-router-dom';
+
 import {currentUser} from "../../selectors/auth_selectors";
 import {selectQuestion} from "../../selectors/questions_selectors";
+import {questionErrors} from "../../selectors/errors_selectors";
+
+import {updateQuestion, clearQuestionErrors, fetchQuestion} from '../../actions/question_actions';
+
 
 const mSTP = (state, ownProps) => {
     return {
@@ -29,7 +32,7 @@ const mDTP = (dispatch) => {
     }
 }
 
-class EditPostForm extends React.Component {
+class EditQuestion extends React.Component {
 
     componentDidMount() {
         this.props.clearQuestionErrors();
@@ -42,11 +45,18 @@ class EditPostForm extends React.Component {
         if (this.props.question.author_id != this.props.currentUserId)
             this.props.history.push(`/questions`);
         return (
-            <QuestionForm
-                {...this.props}
-            />
+            <div className="EditQuestion">
+                 <div className="EditQuestion-Title">
+                    <div className="EditQuestion-TitleText">
+                        Edit your previous question
+                    </div>
+                </div>
+                <QuestionForm
+                    {...this.props}
+                />                
+            </div>
         );
     }
 }
 
-export default connect(mSTP, mDTP)(EditPostForm);
+export default connect(mSTP, mDTP)(EditQuestion);
