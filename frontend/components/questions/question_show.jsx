@@ -78,8 +78,8 @@ class QuestionShow extends React.Component {
                         </div>
                     </div>
 
-                    <div className="QuestionShowBox4">
-                        Answers:
+                    <div className="QuestionShow-AnswersText">
+                        {answers.length} Answers
                     </div>
                         
                     <List 
