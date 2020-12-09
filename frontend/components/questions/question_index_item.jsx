@@ -1,17 +1,22 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import QuestionInfoContainer from './question_info_container';
+import QuestionIndexLowerControlContainer from "./question_index_lower_control_container";
 
 const QuestionIndexItem = (props) => {
+    let {voteId, voteTotal, question} = props;
     return (
         <div className="QuestionIndexItem">
             <QuestionInfoContainer
-                voteTotal={props.voteTotal}
-                voteId={props.voteId}
+                voteTotal={voteTotal}
+                voteId={voteId}
             />
-            <Link to={`/questions/${props.question.id}`}>
-                {props.question.title}
+            <Link to={`/questions/${question.id}`}>
+                {question.title}
             </Link>
+            <QuestionIndexLowerControlContainer
+                question={question}
+            />
         </div>
     )
 }

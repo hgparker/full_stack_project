@@ -1,7 +1,7 @@
 json.questions do
     @questions.each do |question|
         json.set! question.id do
-            json.extract! question, :id, :title, :created_at
+            json.extract! question, :id, :title, :author_id, :created_at
         end
     end
 end

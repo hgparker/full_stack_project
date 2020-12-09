@@ -1,5 +1,5 @@
 import {RECEIVE_CURRENT_USER} from "../actions/auth_actions"
-import {RECEIVE_QUESTION} from "../actions/question_actions";
+import {RECEIVE_QUESTION, RECEIVE_QUESTIONS} from "../actions/question_actions";
 
 const usersReducer = (oldState = {}, action) => {
     Object.freeze(oldState);
@@ -7,6 +7,8 @@ const usersReducer = (oldState = {}, action) => {
         case RECEIVE_CURRENT_USER:
             return Object.assign({}, oldState, {[action.user.id]: action.user})
         case RECEIVE_QUESTION:
+            return Object.assign({}, oldState, action.payload.users)
+        case RECEIVE_QUESTIONS:
             return Object.assign({}, oldState, action.payload.users)
         default:
             return oldState;
