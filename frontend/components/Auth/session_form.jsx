@@ -19,7 +19,6 @@ class SessionForm extends React.Component {
         this.props.clearAuthErrors();
     }
 
-
     handleDemoLogin(e) {
         e.preventDefault();
         this.props.login({email: "demodocus@demo.com", password: "demodemo"})
@@ -40,46 +39,43 @@ class SessionForm extends React.Component {
 
     render() {
         return (
-            <div className="SessionBox1">
+            <div className="SessionElements">
                 <Link
                     to="/"
                 >
                     <img src="/assets/babka.png"/> 
                 </Link>
-
-                    <form
-                        className="SessionBox2"
-                        onSubmit={this.handleSubmit}
-                    >
-                        <div className="SessionFormBox">
-                            <label>Email</label>
-                            <input
-                                type="text"
-                                value={this.state.email}
-                                onChange={this.handleChange("email")}
-                            /> 
-                        </div>
-                        <div className="SessionFormBox">
-                            <label>Password</label>
-                            <input
-                                type="password"
-                                value={this.state.password}
-                                onChange={this.handleChange("password")}
-                            />
-                        </div>
-                        <div className="SessionButtonRow">
-                            <button
-                                className = "ButtonStyle2"
-                                value="submit"
-                            >Log In </button>
-                            <button
-                                className = "ButtonStyle1"
-                                onClick={this.handleDemoLogin}
-                            >Demo </button>
-                        </div>
-                        <Errors errors={this.props.errors}/>
-                    </form> 
-                    <div> Don't have an account? <Link to="/signup">Sign Up</Link> </div>
+                <form
+                    className="SessionForm"
+                    onSubmit={this.handleSubmit}
+                >
+                    <div className="SessionFormLabel">Email</div>
+                        <input
+                            type="text"
+                            className="SessionInput"
+                            value={this.state.email}
+                            onChange={this.handleChange("email")}
+                        /> 
+                    <div className="SessionFormLabel"> Password</div>
+                        <input
+                            type="password"
+                            className="SessionInput"
+                            value={this.state.password}
+                            onChange={this.handleChange("password")}
+                        />
+                    <Errors errors={this.props.errors}/>
+                    <div className="SessionButtonRow">
+                        <button
+                            className = "ButtonStyle2"
+                            value="submit"
+                        >Log In </button>
+                        <button
+                            className = "ButtonStyle1"
+                            onClick={this.handleDemoLogin}
+                        >Demo </button>
+                    </div>
+                </form> 
+                <div className="SessionNotice"> Don't have an account? <Link to="/signup">Sign Up</Link> </div>
             </div>
         )
     }

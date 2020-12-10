@@ -28,7 +28,6 @@ const mSTP = (state, ownProps) => {
         sessionAnswer: selectSessionAnswer(state),
         userComments: selectUserComments(state, currentUserId),
         sessionComment: selectSessionComment(state, currentUserId),
-
     };
 }
 

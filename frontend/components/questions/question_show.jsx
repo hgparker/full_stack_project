@@ -22,12 +22,12 @@ class QuestionShow extends React.Component {
                 else if (this.props.hasAnswered)
                     this.props.enterAnswerViewMode();
                 else
-                    this.props.enterAnswerPostMode();
-            
-                if (!this.props.loggedIn)
-                    this.props.enterCommentLoginMode();
-                else
-                    this.props.enterCommentViewMode();})
+                    this.props.enterAnswerPostMode();})
+        
+        if (!this.props.loggedIn)
+            this.props.enterCommentLoginMode();
+        else
+            this.props.enterCommentViewMode();
     }
 
     render() {

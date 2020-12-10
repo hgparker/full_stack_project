@@ -1,38 +1,57 @@
 
-.SessionBox1, .SignupBox1 {
+// SessionButtonRow SessionNotice
+
+.SessionElements, .SignupElements {
     display: flex;
     flex-direction: column;
+    width: 100%;
+    height: 500px;
     align-items: center;
-    margin-top: 75px;
+    justify-content: center;
+    margin-top: 55px;
+    background-color: lightgray;
 }
 
-.SessionBox2, .SignupBox2 {
+.SessionForm, .SignupForm {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    background-color: whitesmoke;
+    background-color: white;
     padding-left: 20px;
     padding-right: 20px;
-    padding-bottom: 20px; 
-    padding-top: 10px;
+    padding-bottom: 20px;
+    padding-top: 20px;
     margin-top: 20px;
-    margin-bottom: 20px;
-}
-
-.SessionFormBox, .SignupFormBox {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    margin-top: 10px;
-    margin-bottom: 10px;
     border-radius: 5px;
 }
 
-// .SessionLoginButton, .SignupButton {
-//     background-color: #0095FF;
-//     color: #ffffff;
-//     border-radius: 4px;
-//     margin-left: 5px;
-//     margin-right: 5px;
-//     margin-bottom: 5px;
-// }
+.SessionFormLabel, .SignupFormLabel {
+    margin-top: 10px;
+    font-weight: 700;
+}
+
+.SessionInput, .SignupInput {
+    font-size: small;
+    padding: 8px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: lightgray;
+    border-radius: 3px;
+    margin-top: 3px;
+}
+
+.SessionInput:focus, .SignupInput:focus {
+    outline: 1px solid blue;
+    box-shadow: 0 0 3pt 3pt lightblue;   
+}
+
+.SessionButtonRow, .SignupButtonRow {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 5px;
+}
+
+.SessionNotice, .SignupNotice {
+    margin-top: 20px;
+}
