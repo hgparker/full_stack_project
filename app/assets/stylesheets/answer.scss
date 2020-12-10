@@ -15,7 +15,7 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  background-color: lightskyblue;
+  // background-color: lightskyblue;
 }
 
 .AnswerLowerControl {
@@ -23,15 +23,30 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  background-color: indianred;
+  margin-top: 10px;
+  // background-color: indianred;
 }
 
 .ALC-ControlElements {
-  background-color: khaki;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  // background-color: khaki;
+}
+
+.ALC-ControlElements > div {
+  font-size: small;
+  color: #848D95;
+  margin-right: 10px;
+}
+
+.ALC-ControlElements > div:hover {
+  cursor: pointer;
 }
 
 .ALC-UserInfo {
-  font-weight: bold;
+  font-size: small;
+  color: #6A737C;
   // background-color: hotpink;
 }
 
@@ -46,7 +61,6 @@
   padding-left: 30px;
   padding-top: 10px;
   padding-bottom: 10px;
-  border-top: solid grey;
 }
 
 .CommentControl {

@@ -11,7 +11,7 @@ class QuestionLowerControl extends React.Component {
               </div>
               <div className="QLC-UserInfo">
                 asked&nbsp;
-                <ReactTimeAgo date={question.created_at} locale="en-US"/> &nbsp;by {questionUsername}
+                <ReactTimeAgo date={question.created_at} locale="en-US"/> by {questionUsername}
               </div>
           </div>
       );

@@ -65,6 +65,19 @@ export const conditionalDelete = (successCondition, callback) => {
     );
 }
 
+export const conditionalClickableDiv = (successCondition, callback, divClassName, divText) => {
+    if (!successCondition)
+        return null;
+    return (
+        <div
+            className={divClassName}
+            onClick={callback}
+        >
+            {divText}
+        </div>
+    );
+}
+
 export const conditionalButton = (successCondition, callback, buttonStyle, buttonText) => {
     if (!successCondition)
         return null;
