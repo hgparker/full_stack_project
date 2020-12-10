@@ -15,18 +15,19 @@ import {ANSWER_POST_MODE, ANSWER_EDIT_MODE, ANSWER_LOGIN_MODE} from "../../actio
 
 class QuestionShow extends React.Component {
     componentDidMount() {
-        this.props.fetchQuestion(this.props.match.params.questionId);
-        if (!this.props.loggedIn)
-            this.props.enterAnswerLoginMode();
-        else if (this.props.hasAnswered)
-            this.props.enterAnswerViewMode();
-        else
-            this.props.enterAnswerPostMode();
-        
-        if (!this.props.loggedIn)
-            this.props.enterCommentLoginMode();
-        else
-            this.props.enterCommentViewMode();
+        this.props.fetchQuestion(this.props.match.params.questionId)
+            .then(() => {
+                if (!this.props.loggedIn)
+                    this.props.enterAnswerLoginMode();
+                else if (this.props.hasAnswered)
+                    this.props.enterAnswerViewMode();
+                else
+                    this.props.enterAnswerPostMode();
+            
+                if (!this.props.loggedIn)
+                    this.props.enterCommentLoginMode();
+                else
+                    this.props.enterCommentViewMode();})
     }
 
     render() {

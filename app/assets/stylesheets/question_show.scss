@@ -70,15 +70,17 @@
 .QuestionShow-RightQuestionElements {
     // display: flex;
     // flex-direction: column;
-    // width: 100%;
+    width: 100%;
     // background-color: lemonchiffon;
 }
 
 .QuestionLowerControl {
     display: flex;
     flex-direction: row;
+    width: 100%;
     align-items: center;
     justify-content: space-between;
+    margin-top: 20px;
     // background-color: green;
 }
 
