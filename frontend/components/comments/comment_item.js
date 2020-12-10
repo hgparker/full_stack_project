@@ -1,6 +1,7 @@
 import React from 'react';
 import CommentControlContainer from "./comment_control_container";
 import {COMMENT_EDIT_MODE} from "../../actions/comment_actions";
+import ReactTimeAgo from "react-time-ago";
 
 const CommentItem = (props) => {
     let {comment, userCommentId, sessionComment, commentUsername} = props;
@@ -12,7 +13,7 @@ const CommentItem = (props) => {
     return (
       <div className="CommentItem">
         {comment.body} - <span className="CommentItem-UserInfo">
-          {commentUsername}
+          {commentUsername} <ReactTimeAgo date={comment.created_at} locale="en-US"/>
         </span>
           <CommentControlContainer
             comment={comment}

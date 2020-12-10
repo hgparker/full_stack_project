@@ -24,6 +24,7 @@
   align-items: center;
   justify-content: space-between;
   margin-top: 10px;
+  margin-bottom: 10px;
   // background-color: indianred;
 }
 
@@ -48,25 +49,4 @@
   font-size: small;
   color: #6A737C;
   // background-color: hotpink;
-}
-
-
-
-.CommentItem-UserInfo {
-  font-weight: bold;
-}
-
-
-.CommentItem {
-  padding-left: 30px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
-
-.CommentControl {
-  padding-top: 5px;
-}
-
-.AnswerAlternative {
-  margin-top: 30px;
 }
