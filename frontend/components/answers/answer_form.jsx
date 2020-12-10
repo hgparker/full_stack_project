@@ -30,25 +30,23 @@ class AnswerForm extends React.Component {
 
     render() {
         return (
-            <div>
-                <form className="QuestionFormBox1"
-                    onSubmit={this.handleSubmit}
-                >
-                    <div className="QuestionFormBox">
-                        <textarea
-                            className="QuestionFormBody"
-                            cols="60"
-                            value={this.state.body}
-                            onChange={this.handleChange()}
-                        />
-                    </div>
-                    <button
-                        className="ButtonStyle1"
-                        value="submit"
-                    >{this.props.formType} </button>
-                    <Errors errors={this.props.errors}/>
-                    </form> 
-            </div>
+            <form className="AnswerForm"
+                onSubmit={this.handleSubmit}
+            >
+                <div className="AnswerFormTitle">Your Answer</div>
+                <div className="AnswerInputBodyContainer">
+                    <textarea
+                        className="AnswerInputBody"
+                        value={this.state.body}
+                        onChange={this.handleChange()}
+                    />
+                </div>
+                <Errors errors={this.props.errors}/>
+                <button
+                    className="ButtonStyle1"
+                    value="submit"
+                >{this.props.formType} </button>
+            </form> 
         )
     }
 }

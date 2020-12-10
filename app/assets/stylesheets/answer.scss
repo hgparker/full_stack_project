@@ -50,3 +50,41 @@
   color: #6A737C;
   // background-color: hotpink;
 }
+
+.AnswerAlternative {
+  margin-top: 30px;
+}
+
+// Answer Form CSS
+
+.AnswerForm {
+  padding-top: 20px;
+  // background-color: red;
+}
+
+.AnswerFormTitle {
+  font-size: x-large;
+}
+
+.AnswerInputBodyContainer {
+  display: flex;
+  flex-direction: row;
+}
+
+.AnswerInputBody {
+  font-size: small;
+  width: 100%;
+  height: 200px;
+  padding: 8px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: lightgrey;
+  border-radius: 3px;
+}
+
+.AnswerInputBody:focus {
+  outline: 1px solid blue;
+  box-shadow: 0 0 3pt 3pt lightblue;   
+}
