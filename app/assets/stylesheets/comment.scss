@@ -13,11 +13,20 @@
   color: #9199A1;
 }
 
-
-
-
 .CommentControl {
+  display: flex;
+  flex-direction: row;
   padding-top: 5px;
+}
+
+.CommentControl > div {
+  font-size: small;
+  color: #848D95;
+  margin-right: 10px;
+}
+
+.CommentControl > div:hover {
+  cursor: pointer;
 }
 
 .AnswerAlternative {
