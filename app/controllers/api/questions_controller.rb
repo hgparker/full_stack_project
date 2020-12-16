@@ -7,7 +7,6 @@ class Api::QuestionsController < ApplicationController
 
     def show
         @question = Question.includes(:author, :votes, :answers, :answer_votes, :answer_comments).find_by(id: params[:id])        
-        print(@question.title)
         if @question
             render :show
         else

@@ -3,8 +3,8 @@ import {Route, Switch} from "react-router-dom";
 import {OnlyLoggedInRoute, OnlyLoggedOutRoute} from "../util/route_util"
 
 import AllQuestionsContainer from "./questions/all_questions_container";
-import SessionFormContainer from "./Auth/session_form_container";
-import SignupFormContainer from "./Auth/signup_form_container";
+import SessionFormContainer from "./auth/session_form_container";
+import SignupFormContainer from "./auth/signup_form_container";
 import NavBarContainer from "./navbar/nav_bar_container";
 import PageUnknown from './page_unknown';
 import QuestionShowContainer from './questions/question_show_container';
