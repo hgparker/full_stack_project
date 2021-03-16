@@ -1,7 +1,7 @@
 # Babka Overflow
 ## Overview
 
-Babka Overflow is a clone of Stack Overflow. As such, it is a website which offers the ability to create accounts and login, to post and edit questions, to offer answers to questions, and to vote about which questions and answers are the most valuable. Additionally, one can view the questions and answers of others, as well as applicable vote tallies.
+Babka Overflow is a clone of Stack Overflow. As such, it is a website which offers the ability to create accounts and login, to post and edit questions, to offer and edit answers to questions, to post and edit comments on answers, and to vote about which questions and answers are the most valuable. Additionally, one can view the questions and answers of others, as well as applicable vote tallies.
 
 ## Link to live site:
 
